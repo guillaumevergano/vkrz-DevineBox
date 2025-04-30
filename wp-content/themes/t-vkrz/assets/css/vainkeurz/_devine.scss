@@ -1,0 +1,831 @@
+.is_devine{
+  display: none;
+}
+.resultats-devine{
+  display: none;
+}
+.devinetoplistbtn{
+  h6{
+    color: $c2;
+  }
+}
+
+.score-devine{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 6px 10px 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  @media (max-width: 768px) {
+    flex-wrap: nowrap;
+    justify-content: start;
+    padding-bottom: 5px;
+  }
+  h5{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin: 0 15px 0 0;
+    font-family: "lato";
+    font-style: italic;
+    font-weight: 900;
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
+  }
+  .score-devine-number{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+    li{
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      border-radius: 2px;
+      background-color: rgba(255, 255, 255, 0.1);
+      margin-right: 5px;
+      @media (max-width: 768px) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+.devine-good{
+  background-color: #51cc6c14;
+  margin-right: 5px;
+  span{
+    margin-right: 5px;
+  }
+}
+.devine-bad{
+  margin-left: 5px;
+  background-color: #e3061326;
+  span{
+    margin-right: 5px;
+  }
+}
+.cover-devine{
+  padding: 0 !important;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+.intro-devine{
+  text-align: center;
+  background: linear-gradient($c3, $c3) 50% 50%/calc(100% - 10px) calc(100% - 10px) no-repeat,
+    linear-gradient(270deg, $c2 0%, $rose 100%);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 15px 30px 15px 70px;
+  transform: rotate(-1deg) translateY(-50px);
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+
+  .avatar-devine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: -50px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #fff;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    @media (max-width: 768px) {
+      height: 80px;
+      width: 80px;
+      margin-left: -30px;
+    } 
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    color: $rose;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: "lato";
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: "lato";
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.top-title-devine{
+  color: $c2;
+  font-size: 1.1rem;
+}
+
+.lauch-devine{
+  a{
+    display: inline-flex !important;
+  }
+}
+
+#show-navbar-barre-devine{
+  display: none;
+}
+
+.goodchoice{
+  position: fixed;
+  bottom: -360px;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(0deg, #25D366 0%, #25D366 100%);
+  filter: blur(280px);
+  border-radius: 315px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.badchoice{
+  position: fixed;
+  bottom: -360px;
+  right: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(0deg, #E30613 0%, #E30613 100%);
+  filter: blur(280px);
+  border-radius: 315px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.emojis-devine{
+  position: fixed;
+  bottom: -30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  left: 0;
+  z-index: 999;
+}
+
+#devine-page {
+  .card-developer-meetup {
+    background: transparent !important;
+  }
+
+  .card-body.presentationtop {
+    width: 100%;
+    padding: 0;
+  }
+
+  .pourcentage-progress-container {
+    width: 100%;
+    background: radial-gradient(circle, rgba(115, 103, 240, 0.1) 0%, transparent 70%);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -90px;
+      width: 150%;
+      height: 150%;
+      background-image: url('../../images/vkrz/test-rays.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+  }
+
+  .top-question-h2 {
+    font-family: "Lato";
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    transform: rotate(-1deg);
+    margin: -12px 0 40px 0;
+
+    .top-title-devine {
+      color: #fff;
+    }
+  }
+
+  .result-pourcentage {
+    position: absolute;
+    top: -125px;
+    right: 120px;
+    font-size: 80px;
+    font-weight: 800;
+    background-image: linear-gradient(145deg, #ff4b98 40%, #7b5bc2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transform: rotate(-1deg);
+    filter: drop-shadow(4px 2px #0A0537);
+
+    /* Applique une ombre à l'ensemble du texte */
+  }
+
+  .rank-index-container {
+    position: relative;
+    margin-top: 150px;
+  }
+
+  .progress-wrapper {
+    position: absolute;
+    top: -50px;
+    right: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 70%;
+    margin: 20px auto;
+    z-index: 100;
+    transform: rotate(-1deg);
+  }
+
+  .rank-index-container p {
+    margin-top: 10px;
+  }
+
+  .progress-start, .progress-end {
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .header-phone {
+    display: none;
+  }
+
+  .progress-start {
+    color: #b8a9c9;
+  }
+
+  .progress-end {
+    color: #fff;
+  }
+
+  .progress-bar {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #ff4b98, #7b5bc2);
+
+    /* Dégradé pour la bordure */
+    padding: 4px;
+
+    /* Augmenter l'espace entre la bordure et le tube */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .progress-bar-inner {
+    height: 100%;
+    width: 100%;
+    border-radius: 21px;
+
+    /* Ajuste pour correspondre à l'intérieur */
+    background: linear-gradient(145deg, #101035, #1e1e4d);
+    padding: 4px;
+
+    /* <--- C'est ici que tu ajustes l'espace interne */
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 10px, rgba(0, 0, 0, 0.1) 10px, rgba(0, 0, 0, 0.1) 20px);
+      opacity: 0.7;
+      border-radius: 19px;
+    }
+  }
+
+  .progress-fill {
+    position: relative;
+    width: 0%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background: linear-gradient(to top, #D02B82, #F8BBD0);
+    box-shadow: inset 0 -3px 8px rgba(0, 0, 0, 0.2), inset 0 3px 8px rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+  }
+
+  .rank-index-container {
+    background-color: #1F1B47;
+    border: 2px solid #6154A7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 190px;
+    transform: rotate(-1deg) translateY(-20px);
+  }
+
+  .rank-devine.index-rank {
+    font-size: 28px;
+    color: #ff4b98;
+    font-weight: 700;
+    filter: drop-shadow(4px 2px #0A0537);
+  }
+
+  .table-score-devine-table {
+    border-radius: 8px;
+    overflow: hidden;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  .table-score-devine-thead {
+    color: #7983BB;
+    border: none;
+    border-bottom: 1px solid #7983BB;
+  }
+
+  .table-score-devine-th {
+    color: #7983BB;
+  }
+
+  .table-border-bottom-0 {
+    tr {
+      padding: 10px;
+    }
+
+    &:first-child td {
+      border-top: none;
+    }
+
+    &:not(:first-child) td {
+      border-top: 1px solid #7983BB;
+    }
+  }
+
+  .mb-5 {
+    margin-bottom: 5rem !important;
+  }
+
+  .footer-devine {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #1F1B47;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 99;
+  }
+
+  .footer-devine-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+#detailsdevine-page {
+  .titre-section{
+    margin-top: 10px;
+  }
+  .titre-section.text-center.titre-section-emojibig {
+    background: none;
+  }
+
+  tbody {
+    border-color: #7983BB;
+    border: none;
+    border-width: 1px;
+  }
+}
+
+td, tfoot, th, thead, tr {
+  border-color: #7983BB;
+  border: none;
+  border-width: 1px;
+}
+
+#detailsdevine-page {
+  .titre-section {
+    font-size: 24px;
+  }
+}
+
+#devine-page {
+
+  .mb-O-em {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+
+  .user-card, .user-card-table {
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: #312673;
+    padding: 8px 10px;
+    border-radius: 10px;
+    max-width: fit-content;
+  }
+
+  .user-avatar, .user-avatar-table {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .user-card-table {
+    background: none;
+  }
+
+  .h1-ton-score {
+    font-size: 28px;
+    font-weight: 700;
+    transform: rotate(-1deg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  }
+}
+.bloc-devine-result{
+  gap: 4rem;
+}
+@media (max-width: 1073px) {
+  #devine-page {
+    .top-question {
+      font-size: 0.95rem;
+    }
+
+    .top-question-h2 {
+      font-size: 0.95rem;
+    }
+
+    .score-board {
+      width: 90%;
+      margin: 0 5%;
+    }
+
+    .bloc-devine-result {
+      flex-direction: column;
+      gap: 0rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-devine-content{
+      p{
+        margin-bottom: 5px;
+      }
+    }
+    .pourcentage-progress-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .rank-index-container {
+      width: 65%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .result-pourcentage {
+      top: -100px;
+      right: 130px;
+      font-size: 65px;
+    }
+
+    .progress-wrapper {
+      top: -40px;
+      right: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .progress-bar {
+      height: 35px;
+    }
+
+    .mb-0 {
+      em {
+        font-weight: 600;
+        font-size: 0.75rem;
+      }
+
+      span {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+
+    .pourcentage-progress-container::after {
+      width: 100%;
+      height: 100%;
+      top: 30px;
+      left: 0px;
+    }
+
+    .card-developer-meetup .presentationtop h1 {
+      font-size: 28px;
+    }
+
+    .footer-devine {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #devine-page {
+    .top-question span, .top-question-h2 span {
+      font-size: 0.75rem;
+    }
+
+    .card-developer-meetup .presentationtop h1 {
+      margin: 0;
+    }
+
+    .rank-index-container {
+      margin-top: 130px;
+    }
+
+    .result-pourcentage {
+      top: -90px;
+      right: 38%;
+      font-size: 50px;
+    }
+
+    .rank-index-container {
+      width: 100%;
+    }
+
+    .progress-wrapper {
+      right: 15%;
+    }
+  }
+
+  #devine-page {
+    .card-developer-meetup .presentationtop h1 {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .top-question .user-card-devine {
+      .user-card {
+        padding: 4px 5px;
+        border-radius: 5px;
+      }
+
+      .user-avatar {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    .top-question-h2 span {
+      font-size: 0.85rem;
+    }
+
+    .rank-index-container {
+      width: auto;
+      margin-top: 100px;
+      padding: 10px;
+    }
+
+    .result-pourcentage {
+      right: 36%;
+      top: -75px;
+      font-size: 35px;
+    }
+
+    .rank-devine.index-rank {
+      font-size: 20px;
+    }
+
+    .progress-bar {
+      height: 30px;
+    }
+
+    .pourcentage-progress-container::after {
+      width: 70%;
+      height: 100%;
+      top: 15px;
+      left: 55px;
+    }
+
+    .table-score-devine-thead th, .table-border-bottom-0 td {
+      font-size: 10px;
+    }
+  }
+}
+
+#defi-modal{
+  background-color: rgba(0, 0, 0, 0.8);
+  .modal-dialog {
+    max-width: 650px;
+  }
+  .modal-body{
+    background-color: #312673;
+    border-radius: 8px;
+    border: none;
+    padding-bottom: 0;
+  }
+  .modal-content-devine{
+    margin-top: 20px;
+  }
+  .modal-footer{
+    background: #312673;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 10px;
+  }
+}
+
+.email-link-share{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  li{
+    margin-bottom: 10px;
+  }
+}
+
+.list-score-devine{
+  img{
+    max-width: 130%;
+    position: relative;
+    top: -10px;
+    @media (max-width: 768px) {
+      max-width: 140%;
+      position: relative;
+      top: -10px;
+      left: -20%;
+    }
+  }
+}
+
+.btn-fermer{
+  background: transparent;
+  border: none;
+  text-transform: uppercase;
+  color: $muted;
+  letter-spacing: 1px;
+}
+
+.reseau-share{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 5px;
+  padding: 0;
+  gap: 10px;
+  li{
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    a{
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 50px;
+      line-height: 50px;
+      margin: 0;
+      i{
+        margin: 0;
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.user-card-devine{
+  .user-card{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #312673;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transform: scale(0.9);
+    margin: 0 -5px;
+    position: relative;
+    top: -3px;
+    @media (max-width: 768px) {
+      padding: 2px 10px 2px 5px;
+    }
+  }
+  .user-avatar{
+    margin: 0 5px 0 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
+
+.single-devine{
+  .tournoi-content{
+    padding: 0;
+  }
+  .top-title-question{
+    margin-bottom: 10px;
+  }
+  .content-intro{
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .single-devine .focus-top #show-navbar-barre {
+    display: block;
+    bottom: 0px;
+    position: fixed;
+    padding: 0 0 10px 0;
+    .btn-annule-devine{
+      display: flex;
+    }
+  }
+  .single-devine{
+    .presentationtop-whitelabel{
+      margin-top: 50px;
+    }
+  }
+}
+
+.scoreduel {
+    transition: background-color 1s ease;
+}
+
+.noresult-defis{
+  padding: 50px;
+  text-align: center;
+}
+
+.noresult-defis-envoyes{
+  h5{
+    text-transform: uppercase;
+  }
+  img{
+    max-width: 250px;
+    display: block;
+    margin: 5px auto;
+    box-shadow: 0px 0px 36px 0px #f5177f2e;
+    transform: rotate(-2deg);
+  }
+}
+
+.medaille-devine-td{
+  text-align: left !important;
+  .medaille-devine{
+    font-size: 2rem;
+  }
+  .rank-devine{
+    font-size: 1rem;
+    color: #7983BB;
+  }
+}

@@ -1,0 +1,10 @@
+<?php
+require_once('all/url.php');
+require_once('all/login.php');
+require_once('all/cpt.php');
+require_once('all/env.php');
+require_once('all/tax.php');
+require_once('all/comments.php');
+require_once('all/global.php');
+require_once('all/translation.php');
+require_once('all/notion-api.php');

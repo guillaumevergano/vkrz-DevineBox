@@ -1,0 +1,1166 @@
+.va {
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/***** Sizes START *****/
+.va-xs {
+  width: .75em !important;
+  height: .75em !important;
+}
+
+.va-sm {
+  width: .875em !important;
+  height: .875em !important;
+}
+
+.va-md {
+  width: 1em !important;
+  height: 1em !important;
+}
+
+.va-lg {
+  width: 1.33em !important;
+  height: 1.33em !important;
+}
+
+.va-1x {
+  width: 1em !important;
+  height: 1em !important;
+}
+
+.va-2x {
+  width: 2em !important;
+  height: 2em !important;
+}
+
+.va-3x {
+  width: 3em !important;
+  height: 3em !important;
+}
+
+.va-4x {
+  width: 4em !important;
+  height: 4em !important;
+}
+
+.va-5x {
+  width: 5em !important;
+  height: 5em !important;
+}
+
+.va-6x {
+  width: 6em !important;
+  height: 6em !important;
+}
+
+.va-7x {
+  width: 7em !important;
+  height: 7em !important;
+}
+
+.va-8x {
+  width: 8em !important;
+  height: 8em !important;
+}
+
+.va-9x {
+  width: 9em !important;
+  height: 9em !important;
+}
+
+.va-10x {
+  width: 10em !important;
+  height: 10em !important;
+}
+
+.va-z-1 {
+  width: 1px !important;
+  height: 1px !important;
+}
+
+.va-z-2 {
+  width: 2px !important;
+  height: 2px !important;
+}
+
+.va-z-3 {
+  width: 3px !important;
+  height: 3px !important;
+}
+
+.va-z-4 {
+  width: 4px !important;
+  height: 4px !important;
+}
+
+.va-z-5 {
+  width: 5px !important;
+  height: 5px !important;
+}
+
+.va-z-6 {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+.va-z-7 {
+  width: 7px !important;
+  height: 7px !important;
+}
+
+.va-z-8 {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+.va-z-9 {
+  width: 9px !important;
+  height: 9px !important;
+}
+
+.va-z-10 {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.va-z-13 {
+  width: 13px !important;
+  height: 13px !important;
+}
+
+.va-z-15 {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.va-z-17 {
+  width: 17px !important;
+  height: 17px !important;
+}
+
+.va-z-20 {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.va-z-24 {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.va-z-25 {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.va-z-30 {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.va-z-40 {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.va-z-50 {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.va-z-70 {
+  width: 70px !important;
+  height: 70px !important;
+}
+.va-z-85 {
+  width: 85px !important;
+  height: 85px !important;
+}
+
+.iconstats{
+  width: 30px !important;
+  height: 30px !important;
+  margin: 0 0 8px 0;
+}
+
+/***** Sizes END *****/
+
+/***** Icons START *****/
+.va-dragon {
+  background-image: url(../../images/emojis/dragon-face_1f432.png);
+}
+
+.va-neptune {
+  background-image: url(../../images/emojis/neptune.png);
+}
+
+.va-france {
+  background-image: url(../../images/emojis/france.png);
+}
+
+.va-package {
+  background-image: url(../../images/emojis/package_1f4e6.png);
+}
+
+.va-folder-in {
+  background-image: url(../../images/emojis/inbox-tray_1f4e5.png);
+}
+
+.va-envelope-in {
+  background-image: url(../../images/emojis/envelope-with-arrow_1f4e9.png);
+}
+
+.va-kraken {
+  background-image: url(../../images/emojis/octopus_1f419.png);
+}
+
+.va-folder-empty {
+  background-image: url(../../images/emojis/open-file-folder_1f4c2.png);
+}
+
+.va-chance {
+  background-image: url(../../images/emojis/four-leaf-clover_1f340-1.png);
+}
+
+.va-jv {
+  background-image: url(../../images/emojis/joystick_1f579-fe0f.png);
+}
+
+.va-tv {
+  background-image: url(../../images/emojis/television_1f4fa.png);
+}
+
+.va-food {
+  background-image: url(../../images/emojis/pretzel_1f968.png);
+}
+
+.va-music {
+  background-image: url(../../images/emojis/optical-disk_1f4bf.png);
+}
+
+.va-sport {
+  background-image: url(../../images/emojis/ping-pong_1f3d3.png);
+}
+
+.va-comics {
+  background-image: url(../../images/emojis/spider-web_1f578-fe0f.png);
+}
+
+.va-chouette {
+  background-image: url(../../images/emojis/owl_1f989.png);
+}
+
+.va-dodo {
+  background-image: url(../../images/emojis/dodo_1f9a4.png);
+}
+
+.va-ninja {
+  background-image: url(../../images/emojis/ninja_1f977-1.png);
+}
+
+.va-visionnaire {
+  background-image: url(../../images/emojis/telescope_1f52d.png);
+}
+
+.va-egg {
+  background-image: url(../../images/emojis/egg_1f95a.png);
+}
+
+.va-hatching-chick {
+  background-image: url(../../images/emojis/hatching-chick_1f423.png);
+}
+
+.va-chick {
+  background-image: url(../../images/emojis/front-facing-baby-chick_1f425.png);
+}
+
+.va-rooster {
+  background-image: url(../../images/emojis/rooster_1f413.png);
+}
+
+.va-turkey {
+  background-image: url(../../images/emojis/turkey_1f983.png);
+}
+
+.va-swan {
+  background-image: url(../../images/emojis/swan_1f9a2.png);
+}
+
+.va-flamingo {
+  background-image: url(../../images/emojis/flamingo_1f9a9.png);
+}
+
+.va-peacock {
+  background-image: url(../../images/emojis/peacock_1f99a.png);
+}
+
+.va-vulcan-salute {
+  background-image: url(../../images/emojis/vulcan-salute_1f596.png);
+}
+
+.va-waving-hand {
+  background-image: url(../../images/emojis/waving-hand_1f44b.png);
+}
+
+.va-finger-down {
+  background-image: url(../../images/emojis/backhand-index-pointing-down_1f447.png);
+}
+
+.va-change {
+  background-image: url(../../images/emojis/counterclockwise-arrows-button_1f504-1.png);
+}
+
+.va-call-me-hand {
+  background-image: url(../../images/emojis/call-me-hand_1f919.png);
+}
+
+.va-writing-hand {
+  background-image: url(../../images/emojis/writing-hand_270d-fe0f.png);
+}
+
+.va-raised-fist {
+  background-image: url(../../images/emojis/raised-fist_270a.png);
+}
+
+.va-right-facing-fist {
+  background-image: url(../../images/emojis/right-facing-fist_1f91c.png);
+}
+
+.va-left-facing-fist {
+  background-image: url(../../images/emojis/left-facing-fist_1f91b.png);
+}
+
+.va-folded-hands {
+  background-image: url(../../images/emojis/folded-hands_1f64f.png);
+}
+
+.va-victory-hand {
+  background-image: url(../../images/emojis/victory-hand_270c-fe0f.png);
+}
+
+.va-doigt-droit {
+  background-image: url(../../images/emojis/doigt-droit.png);
+}
+
+.va-gem {
+  background-image: url(../../images/emojis/gem-stone_1f48e.png);
+}
+
+.va-gem-rose {
+  background-image: url(../../images/emojis/gem-rose.png);
+}
+
+.va-setting {
+  background-image: url(../../images/emojis/gear_2699-fe0f.png);
+}
+
+.va-rocket {
+  background-image: url(../../images/emojis/rocket_1f680.png);
+}
+
+.va-trophy {
+  background-image: url(../../images/emojis/trophy_1f3c6.png);
+}
+
+.va-house {
+  background-image: url(../../images/emojis/house.png);
+}
+
+.va-paques {
+  background-image: url(../../images/emojis/paques.png);
+}
+
+.va-trash {
+  background-image: url(../../images/emojis/wastebasket_1f5d1-fe0f.png);
+}
+
+.va-trash2 {
+  background-image: url(../../images/emojis/litter-in-bin-sign_1f6ae-1.png);
+}
+
+.va-party-popper {
+  background-image: url(../../images/emojis/party-popper_1f389.png);
+}
+
+.va-woozy-face {
+  background-image: url(../../images/emojis/woozy-face_1f974.png);
+}
+
+.va-hugging-face {
+  background-image: url(../../images/emojis/hugging-face_1f917.png);
+}
+
+.va-package {
+  background-image: url(../../images/emojis/package_1f4e6-1.png);
+}
+
+.va-spiral-eyes {
+  background-image: url(../../images/emojis/face-with-spiral-eyes_1f635-200d-1f4ab-1);
+}
+
+.va-star-struck {
+  background-image: url(../../images/emojis/star-struck_1f929.png);
+}
+
+.va-twitch {
+  background-image: url(../../images/emojis/twitch.png);
+}
+
+.va-youtube {
+  background-image: url(../../images/emojis/yt.png);
+}
+
+.va-smiling-face-with-heart-eyes {
+  background-image: url(../../images/emojis/smiling-face-with-heart-eyes_1f60d.png);
+}
+
+.va-face-screaming {
+  background-image: url(../../images/emojis/face-screaming-in-fear_1f631.png);
+}
+
+.va-recommencer {
+  background-image: url(../../images/emojis/counterclockwise-arrows-button_1f504.png);
+}
+
+.va-upside-down-face {
+  background-image: url(../../images/emojis/upside-down-face_1f643.png);
+}
+
+.va-anxious-face-with-sweat {
+  background-image: url(../../images/emojis/anxious-face-with-sweat_1f630.png);
+}
+
+.va-santa {
+  background-image: url(../../images/emojis/santa-claus_1f385.png);
+}
+
+.va-smiling-face-with-hearts {
+  background-image: url(../../images/emojis/smiling-face-with-hearts_1f970.png);
+}
+
+.va-man-raising {
+  background-image: url(../../images/emojis/man-raising-hand_1f64b-200d-2642-fe0f.png);
+}
+
+.va-link {
+  background-image: url(../../images/emojis/link_1f517.png);
+}
+
+.va-monocle {
+  background-image: url(../../images/emojis/face-with-monocle_1f9d0.png);
+}
+
+.va-squinting-face-with-tongue {
+  background-image: url(../../images/emojis/squinting-face-with-tongue_1f61d.png);
+}
+
+.va-swinking-face-with-tongue {
+  background-image: url(../../images/emojis/winking-face-with-tongue_1f61c.png);
+}
+
+.va-cold-face {
+  background-image: url(../../images/emojis/cold-face_1f976.png);
+}
+
+.va-full-moon-face {
+  background-image: url(../../images/emojis/full-moon-face_1f31d.png);
+}
+
+.va-new-moon-face {
+  background-image: url(../../images/emojis/new-moon-face_1f31a.png);
+}
+
+.va-vkrzteam {
+  background-image: url(../../images/emojis/vkrzteam.png);
+}
+
+.va-confetti {
+  background-image: url(../../images/emojis/confetti.png);
+}
+
+.va-keycap-digit-one {
+  background-image: url(../../images/emojis/keycap-digit-one_31-fe0f-20e3-1.png);
+}
+.va-keycap-digit-two {
+  background-image: url(../../images/emojis/keycap-digit-two_32-fe0f-20e3-1.png);
+}
+.va-keycap-digit-three {
+  background-image: url(../../images/emojis/keycap-digit-three.png);
+}
+
+.va-trois {
+  background-image: url(../../images/emojis/keycap-digit-three.png);
+}
+
+.va-calendar {
+  background-image: url(../../images/emojis/calendar_1f4c5.png);
+}
+
+.va-micro {
+  background-image: url(../../images/emojis/micro.png);
+}
+
+.va-ninja {
+  background-image: url(../../images/emojis/ninja_1f977.png);
+}
+
+.va-water {
+  background-image: url(../../images/emojis/sweat-droplets_1f4a6.png);
+}
+
+.va-eyes {
+  background-image: url(../../images/emojis/eyes_1f440.png);
+}
+
+.va-keurz {
+  background-image: url(../../images/emojis/purple-heart_1f49c.png);
+}
+
+.va-compteur {
+  background-image: url(../../images/emojis/abacus_1f9ee.png);
+}
+
+.va-globe {
+  background-image: url(../../images/emojis/globe-showing-americas_1f30e.png);
+}
+
+.va-cart {
+  background-image: url(../../images/emojis/shopping-cart_1f6d2.png);
+}
+
+.va-person-gesturing-no {
+  background-image: url(../../images/emojis/person-gesturing-no_1f645.png);
+}
+
+.va-exploding-head {
+  background-image: url(../../images/emojis/exploding-head_1f92f.png);
+}
+
+.va-crown {
+  background-image: url(../../images/emojis/crown_1f451.png);
+}
+
+.va-coupon {
+  background-image: url(../../images/emojis/label_1f3f7-fe0f.png);
+}
+
+.va-shopping {
+  background-image: url(../../images/emojis/shopping-bags_1f6cd-fe0f.png);
+}
+
+.va-satellite {
+  background-image: url(../../images/emojis/satellite_1f4e1.png);
+}
+
+.va-satellite {
+  background-image: url(../../images/emojis/satellite.png);
+}
+
+.va-creator {
+  background-image: url(../../images/emojis/man-singer_1f468-200d-1f3a4.png);
+}
+
+.va-money {
+  background-image: url(../../images/emojis/money-bag_1f4b0.png);
+}
+
+.va-sports-medal {
+  background-image: url(../../images/emojis/sports-medal_1f3c5.png);
+}
+
+.va-pouce-up {
+  background-image: url(../../images/emojis/pouce-up.png);
+}
+
+.va-pouce-down {
+  background-image: url(../../images/emojis/pouce-down.png);
+}
+
+.va-velo {
+  background-image: url(../../images/emojis/person-biking_1f6b4.png);
+}
+
+.va-velo-hard {
+  background-image: url(../../images/emojis/person-mountain-biking_1f6b5.png);
+}
+
+.va-cheese1 {
+  background-image: url(../../images/emojis/face-savoring-food_1f60b.png);
+}
+
+.va-cheese2 {
+  background-image: url(../../images/emojis/winking-face-with-tongue_1f61c-1.png);
+}
+
+.va-guetteur {
+  background-image: url(../../images/emojis/face-with-peeking-eye_1fae3.png);
+}
+
+.va-mush {
+  background-image: url(../../images/emojis/mushroom_1f344.png);
+}
+
+.va-duo {
+  background-image: url(../../images/emojis/people-with-bunny-ears_1f46f.png);
+}
+
+.va-cheese3 {
+  background-image: url(../../images/emojis/zany-face_1f92a.png);
+}
+
+.va-camping {
+  background-image: url(../../images/emojis/camping_1f3d5-fe0f.png);
+}
+
+.va-lama {
+  background-image: url(../../images/emojis/llama_1f999.png);
+}
+
+.va-spiral-eyes {
+  background-image: url(../../images/emojis/face-with-spiral-eyes_1f635-200d-1f4ab.png);
+}
+
+.va-celebrate {
+  background-image: url(../../images/emojis/partying-face_1f973.png);
+}
+
+.va-fire {
+  background-image: url(../../images/emojis/fire_1f525.png);
+}
+
+.va-disquette {
+  background-image: url(../../images/emojis/floppy-disk_1f4be.png);
+}
+
+.va-italian-finger {
+  background-image: url(../../images/emojis/pinched-fingers_1f90c.png);
+}
+
+.va-hourglass {
+  background-image: url(../../images/emojis/hourglass-not-done_23f3.png);
+}
+
+.va-medal-1 {
+  background-image: url(../../images/emojis/1st-place-medal_1f947.png);
+}
+
+.va-medal-2 {
+  background-image: url(../../images/emojis/2nd-place-medal_1f948.png);
+}
+
+.va-medal-3 {
+  background-image: url(../../images/emojis/3rd-place-medal_1f949.png);
+}
+
+.va-new-button {
+  background-image: url(../../images/emojis/new-button_1f195.png);
+}
+
+.va-nobell {
+  background-image: url(../../images/emojis/bell-with-slash_1f515.png);
+}
+
+.va-dynamite {
+  background-image: url(../../images/emojis/firecracker_1f9e8.png);
+}
+
+.va-keycap-5 {
+  background-image: url(../../images/emojis/keycap-digit-five_35-fe0f-20e3.png);
+}
+
+.va-throw-bin-button {
+  background-image: url(../../images/emojis/litter-in-bin-sign_1f6ae.png);
+}
+
+.va-free-button {
+  background-image: url(../../images/emojis/free-button_1f193.png);
+}
+
+.va-play-button {
+  background-image: url(../../images/emojis/play-button_25b6-fe0f.png);
+}
+
+.va-left-arrow {
+  background-image: url(../../images/emojis/left-arrow_2b05-fe0f.png);
+}
+
+.va-slot {
+  background-image: url(../../images/emojis/crossed-swords_2694-fe0f.png);
+}
+
+.va-clapping {
+  background-image: url(../../images/emojis/clapping-hands_1f44f.png);
+}
+
+.va-casier {
+  background-image: url(../../images/emojis/file-cabinet_1f5c4-fe0f.png);
+}
+
+.va-unknow {
+  background-image: url(../../images/emojis/person-shrugging_1f937.png);
+}
+
+.va-seven {
+  background-image: url(../../images/emojis/keycap-digit-seven_37-fe0f-20e3.png);
+}
+
+.va-gpexplorer {
+  background-image: url(../../images/emojis/f1.png);
+}
+
+.va-avis {
+  background-image: url(../../images/emojis/glowing-star_1f31f.png);
+}
+
+.va-star {
+  background-image: url(../../images/emojis/star_2b50.png);
+}
+
+.va-t-shirt {
+  background-image: url(../../images/emojis/t-shirt_1f455.png);
+}
+
+.va-hundred {
+  background-image: url(../../images/emojis/hundred-points_1f4af.png);
+}
+
+.va-de {
+  background-image: url(../../images/emojis/game-die_1f3b2.png);
+}
+
+.va-casino {
+  background-image: url(../../images/emojis/slot-machine_1f3b0.png);
+}
+
+.va-explosion {
+  background-image: url(../../images/emojis/collision_1f4a5.png);
+}
+
+.va-barber {
+  background-image: url(../../images/emojis/barber-pole_1f488.png);
+}
+
+.va-loupe {
+  background-image: url(../../images/emojis/magnifying-glass-tilted-left_1f50d.png);
+}
+
+.va-cross {
+  background-image: url(../../images/emojis/cross-mark_274c.png);
+}
+
+.va-timer-clock {
+  background-image: url(../../images/emojis/timer-clock_23f2-fe0f.png);
+}
+
+.va-flexed-biceps {
+  background-image: url(../../images/emojis/flexed-biceps_1f4aa.png);
+}
+
+.va-dizzy {
+  background-image: url(../../images/emojis/dizzy_1f4ab.png);
+}
+
+.va-high-voltage {
+  background-image: url(../../images/emojis/high-voltage_26a1.png);
+}
+
+.va-stopwatch {
+  background-image: url(../../images/emojis/stopwatch_23f1-fe0f.png);
+}
+
+.va-stopwatch-check {
+  background-image: url(../../images/emojis/stopwatch-check.png);
+}
+
+.va-light-bulb {
+  background-image: url(../../images/emojis/light-bulb_1f4a1.png);
+}
+
+.va-face-money {
+  background-image: url(../../images/emojis/money-mouth-face_1f911.png);
+}
+
+.va-cowboy {
+  background-image: url(../../images/emojis/cowboy-hat-face_1f920.png);
+}
+
+.va-rock {
+  background-image: url(../../images/emojis/rock_1faa8.png);
+}
+
+.va-un {
+  background-image: url(../../images/emojis/keycap-digit-one_31-fe0f-20e3.png);
+}
+
+.va-deux {
+  background-image: url(../../images/emojis/keycap-digit-two_32-fe0f-20e3.png);
+}
+
+.va-mechanical-arm {
+  background-image: url(../../images/emojis/mechanical-arm_1f9be.png);
+}
+
+.va-chequered-flag {
+  background-image: url(../../images/emojis/chequered-flag_1f3c1.png);
+}
+
+.va-prince {
+  background-image: url(../../images/emojis/prince_1f934.png);
+}
+
+.va-comment {
+  background-image: url(../../images/emojis/speech-balloon_1f4ac.png);
+}
+
+.va-birthday-cake {
+  background-image: url(../../images/emojis/birthday-cake_1f382.png);
+}
+
+.va-detective {
+  background-image: url(../../images/emojis/detective_1f575-fe0f.png);
+}
+
+.va-updown {
+  background-image: url(../../images/emojis/up-down-arrow_2195-fe0f.png);
+}
+
+.va-repeat {
+  background-image: url(../../images/emojis/recycling-symbol_267b-fe0f.png);
+}
+
+.va-hache {
+  background-image: url(../../images/emojis/axe_1fa93.png);
+}
+
+.va-heart-hands {
+  background-image: url(../../images/emojis/heart-hands_1faf6.png);
+}
+
+.va-skull {
+  background-image: url(../../images/emojis/skull_1f480.png);
+}
+
+.va-genie {
+  background-image: url(../../images/emojis/genie_1f9de.png);
+}
+
+.va-love-people {
+  background-image: url(../../images/emojis/kiss_1f48f.png);
+}
+
+.va-guetteur-close {
+  background-image: url(../../images/emojis/guetteur-close.png);
+}
+
+.va-wheel {
+  background-image: url(../../images/emojis/wheel.png);
+}
+
+.va-camera {
+  background-image: url(../../images/emojis/camera.png);
+}
+
+.va-wrapped-gift {
+  background-image: url(../../images/emojis/wrapped-gift_1f381.png);
+}
+.va-gift {
+  background-image: url(../../images/emojis/wrapped-gift_1f381.png);
+}
+
+.va-calendar-saved {
+  background-image: url(../../images/icon/savetop.svg);
+}
+
+.va-question-white {
+  background-image: url(../../images/emojis/white-question-mark_2754.png);
+}
+
+.va-calendar-tosaved {
+  background-image: url(../../images/icon/topsaved.svg);
+}
+
+.va-placard {
+  background-image: url(../../images/emojis/placard_1faa7.png);
+}
+
+.va-megaphone {
+  background-image: url(../../images/emojis/megaphone_1f4e3.png);
+}
+
+.va-envelop-coeur {
+  background-image: url(../../images/emojis/love-letter_1f48c.png);
+}
+
+.va-eye-crossed {
+  background-image: url(../../images/emojis/dizzy-face_1f635.png);
+}
+
+.va-exclamation-question {
+  background-image: url(../../images/emojis/exclamation-question.png);
+}
+
+.va-horn {
+  background-image: url(../../images/emojis/postal-horn_1f4ef.png);
+}
+
+.va-laptop {
+  background-image: url(../../images/emojis/laptop_1f4bb.png);
+}
+
+.va-blog {
+  background-image: url(../../images/emojis/blog.png);
+}
+
+.va-down-arrow {
+  background-image: url(../../images/emojis/down-arrow.png);
+}
+
+.va-bell {
+  background-image: url(../../images/emojis/bell.png);
+}
+
+.va-sun {
+  background-image: url(../../images/emojis/sun_2600-fe0f.png);
+}
+
+.va-japon {
+  background-image: url(../../images/emojis/flag-japan_1f1ef-1f1f5.png);
+}
+
+.va-sign-of-the-horns{
+  background-image: url(../../images/emojis/sign-of-the-horns_1f918.png);
+}
+
+.va-grinning-face-with-smiling-eyes{
+  background-image: url(../../images/emojis/grinning-face-with-smiling-eyes.png);
+}
+
+.va-lolipop{
+  background-image: url(../../images/emojis/lollipop_1f36d.png);
+}
+
+.va-kissing{
+  background-image: url(../../images/emojis/kissing-face_1f617.png);
+}
+
+.va-icon-arrow-up{
+  background-image: url(../../images/emojis/icon-arrow-up.png);
+}
+
+.va-calendar{
+  background-image: url(../../images/emojis/tear-off-calendar_1f4c6.png);
+}
+
+.va-pencil{
+  background-image: url(../../images/emojis/pencil_270f-fe0f.png);
+}
+
+.va-left-arrow{
+  background-image: url(../../images/emojis/left-arrow_2b05-fe0f-1.png);
+}
+
+.va-contender{
+  background-image: url(../../images/emojis/flexed-biceps_1f4aa-1.png);
+}
+
+.va-memo{
+  background-image: url(../../images/emojis/memo_1f4dd.png);
+}
+.va-enveloppe-coeur{
+  background-image: url(../../images/emojis/enveloppe-coeur.png);
+}
+
+.va-bookmark{
+  background-image: url(../../images/emojis/bookmark_1f516.png);
+}
+
+.va-toplist-creator{
+  background-image: url(../../images/emojis/toplist-creator.png);
+}
+
+.va-vote-creator{
+  background-image: url(../../images/emojis/vote-creator.png);
+}
+
+.va-door{
+  background-image: url(../../images/emojis/door_1f6aa.png);
+}
+
+.va-hut{
+  background-image: url(../../images/emojis/hut_1f6d6.png);
+}
+
+.va-couch{
+  background-image: url(../../images/emojis/couch.png);
+}
+
+.va-temple{
+  background-image: url(../../images/emojis/temple.png);
+}
+
+.va-chato-jap{
+  background-image: url(../../images/emojis/chato-jap.png);
+}
+.va-castle{
+  background-image: url(../../images/emojis/castle.png);
+}
+.va-planet{
+  background-image: url(../../images/emojis/planet.png);
+}
+.va-square{
+  background-image: url(../../images/emojis/square.png);
+}
+.va-play{
+  background-image: url(../../images/emojis/play.png);
+}
+
+.va-check{
+  background-image: url(../../images/emojis/check-mark-button_2705.png);
+}
+
+.va-f1{
+  background-image: url(../../images/emojis/racing-car_1f3ce-fe0f.png);
+}
+
+.va-boiteaulettre{
+  background-image: url(../../images/emojis/open-mailbox-with-raised-flag_1f4ec.png);
+}
+
+.va-atomish{
+  background-image: url(../../images/emojis/astonished-face_1f632.png);
+}
+
+.va-soucoupe{
+  background-image: url(../../images/emojis/soucoupe.png);
+}
+
+.va-finger-you{
+  background-image: url(../../images/emojis/finger-you.png);
+}
+
+.va-react-face-smiling-with-hearts {
+  background-image: url(../../images/emojis/react-smiling-face-with-hearts.png);
+}
+.va-react-face-saluting {
+  background-image: url(../../images/emojis/react-saluting-face.png);
+}
+.va-react-face-yawming {
+  background-image: url(../../images/emojis/yawning-face_1f971.png);
+}
+.va-react-face-screaming {
+  background-image: url(../../images/emojis/face-screaming-in-fear_1f631.png);
+}
+.va-react-face-lying {
+  background-image: url(../../images/emojis/react-lying-face.png);
+}
+.va-react-face-nauseated {
+  background-image: url(../../images/emojis/react-nauseated-face.png);
+}
+.va-react-face-with-symbols-on-mouth {
+  background-image: url(../../images/emojis/react-face-with-symbols-on-mouth.png);
+}
+.va-react-face-shushing {
+  background-image: url(../../images/emojis/shushing-face_1f92b.png);
+}
+
+.va-man-nose{
+  background-image: url(../../images/emojis/man-shrugging_1f937-200d-2642-fe0f.png);
+}
+
+.va-man-gesturing-no{
+  background-image: url(../../images/emojis/man-gesturing-no_1f645-200d-2642-fe0f.png);
+}
+
+.va-teacher{
+  background-image: url(../../images/emojis/man-teacher-light-skin-tone_1f468-1f3fb-200d-1f3eb.png);
+}
+
+.va-soucoupe{
+  background-image: url(../../images/emojis/flying-saucer_1f6f8.png);
+}
+
+.va-chart{
+  background-image: url(../../images/emojis/bar-chart_1f4ca.png);
+}
+
+.va-bag{
+  background-image: url(../../images/emojis/shopping-bags_1f6cd-fe0f.png);
+}
+
+.va-nerd{
+  background-image: url(../../images/emojis/dotted-line-face_1fae5.png);
+}
+
+.va-rondviolet{
+  background-image: url(../../images/emojis/large-purple-circle_1f7e3.png);
+}
+
+.va-coeurviolet{
+  background-image: url(../../images/emojis/purple-heart_1f49c-1.png);
+}
+
+.va-cross-fingers{
+  background-image: url(../../images/emojis/crossed-fingers_1f91e.png);
+}
+
+.va-pizza{
+  background-image: url(../../images/emojis/pizza.png);
+}
+
+.va-versus{
+  background-image: url(../../images/emojis/vs-button_1f19a.png);
+}
+
+.va-raising-hands{
+  background-image: url(../../images/emojis/raising-hands_1f64c.png);
+}
+
+.va-twitch-logo {
+  background-image: url(../../images/emojis/twitch-logo.png);
+}
+
+.va-santa{
+  background-image: url(../../images/emojis/santa-claus_1f385-1.png);
+}
+
+.va-drooling-face{
+  background-image: url(../../images/emojis/drooling-face_1f924.png);
+}
+
+.va-construction{
+  background-image: url(../../images/emojis/construction_1f6a7.png);
+}
+
+.va-kiss{
+  background-image: url(../../images/emojis/face-blowing-a-kiss_1f618.png);
+}
+
+.va-saluting{
+  background-image: url(../../images/emojis/saluting-face_1fae1.png);
+}
+
+.va-microscope{
+  background-image: url(../../images/emojis/microscope_1f52c.png);
+}
+
+.va-bail{
+  background-image: url(../../images/emojis/shushing-face_1f92b.png);
+}
+
+.va-chut{
+  background-image: url(../../images/emojis/yawning-face_1f971.png);
+}
+
+.va-bogoss{
+  background-image: url(../../images/emojis/smiling-face-with-sunglasses_1f60e.png);
+}
+
+.va-christmas-tree{
+  background-image: url(../../images/emojis/christmas-tree_1f384.png);
+}
+
+
+/***** Icons END *****/

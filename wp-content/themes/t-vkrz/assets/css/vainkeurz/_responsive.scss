@@ -1,0 +1,871 @@
+@media (min-width: 1200px) {
+  .col-xxl-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+  }
+
+  .mb-xs {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .table-responsive {
+    overflow-x: inherit;
+  }
+}
+
+@media (max-width: 1700px) {
+  .basic-pricing {
+    .pricing-basic-value {
+      font-size: 1.5rem !important;
+      line-height: 0.8;
+    }
+
+    .card-text {
+      font-size: 15px;
+    }
+  }
+
+  .plus {
+    font-size: 20px;
+    margin: 0 5px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .titre-section{
+    transform: scale(0.85);
+  }
+  .toplistbloc{
+    padding: 10px 10px 230px;
+  }
+
+  .menu-sub{
+    background: transparent !important;
+  }
+  .bg-menu-theme .menu-sub>.menu-item>.menu-link:before {
+    display: none;
+  }
+  .choosecta{
+    margin: 0;
+  }
+  .top_is_sponso{
+    .separate-sponso{
+      display: none !important;
+    }
+  }
+  #show-navbar-barre{
+    .logo-simple{
+      margin: 0 !important;
+      img{
+        max-width: 100% !important;
+      }
+    }
+    .btn-annule-devine {
+      margin: 5px 10px 5px 0;
+    }
+    .niveau-slim{
+      position: relative;
+      top: 5px;
+      margin: 0;
+    }
+    .right-slim{
+      padding: 5px;
+      justify-content: space-between !important;
+    }
+    .money_dispo_vkrz{
+      top: 0 !important;
+    }
+    .iconstats {
+      margin: 0 !important;
+    }
+    .decompte-txt{
+      font-size: 13px;
+    }
+  }
+  .progress-bar-primary{
+    background: #ffffff29;
+  }
+  .btn-annule-devine{
+   span{
+    margin-right: 2px;
+   } 
+  }
+  .top-title-question{
+   font-size: 1rem;
+   margin: 10px 5px 20px 5px !important;
+   em{
+    font-size: 0.7rem;
+   }
+  }
+  .tournoi-content-final{
+    margin: 0 !important;
+  }
+  .tournament-heading h1 {
+    font-size: 1rem;
+  }
+  
+  .avatar-info-bubble {
+    display: none !important;
+  }
+
+  .single-tournoi .tournoi-content + .infos-toplist {
+    bottom: 10px;
+  }
+
+  #menu-user-ul {
+    padding-right: 10px;
+  }
+
+  ul.share-toplist li {
+    flex: 1;
+    a,
+    button {
+      width: 100%;
+      margin: 0 0 5px 0 !important;
+    }
+  }
+  ul.share-toplist li.li1,
+  ul.share-toplist li.li2 {
+    flex: 1 1 100%;
+  }
+  ul.share-toplist li.li3 {
+    flex: 1 1 30%;
+  }
+  ul.share-toplist li.li4 {
+    flex: 1 1 70%;
+    a {
+      display: flex !important;
+      justify-content: center;
+    }
+  }
+
+  .versus{
+    margin: 20px auto !important;
+    transform: rotate(2deg);
+  }
+
+  .absolute-word {
+    text-align: center;
+    font-size: 75px;
+  }
+
+  .classement {
+    padding-top: 30px;
+    .ico {
+      img {
+        max-width: 30px;
+        position: relative;
+        top: -17px;
+        margin: 0 0 -15px !important;
+        z-index: 10;
+        height: auto !important;
+        width: 30px !important;
+      }
+    }
+  }
+
+  .single-tournoi {
+    .infos-toplist {
+      bottom: 10px;
+      top: auto !important;
+      left: 0;
+      right: 0;
+      position: fixed;
+      right: 0;
+      top: 20%;
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 10px 0 0 0;
+
+      a {
+        margin: 0 10px !important;
+      }
+    }
+  }
+
+  .cta-participation{
+    padding: 0 20px;
+  }
+  .tournoi-content {
+    padding: 20px 10px;
+  }
+
+  .intro-archive {
+    max-width: 86%;
+    margin: 40px auto;
+
+    .iconarchive {
+      position: absolute;
+      left: -20px;
+      top: 20px;
+
+      span {
+        width: 45px !important;
+        height: 45px !important;
+      }
+    }
+
+    h1 {
+      font-size: 1rem;
+    }
+
+    h2 {
+      font-size: 0.85rem;
+    }
+
+    .infonbtops {
+      font-size: 0.9rem;
+    }
+  }
+
+  .page-template-propositions-top {
+    .heading-title {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+  .card-header {
+    margin-bottom: 15px;
+    display: block !important;
+    h3 {
+      text-align: center;
+    }
+  }
+
+  .mt-xs-2 {
+    margin-top: 1.5rem !important;
+  }
+
+  .vainkeur-table {
+    display: flex;
+    flex-direction: column;
+
+    .championname {
+      margin: 0;
+    }
+
+    .user-niveau {
+      display: none;
+    }
+
+    .user-niveau-xs {
+      display: inline-block;
+    }
+  }
+
+  #toplist-single{
+    #content-page-gv{
+      padding: 0 !important;
+    }
+    .ba-cover-r {
+      padding: 0 10px;
+    }
+    .top-title-question {
+      font-size: 1rem;
+      em {
+        font-size: 0.8rem;
+      }
+   }
+  }
+  .message_de_confirmation{
+    padding: 0 !important;
+  }
+  .top_not_started{
+    .card{
+      margin-bottom: 10px;
+    }
+  }
+  .img-gift {
+    position: absolute;
+    min-width: 128px;
+    right: -10px;
+    top: 10px;
+    transform: rotate(25deg);
+  }
+  #content-page-gv{
+    padding: 0;
+  }
+  .creator-block{
+    h3{
+      margin-top: 30px;
+    }
+  }
+  .absolute-word{
+    opacity: 0;
+  }
+  #toplistmondialevedette{
+    h3{
+      margin-top: 40px !important;
+    }
+  }
+  .min-tournoi .cov-illu .badge-light-rose {
+    top: 35px !important;
+  }
+  .single-tournoi {
+    .tournoi-content .contenders-containers {
+      .versus {
+        margin: 5px auto;
+        position: relative;
+
+        img {
+          max-width: 30px !important;
+          border-radius: 0;
+          height: auto;
+          position: relative;
+          z-index: 33;
+        }
+      }
+    }
+
+    .link-contender {
+      .contender_zone {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        img,
+        .cov-illu {
+          width: 70%;
+          img{
+            width: auto;
+          }
+        }
+
+        .title-contender {
+          width: 30%;
+          margin: 10px 0 0;
+          padding: 0 5px;
+        }
+      }
+
+      #c_2 {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  .intro-mobile {
+    display: block;
+    margin: 0 0 5px;
+  }
+
+  .display_current_user_rank {
+    display: none;
+  }
+
+  .hide-xs {
+    display: none !important;
+  }
+
+  .hide-lg {
+    display: block;
+  }
+
+  .nav-tournament {
+    left: 0;
+    flex-direction: column;
+
+    .btng {
+      margin-bottom: 10px;
+    }
+  }
+
+  .user-avatar-section {
+    .content-avatar-name {
+      flex-direction: column;
+      text-align: center;
+
+      h1 {
+        margin-top: 15px;
+      }
+
+      .ml-2,
+      .mr-1 {
+        margin: 0 !important;
+      }
+
+      .btn {
+        margin-bottom: 10px !important;
+      }
+    }
+  }
+
+  html body .app-content {
+    padding: calc(1rem - 0.8rem + 6.45rem + 1.3rem) calc(2rem - 0.8rem) 0
+      calc(2rem - 0.8rem) !important;
+  }
+
+  .bookmark-wrapper {
+    display: none !important;
+  }
+
+  .min-tournoi .cov-illu .badge {
+    position: absolute;
+    top: 5px;
+    z-index: 9;
+  }
+
+  .min-tournoi .cov-illu .badge-light-rose {
+    position: absolute;
+    top: 35px;
+    right: 5px;
+    left: auto;
+    z-index: 3;
+  }
+
+  .logo {
+    max-width: 120px !important;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .cat-min {
+    .card-header {
+      text-align: center;
+      flex-direction: column;
+      padding: 20px 10px 12px 10px;
+
+      .ico2 {
+        display: block;
+        margin: 0 auto 10px;
+      }
+    }
+  }
+
+  .heading-cat {
+    small {
+      display: block;
+      margin: 5px 0 0 0;
+    }
+  }
+
+  .main-menu .main-menu-content {
+    height: 100%;
+  }
+
+  .vertical-layout
+    .header-navbar
+    .navbar-container
+    ul.navbar-nav
+    li.dropdown
+    .dropdown-menu {
+    top: 80px !important;
+    margin-top: 0px !important;
+  }
+
+  .apropos .card-text h2 {
+    text-align: center;
+  }
+  .card-top-presentation .card-footer {
+    padding: 10px 10px 0 10px !important;
+  }
+  .top_started{
+    .illu{
+      width: 70%;
+      padding: 5px;
+      img{
+        width: auto !important;
+        max-height: 30vh !important;
+      }
+    }
+  }
+  .header-navbar .navbar-container ul.navbar-nav li .media-list {
+    max-height: 22rem;
+  }
+
+  .card-developer-meetup .card-cta .choosecta .cta-begin {
+    flex-direction: column;
+    margin: 0 5px;
+  }
+
+  .card-developer-meetup .card-cta .choosecta .cta-begin a {
+    font-size: 15px;
+    padding: 20px 10px;
+  }
+
+  .infos-card-t-c {
+    margin-top: 20px;
+  }
+
+  .profile-tabs {
+    .nav-pills {
+      margin-bottom: 20px !important;
+
+      .nav-link {
+        padding: 5px 10px;
+        font-size: 1rem;
+        line-height: 1rem;
+        border: 1px solid transparent;
+      }
+    }
+  }
+
+  #ecommerce-header {
+    flex-direction: column;
+
+    .ecommerce-header-items {
+      width: 100%;
+      margin-bottom: 10px;
+
+      .result-toggler {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+
+        a {
+          width: 100%;
+        }
+      }
+    }
+
+    .ecommerce-searchbar {
+      width: 100%;
+
+      #search_form {
+        width: 100%;
+
+        input {
+          padding: 0 15px;
+          font-size: 1rem;
+
+          &::placeholder {
+            color: $c2 !important;
+            font-size: 0.8rem;
+            line-height: 1;
+            text-transform: none;
+            border-radius: 0.358rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+
+  .filtres-bloc {
+    .ui-group {
+      width: 100%;
+      margin: 0 !important;
+    }
+
+    .dropdown-sort {
+      width: 100%;
+
+      button {
+        width: 100%;
+        display: block;
+        margin: 0 0 10px !important;
+        text-align: left;
+
+        &:after {
+          height: 11px;
+          position: absolute;
+          top: 39%;
+          right: 10px;
+          left: inherit;
+        }
+      }
+    }
+  }
+
+  .auth-wrapper {
+    padding: 10px 0;
+  }
+
+  .big-cat .heading-cat h2 {
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin: 10px 0 5px;
+    font-size: 18px;
+  }
+
+  .display_battle {
+    margin: 0 -1rem 0;
+    padding: 0;
+  }
+
+  .intro-mobile h4 {
+    font-size: 13px;
+    color: $rose;
+  }
+
+  .profile-title {
+    margin-left: 20px !important;
+  }
+
+  .cover-profil {
+    min-height: 100px;
+  }
+
+  .nav-fill {
+    li {
+      a {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .profile-header-nav .profile-tabs {
+    margin-left: 0;
+  }
+
+  .swal2-actions {
+    .swal2-confirm {
+      margin-bottom: 10px;
+    }
+  }
+
+  .bigup {
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  .dropdown-user {
+    display: block;
+    text-align: right;
+    padding: 0;
+
+    a {
+      font-size: 14px;
+    }
+  }
+
+  .dropdown-notification,
+  .dropdown-cart {
+    width: 25%;
+    text-align: center;
+
+    a {
+      font-size: 12px;
+    }
+  }
+
+  .contenders-containers {
+    align-items: flex-start !important;
+  }
+
+  .ico-nav-mobile {
+    flex-direction: column;
+
+    a {
+      flex-direction: column;
+    }
+  }
+
+  .icons-navbar {
+    justify-content: space-between;
+  }
+
+  .hide-spot {
+    text-transform: uppercase;
+    margin: 0 0 0 0;
+    font-size: 8px;
+    display: block;
+  }
+
+  .mobile-navbar {
+    margin-left: 0;
+  }
+
+  .hide-xs {
+    display: none !important;
+  }
+
+  .single {
+    .crisp-client .cc-kv6t[data-full-view="true"] .cc-1xry .cc-unoo {
+      bottom: 60px !important;
+      right: 5px !important;
+    }
+  }
+  .page-template-r {
+    .crisp-client .cc-tlyw[data-full-view="true"] .cc-kxkl .cc-nsge {
+        bottom: 54px !important;
+        right: 10px !important;
+      }
+  }
+
+  .swal2-header,
+  .swal2-content {
+    padding: 0;
+  }
+
+  .single-tournoi {
+    .menuvkrzmobilehide {
+      transition: all 0.2s ease-in;
+      display: none;
+    }
+  }
+
+  .mobile-navbar .icons-navbar {
+    display: flex;
+    padding: 10px 15px 9px;
+    background: $c2;
+  }
+
+  .single {
+    footer.footer {
+      padding: 0.8rem 2rem 90px;
+    }
+
+    .social-links {
+      border-top: 1px solid $c2;
+      padding: 10px 0 0 0;
+      margin: 10px 0 0 0;
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .header-navbar {
+    .value-user-stats {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .card-developer-meetup .meetup-img-wrapper {
+    min-height: 220px;
+  }
+
+  .card-developer-meetup .meetup-header .card-text {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  .card-precision {
+    p {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .p-mobile-0{
+    padding: 0 !important;
+  }
+
+  .kl-react-action{
+    width: 35px;
+  }
+  .card-developer-meetup{
+    .presentationtop {
+      padding: 5px;
+      h1{
+        font-size: 0.85rem;
+        margin: 10px;
+      }
+      .top-precision{
+        p{
+          font-size: 0.75rem;
+        }
+      }
+    }
+    .info-top-footer{
+      .vainkeur-card{
+        margin-top: 10px;
+      }
+    }
+  }
+  .tournament-heading{
+    margin-bottom: 40px;
+  }
+  .title-win{
+    display: none !important;
+  }
+  .barretop{
+    background: transparent;
+    .listingchoice{
+      width: 100%;
+    }
+    .btn-cta-starttop{
+      div{
+        width: 100%;
+      }
+    }
+    .listingchoice{
+      width: 100%;
+      padding: 0 !important;
+    }
+    #choosenumbertop{
+      justify-content: center;
+      margin-bottom: 5px;
+      .choicetop1-bloc {
+        width: 25%;
+      }
+      .choicetop3-bloc {
+        width: 25%;
+      }
+      .choicetopcomplet-bloc {
+        width: 50%;
+      }
+      .form-check{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0;
+        text-align: center;
+        .info-check{
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          label{
+            font-size: 0.75rem;
+          }
+        }
+        .text-muted{
+            font-size: 0.65rem;
+            position: relative;
+            top: 1px;
+        }
+      }
+    }
+  }
+  #choosenumbertop{
+  .choicetop1-bloc, .choicetop3-bloc, .choicetopcomplet-bloc{
+      flex-direction: column;
+      align-items: center;
+      small{
+        margin-left: 10px;
+      }
+      .info-check {
+        display: flex;
+        min-width: 50px;
+      }
+    }
+  }
+  .rules-content{
+    padding: 15px 10px 10px;
+  }
+  .meetings{
+    padding: 10px;
+    h4{
+      font-size: 0.8rem !important;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .app-user-view .btns-alert .btn-outline-white {
+    margin-right: 0px !important;
+  }
+}
+
+@media (max-height: 800px) {
+  .contenders-containers .link-contender {
+    max-width: 350px;
+    position: relative;
+    transition: all 0.2s ease-in;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1500px) {
+  .space {
+    display: inline-block;
+    width: 3px;
+  }
+}

@@ -1,0 +1,98 @@
+.wheel-container{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.must-log-in {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-2deg);
+    text-align: center;
+
+    font-size: 1.3rem;
+    
+    .connect-btn {
+        margin-top: 1rem;
+        padding: .8rem;
+        font-size: .8rem;
+        text-transform: uppercase;
+    }
+    @media (max-width:1350px) {
+        top: 20%;
+    }
+}
+.wheelContainer{
+  position: relative;
+}
+.spinBtn{
+  position: absolute;
+  top: 50%;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  left: 50%;
+  padding: 20px;
+  margin: -100px 0 0 -100px;
+  background: $c3;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.wheelOutline{
+  circle{
+    stroke: $c3;
+  }
+}
+.centerCircle{
+  circle{
+    stroke: $c3;
+    fill: $c3;
+  }
+}
+.pegContainer{
+  transform-origin: 0 -20px !important;
+}
+.wheel{
+  line{
+    stroke: $c3;
+    fill: $c3;
+  }
+}
+
+.pegContainer{
+    transform-origin: 0px 0px;
+}
+
+.disable-wheel {
+    pointer-events: none;
+    filter: blur(4px);
+}
+
+.centerCircleImageContainer{
+    image{
+        display: none;
+    }
+}
+
+.page-template-wheel{
+    
+    .popup-header h3{
+        background: #e5213f;
+    }
+    #content-page-gv{
+        .row{
+            justify-content: center;
+        }
+    }
+    
+}
+
+.message-alreadyspun{
+  margin: 75px 0;
+  transform: rotate(-1deg);
+}
+
+.spinBtn, .pegContainer {
+  display: none;
+}

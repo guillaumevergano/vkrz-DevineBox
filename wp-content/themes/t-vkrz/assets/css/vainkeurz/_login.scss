@@ -1,0 +1,263 @@
+@import '_variables';
+
+.auth-bg {
+  .card-title {
+    font-size: 1.5rem;
+  }
+}
+
+.already-account {
+  text-align: center;
+  margin: 0;
+}
+
+.firebaseui-idp-text {
+  color: #FFF !important;
+}
+.firebaseui-idp-text-long {
+  color: #FFF !important;
+}
+
+.firebaseui-idp-text-short{
+  display: none;
+}
+
+.auth-wrapper {
+  text-align: center;
+  padding: 35px 0;
+
+  .auth-inner {
+    margin: 0 auto;
+    
+    .login-bloc{
+      background: #2a1f70;
+      border-radius: 10px;
+    }
+
+    .card-title {
+      width: 100%;
+    }
+
+    .form-submit,
+    .login-submit {
+      text-align: center;
+
+      input {
+        margin: 0 auto !important;
+      }
+    }
+  }
+
+  .divider {
+    margin: 20px auto !important;
+  }
+}
+
+.login-form {
+  h3 {
+    color: $c2;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  #reset-password,
+  #updatePassword {
+    width: 36%!important;
+    font-size: .9rem;
+
+    @media screen and (max-width: 768px) {
+      width: 100%!important;
+    }
+  }
+}
+
+.get-connected {
+
+  .auth-wrapper {
+    padding: 0;
+  }
+
+  .auth-inner {
+    max-width: 100%;
+  }
+
+  .go-logIn {
+    margin: 1rem auto .6rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: #36096d;
+    color: #FFF;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    transition: .4s;
+    display: none;
+
+    &:hover {
+      color: #FFF !important;
+      transform: scale(0.96);
+    }
+
+    span {
+      margin-left: 3px;
+      width: 1.1em !important;
+      height: 1.1em !important;
+    }
+
+    @media (max-width: 768px) {
+      display: inline-block;
+    }
+  }
+
+  .sign-up,
+  .sign-in {
+    padding: 1.5rem;
+    border-radius: 12px;
+    transform: scale(0.98);
+    transition: all .6s;
+  }
+
+  .sign-up {
+    background: rgb(18, 11, 43);
+    background: linear-gradient(135deg, rgba(18, 11, 43, 1) 0%, rgba(41, 17, 70, 1) 150%);
+  }
+
+  .sign-in {
+    background: rgb(18, 11, 43);
+    background: linear-gradient(306deg, rgba(18, 11, 43, 1) 0%, rgba(41, 17, 70, 0.5) 100%);
+  }
+
+  .sign-up:hover,
+  .sign-in:hover {
+    transform: scale(1.02);
+  }
+
+  .col-lg-6:nth-of-type(1):hover+.col-lg-6:nth-of-type(2) .sign-in {
+    opacity: 0.3;
+  }
+
+  .shade {
+    opacity: 0.3;
+  }
+}
+
+.alertform{
+  display: none;
+}
+
+.firebaseui-list-item {
+  direction: ltr;
+  margin: 0 0 20px 0;
+  padding: 0;
+  text-align: left;
+  text-align: center;
+  display: inline-block;
+}
+
+.firebaseui-idp-list{
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+.firebaseui-idp-password{
+  display: none;
+}
+.firebaseui-idp-button,
+.firebaseui-tenant-button {
+  background: #ffffff12 !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  height: auto;
+  line-height: normal;
+  min-height: 60px;
+  padding: 8px 16px;
+  text-align: left;
+  width: 100%;
+  border: none;
+  border-radius: 49px;
+  transition: all 0.2s ease-in;
+  text-align: center;
+  .firebaseui-idp-icon-wrapper{
+    margin-right: 10px;
+  }
+  &:hover{
+    background: $c3 !important;
+  }
+}
+
+firebase-auth .firebaseui-idp-list .firebaseui-idp-icon-wrapper {
+  display: block;
+  text-align: center;
+}
+
+.firebaseui-idp-icon {
+  border: none;
+  display: inline-block;
+  height: 18px;
+  vertical-align: middle;
+  width: 18px;
+}
+
+.argument{
+  margin-bottom: 30px;
+  .argument-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+      margin: 0;
+    }
+    .iconstats {
+      width: 30px !important;
+      height: 30px !important;
+      margin: 0 50px 0 0;
+      transform: scale(3.5) rotate(-9deg);
+    }
+  }
+  &.argument-2{
+    .argument-body {
+      .iconstats {
+        margin: 0 0 0 50px;
+        transform: scale(3.5) rotate(9deg);
+      }
+    }
+  }
+  &.argument-3 {
+    .argument-body {
+      .iconstats {
+        transform: scale(3.5) rotate(0deg);
+      }
+    }
+  }
+  &.argument-4 {
+    .argument-body {
+      text-align: left;
+      .iconstats {
+        margin: 0 25px 0 0;
+        transform: scale(2) rotate(-2deg);
+      }
+    }
+  }
+  &.argument-5 {
+    .argument-body {
+      text-align: right;
+      .iconstats {
+        margin: 0 0 0 25px;
+        transform: scale(2) rotate(2deg);
+      }
+    }
+  }
+  &.argument-connexion-1 {
+    .argument-body {
+      .iconstats {
+        margin: 0 75px 0 0;
+        transform: scale(3.5) rotate(0);
+      }
+    }
+  }
+}

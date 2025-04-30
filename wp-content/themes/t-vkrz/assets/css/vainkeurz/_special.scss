@@ -1,0 +1,402 @@
+@font-face {
+  font-family: "Grilled Cheese BTN";
+  src: url("../../fonts/grilledcheese-btn-cn/Grilled_Cheese_BTN.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#tls-645920{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/jinx.gif);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 20px;
+      opacity: 0.2;
+    }
+  }
+}
+#tls-468089{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/arbre.gif);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 20px;
+      opacity: 0.2;
+    }
+  }
+}
+#tls-645925{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/superman.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.40);
+    }
+  }
+}
+#tls-646464{
+  border-radius: 20px;
+  background : linear-gradient(180deg, #C81124 0%, #F7B2D8 24%, #F572BA 100%) !important;
+  box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.40);
+}
+#tls-654033{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/mha.gif);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 10px;
+      right: 10px;
+      position: absolute;
+      border-radius: 20px;
+      opacity: 0.2;
+      box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.40);
+    }
+  }
+}
+#tls-656951{
+  background: linear-gradient(231deg, #DEE896 5.28%, #F8AE83 15.14%, #EA83B4 24.07%, #A284B7 33.46%, #70BBE8 42.86%, #ABE3BF 52.25%, #70BBE8 61.18%, #A284B7 71.04%, #EA83B4 80.44%, #F8AE83 90.3%, #DEE896 99.23%);
+  border-radius: 20px;
+  background-size:400% 400% !important;
+  animation: gradient 15s ease infinite;
+  box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.4);
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+    }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+#tls-652061{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/monster-hunter.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.4);
+    }
+  }
+}
+#tls-656132{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/marvel-rivals.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.4);
+    }
+  }
+}
+#tls-650547{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/m&m.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.4);
+    }
+  }
+}
+#tls-616355{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/pringles.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.4);
+    }
+  }
+}
+#tls-603842{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/mangabox.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.4);
+    }
+  }
+}
+#tls-609692{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/philibert.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.4);
+    }
+  }
+}
+#tls-652113{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/assassinscreed.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.4);
+    }
+  }
+}
+#tls-655638{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/airup.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.4);
+    }
+  }
+}
+#tls-652264{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/fortnite.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.4);
+    }
+  }
+}
+#tls-664205{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/fragpunk.gif);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.4);
+    }
+    .todotop{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    a{
+      background-image: url('../../images/deco/bouton-background.svg') !important;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      border: none !important;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      position: relative;
+      height: 65px !important;
+      width: 288px !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover{
+        background-image: url('../../images/deco/bouton-background.svg') !important;
+        background-size: contain !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        border: none !important;
+        border-radius: 0 !important;
+        background-color: transparent !important;
+        position: relative;
+        height: 65px !important;
+        width: 288px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &::before{
+        content: "";
+        background-image: url(../../images/deco/fragpunk-fleche.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 136px;
+        height: 110px;
+        position: absolute;
+        top: -100%;
+        left: 100%;
+        display: block;
+        transform: translate(-50%, -80px);
+      }
+    }
+  }
+}
+#tls-667212{
+  border: 3px solid black !important;
+  border-radius: 0px !important;
+  .agagner{
+    &::before{
+      content: " ";
+      background-image: url(../../images/deco/onepiece.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 0px !important;
+      box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.4);
+    }
+    h4{
+      text-transform: uppercase !important;
+      font-family: 'Grilled Cheese BTN', sans-serif !important;
+    }
+    .todotop{
+      a{
+        border-radius: 0 !important;
+        background: linear-gradient(to top, #1332D9, #4ABFFF) !important;
+        box-shadow: inset 0 0 0 2px black !important;
+        font-family: 'Grilled Cheese BTN', sans-serif !important;
+        text-transform: unset !important;
+        &:hover{
+          border-radius: 0 !important;
+          background: linear-gradient(to top, #1332D9, #4ABFFF) !important;
+          box-shadow: inset 0 0 0 2px black !important;
+          font-family: 'Grilled Cheese BTN', sans-serif !important;
+          text-transform: unset !important;
+        }
+      }
+    }
+    .puce-content{
+      border-top-left-radius: 0px !important;
+      border: 2px solid black !important;
+    }
+  }
+}
+#tls-655873{
+  .agagner{
+    &::before{
+      content:" ";
+      background-image: url(../../images/deco/sololeveling.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px 0px rgba(15, 20, 34, 0.4);
+    }
+  }
+  .todotop{
+    a{
+      background: linear-gradient(to top, rgba(27,12,48,0.87), rgba(186,80,243,0.87)) !important;
+      &:hover{
+        background: linear-gradient(to top, rgba(27,12,48,0.87), rgba(186,80,243,0.87)) !important;
+      }
+    }
+  }
+}

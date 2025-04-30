@@ -1,0 +1,364 @@
+.separate {
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.btn-emoji-recommencer,
+.btn-emoji-de {
+  transition: all 1s ease-in;
+  &:hover{
+    transform: rotate(360deg);
+  }
+}
+
+.va-reverse{
+  transform: scaleX(-1);
+}
+
+.bg-deg {
+  background: linear-gradient(150deg, $c1, #471867, $c1, #230b36, $c1);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.divfill{
+  height: 100%;
+  width: 100%;
+}
+
+@-webkit-keyframes rotating{
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  span{
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+  }
+}
+
+.btn-label-primary{
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-style table.dataTable td a.btn{
+  margin: 0 2px;
+}
+
+.search{
+  .search-group{
+    border: 2px solid #20153c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    position: relative;
+    top: -1px;
+  }
+  .select-search{
+    max-width: 120px;
+    border-right: 1px solid #20153c;
+  }
+  .input-search{
+    min-width: 200px;
+  }
+  .bootstrap-select {
+    max-width: 100%;
+    background: transparent !important;
+    border: none;
+    .dropdown-toggle{
+      background: transparent !important;
+      border: none;
+    }
+  }
+  .typeahead-prefetch{
+    background: transparent !important;
+    border: none;
+    font-size: 13px;
+    font-family: "montserrat";
+    font-weight: 600;
+    &::placeholder{
+      font-size: 13px;
+      font-family: "montserrat";
+      font-weight: 600;
+    }
+  }
+  .searchmembres{
+    display: none;
+  }
+  .submitbtn{
+    background-color: transparent;
+    padding: 8px;
+    border: none;
+  }
+
+  .dropdown-item{
+    .text{
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-align: center;
+    }
+  }
+}
+
+.reseauxicons{
+  ul{
+    padding: 0;
+    margin: 0;
+  }
+}
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  margin: 5px 0;
+  white-space: nowrap;
+  justify-content: flex-end;
+}
+div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-link {
+  padding: 0.594rem 0.35rem;
+  min-width: calc(1.938rem + 0px);
+  font-size: 0.75rem;
+  line-height: 1;
+  border-radius: 5px !important;
+  transition: all 0.2s ease-in;
+  &:hover{
+    background-color:$c2 !important;
+  }
+}
+.pagination .page-item.active .page-link {
+  background-color:$c2 !important;
+}
+
+.avg-sessions{
+  p{
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+}
+
+.top3list{
+  display: flex;
+}
+
+.top-card{
+  h6{
+    font-size: 0.75rem;
+  }
+  .legende{
+    font-size: 0.75rem;
+  }
+}
+
+.table> :not(caption)>*>* {
+  border-bottom: none;
+  border-top-width: 1px;
+}
+
+.valuestat{
+  .text-muted{
+    font-weight: 600;
+  }
+}
+
+.dropdown-item {
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.btn-log{
+  padding: 10px;
+  font-weight: 700 !important;
+}
+
+.rezo-menu{
+  margin: 50px 0.875rem 0;
+  width: 90%;
+  a{
+    height: 50px;
+    i{
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.fermerrecherche{
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  left: -5px;
+  font-size: 0.8rem;
+}
+
+#waiter-recherche{
+  .search .search-group {
+    justify-content: start;
+    height: 60px;
+  }
+  .submitbtn{
+    background-color: #2a1f70;
+    padding: 8px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+}
+
+.cat-min{
+  h4{
+    font-size: 0.85rem;
+  }
+}
+
+.toplist-min{
+  border: 2px solid #261341;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  .voilecover {
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.15;
+    background-size: cover;
+  }
+  .toplist-min-header{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 10px;
+  }
+  .toplist-min-ranking{
+    margin-bottom: 10px;
+    position: relative;
+    h6{
+      font-size: 0.75rem;
+      margin-bottom: 5px;
+    }
+    .list-contenders{
+      justify-content: center;
+    }
+  }
+  .toplist-min-footer{
+    border-top: 2px solid #261341;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2px;
+  }
+  .toplist-min-vainkeur, .juger-min{
+    transform: scale(0.9);
+  }
+}
+
+.juger-min{
+  a{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    i {
+      width: 25px !important;
+      height: 25px !important;
+      margin: 0 auto;
+      display: block;
+    }
+  
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 1px 0;
+  }
+}
+
+.dodo-user{
+.vainkeur-card {
+    a {
+      border: 2px solid #261341 !important;
+      transition: all 0.2s ease-in;
+      &:hover{
+        background-color: transparent !important;
+        border: 2px solid$c2 !important;
+      }
+    }
+  }
+}
+
+
+.creatornametop{
+  display: flex;
+  flex-direction: row !important;
+  h4{
+    margin: 0 5px 0 2px !important;
+  }
+}
+
+.scale08{
+  transform: scale(0.8);
+}
+
+.info-creator{
+  border-top: 1px solid #110a27;
+}
+
+.btn-wording{
+  text-transform: uppercase;
+  .va{
+    margin-right: 10px;
+  }
+  &:hover{
+    color: #fff;
+  }
+}
