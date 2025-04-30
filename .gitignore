@@ -1,0 +1,67 @@
+*.log
+*.tmp
+*.sublime-project
+*.sublime-workspace
+_ai-cache
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+#### Directory : dependancies
+wp-content/themes/node_modules/
+wp-content/themes/gulp-tasks/
+
+#### Dot Directory
+.idea/
+.sass-cache/
+debug.log
+wp-content/debug.log
+
+#### Dot file
+.DS_Store
+*.DS_Store
+
+
+#### WordPress
+.htaccess
+sitemap.xml
+sitemap.xml.gz
+wp-config.php
+wp-config-docker.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+wp-content/db.php
+wp-content/wp-rocket-config
+prez/*
+prez
+
+#### Spécial
+# twitch/
+# twitch/*
+rooms/*
+rooms/
+
+vkrz-boteurz/
+vkrz-boteurz/*
+
+json/
+json/*
+
+live-twitch/
+live-twitch/*
