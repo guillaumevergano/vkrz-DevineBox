@@ -22,8 +22,6 @@ function load_css_js()
   // Vote + Twitch
   if (is_single() && get_post_type() == 'tournoi') {
     wp_enqueue_script('contenders-ajax', get_template_directory_uri() . '/assets/js/vainkeurz/contenders-ajax.js', array(), filemtime(get_template_directory() . '/assets/js/vainkeurz/contenders-ajax.js'), true);
-    wp_enqueue_script('tmi.min', get_template_directory_uri() . '/assets/js/twitch/tmi.min.js', array(), null, true);
-    wp_enqueue_script('twitch_votes', get_template_directory_uri() . '/assets/js/twitch/twitch_votes.js', array(), filemtime(get_template_directory() . ''), true);
   }
 
   // TopList
@@ -31,22 +29,5 @@ function load_css_js()
     wp_enqueue_script('similar', get_template_directory_uri() . '/function/ajax/similar.js', array(), filemtime(get_template_directory() . '/function/ajax/similar.js'), true);
   }   
 
-  // Création & Edition
-  if (is_page(593779) || is_page(593775)) {
-    wp_enqueue_script('create-top', get_template_directory_uri() . '/assets/js/vainkeurz/create-top.js', array(), filemtime(get_template_directory() . '/assets/js/vainkeurz/create-top.js'), true);
-  }
-
 }
 add_action('wp_enqueue_scripts', 'load_css_js');
-
-function load_weglot_before_scripts() {
-    wp_enqueue_script('weglot', 'https://cdn.weglot.com/weglot.min.js', array(), null, true);
-}
-add_action('wp_enqueue_scripts', 'load_weglot_before_scripts', 5);
-
-function pass_weglot_lang_to_js() {
-    $lang = weglot_get_current_language();
-    wp_localize_script('create-top', 'WeglotData', array('lang' => $lang));
-    wp_localize_script('auth', 'WeglotData', array('lang' => $lang));
-}
-add_action('wp_enqueue_scripts', 'pass_weglot_lang_to_js');

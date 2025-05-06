@@ -12,8 +12,7 @@ let TOP                         = [],
     UTM                         = getParamURL("utm_campaign") ? getParamURL("utm_campaign") : localStorage.getItem("utm_campaign");
 
 const waiterTop = document.querySelector("#waiter-top");
-let isConvention        = false;
-let guessVotesBoolean   = false;
+let guessVotesBoolean   = true;
 let currentRightGuesses = 0;
 
 function addGuessVote() {
@@ -42,372 +41,135 @@ function addGuessVote() {
   if (currentRightGuesses === 10) {
     outerProgressBar.classList.add('d-none');
     subTitleDevineVote.classList.add('d-none');
-    titleDevineVote.innerHTML = `&nbsp; &nbsp; C’EST GAGNÉ ! <span class="va-party-popper va va-lg"></span>`;
+    titleDevineVote.innerHTML = `&nbsp; &nbsp; C'EST GAGNÉ ! <span class="va-party-popper va va-lg"></span>`;
     confetti.start();
     setTimeout(function () { confetti.stop(); }, 20000);
   }
 }
 const userInfos = JSON.parse(localStorage.getItem("user_info"));
-if (
-	isConvention &&
-	userInfos &&
-	userInfos.pseudo_user != "Lama2Lombre" &&
-	!localStorage.getItem("twitchGameMode") &&
-	!window.location.href.includes("openings-manga") &&
-	!window.location.href.includes("anime-ending") &&
-	!window.location.href.includes("arcane-5") &&
-	!window.location.href.includes("meilleur-moment-danime")
-) {
-	if (
-		userInfos.pseudo_slug_user.toLowerCase() == "voteurz" ||
-		userInfos.pseudo_slug_user.toLowerCase() == "vergy" ||
-		userInfos.pseudo_slug_user.toLowerCase() == "voteurz2" ||
-		userInfos.pseudo_slug_user.toLowerCase() == "voteurz3" ||
-		userInfos.uuid_user == "staphylo062021"
-	) {
-		if (document.querySelector(".devine-votes-steps")) {
-			document.querySelector(".devine-votes-steps").classList.remove("d-none");
-			guessVotesBoolean = true;
-		}
-	}
-}
-
-if (
-	window.location.href.includes("openings-manga") ||
-	window.location.href.includes("openings-ending") ||
-	window.location.href.includes("star-wars-film-prefere")
-) {
-	if (document.querySelector(".vote-byvoice-container")) {
-		document
-			.querySelector(".vote-byvoice-container")
-			.classList.remove("d-none");
-	}
-
-	if (
-		document.querySelector(".voicevote_contender_1") &&
-		document.querySelector(".voicevote_contender_2")
-	) {
-		document.querySelector(".voicevote_contender_1").classList.remove("d-none");
-		document.querySelector(".voicevote_contender_2").classList.remove("d-none");
-	}
-}
-
-const youtubeVideos = { // DEALING WITH YOUTUBE VIDEOS
-	646373:
-		'<iframe  id="cover_contender_X" width="560" height="315" src="https://www.youtube.com/embed/1F3OGIFnW1k?si=Q6QJ5RCOJMpnHe7d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-	646372:
-		'<iframe  id="cover_contender_X" width="560" height="315" src="https://www.youtube.com/embed/D9G1VOjN_84?si=jzVtb_hqQLxqmChw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-	646374:
-		'<iframe  id="cover_contender_X" width="560" height="315" src="https://www.youtube.com/embed/3jf6xOg6e7Y?si=B2W4GaEyV4qvlKxq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-	646375:
-		'<iframe  id="cover_contender_X" width="560" height="315" src="https://www.youtube.com/embed/Tg9yLrJTmTc?si=UzAH4Y4KZffUkpQ_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-	646376:
-		'<iframe  id="cover_contender_X" width="560" height="315" src="https://www.youtube.com/embed/liPu1_aPH5k?si=17lGY1ZD3Tgw7oVB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-	646377:
-		'<iframe  id="cover_contender_X" width="560" height="315" src="https://www.youtube.com/embed/n68BF6IlGhk?si=ufvqN7qUgmbIGt35" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-	646378:
-		'<iframe  id="cover_contender_X" width="560" height="315" src="https://www.youtube.com/embed/Ns0N8bcB95I?si=Hr9eC694-BwSDViC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-	646380:
-		'<iframe  id="cover_contender_X" width="560" height="315" src="https://www.youtube.com/embed/pKNEx-9OqRM?si=88sxm0woSwy6MPB8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-	646381:
-		'<iframe  id="cover_contender_X" width="560" height="315" src="https://www.youtube.com/embed/mlJWzAOprrI?si=iNBj9RvrPz4F6wc9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-	646382:
-		'<iframe  id="cover_contender_X" width="560" height="315" src="https://www.youtube.com/embed/JYDwTQC5TlE?si=Jlr3BYCc811x5QwL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-	653129:
-		'<iframe  id="cover_contender_X" width="400" height="315" src="https://streamable.com/e/hvf570" title="Streamable video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-	653134:
-		'<iframe  id="cover_contender_X" width="400" height="315" src="https://streamable.com/e/jfbt09" title="Streamable video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-	653136:
-		'<iframe  id="cover_contender_X" width="400" height="315" src="https://streamable.com/e/62hylt" title="Streamable video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-	653135:
-		'<iframe  id="cover_contender_X" width="400" height="315" src="https://streamable.com/e/qqbnfh" title="Streamable video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-	653130:
-		'<iframe  id="cover_contender_X" width="400" height="315" src="https://streamable.com/e/txrwxd" title="Streamable video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-	653132:
-		'<iframe  id="cover_contender_X" width="400" height="315" src="https://streamable.com/e/7vv7c9" title="Streamable video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-	653133:
-		'<iframe  id="cover_contender_X" width="400" height="315" src="https://streamable.com/e/yhch89" title="Streamable video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-	653131:
-		'<iframe  id="cover_contender_X" width="400" height="315" src="https://streamable.com/e/95meg9" title="Streamable video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-	653137:
-		'<iframe  id="cover_contender_X" width="400" height="315" src="https://streamable.com/e/y2k4ga" title="Streamable video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-};
-
-function replaceWithYoutubeIframe(contenderId, elementClass) {
-  // Check if the contenderId exists in youtubeVideos array
-  if (youtubeVideos[contenderId]) {
-    let iframeHtml = youtubeVideos[contenderId];
-    iframeHtml = iframeHtml.replace("contender_X", elementClass);
-    document.querySelector(`.${elementClass} .illu`).innerHTML = iframeHtml;
-    return;
-  }
-
-  // Check if the TopList is for YouTube videos
-  if (is_toplist_type_youtube_videos_var) {
-    const contender = contenders.find((item) => item.id_wp === contenderId);
-
-    if (contender && contender.embed) {
-      let iframeHtml = contender.embed;
-      iframeHtml = iframeHtml.replace("contender_X", elementClass);
-      document.querySelector(`.${elementClass} .illu`).innerHTML = iframeHtml;
-    } else {
-      console.warn(`Contender with ID ${contenderId} not found or missing .embed`);
-    }
-  }
-}
 
 // LAUNCH FINISH TOPLIST
 const laucher_finish_Btns = document.querySelectorAll(".laucher_finish_t");
 laucher_finish_Btns.forEach((btn) => {
   btn.addEventListener("click", async (e) => {
-    const laucher = btn;
-    const topList_id = btn.dataset.toplistid;
+		
+		const topList_id = btn.dataset.toplistid;
 
-    id_toplist_contenders_ajax = topList_id;
+    console.log("make inital 2");
 
-    waiterTop.style.display = "block";
-    waiterTop.classList.add("fade-in");
-    document.querySelector("#global-page").classList.add("focus-top");
+		// ✅ Envoi POST vers le webhook Make avec state = "initial"
+		await fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				state: "initial",
+			}),
+		});
 
-    let TOP = topListData;
-    if(!TOP) {
-      TOP = await SQL_getTopList(topList_id);
-      contenders = JSON.parse(TOP.toplist_info.ranking);
-    }
-    let id_top     = TOP.toplist_info.id_top_rank;
-    contenders     = JSON.parse(TOP.toplist_info.ranking);
-    type_top       = TOP.toplist_info.type_rank;
-    UTM            = TOP.toplist_info.UTM;
-    timelineVotes  = TOP.toplist_info.nb_votes;
-    timelineMain   = TOP.toplist_info.timelineMain;
-    listLR         = JSON.parse(TOP.toplist_info.listLR) ?? [];
-    listWR         = JSON.parse(TOP.toplist_info.listWR) ?? [];
+		id_toplist_contenders_ajax = topList_id;
 
-    if (timelineVotes === null) 
-      timelineVotes = 0;
-    
-    if (timelineMain === null) 
-      timelineMain = 1;
-  
-    id_top_contenders_ajax = id_top;
+		waiterTop.style.display = "block";
+		waiterTop.classList.add("fade-in");
+		document.querySelector("#global-page").classList.add("focus-top");
 
-    var elementtoplistexists = document.querySelectorAll(".toplistexists");
-    elementtoplistexists.forEach(function (element) {
-      element.style.display = "block";
-    });
-    var elements = document.querySelectorAll(".confirm_delete");
-    elements.forEach(function (element) {
-      element.dataset.toplistid = topList_id;
-    });
+		let TOP = topListData;
+		if (!TOP) {
+			TOP = await SQL_getTopList(topList_id);
+			contenders = JSON.parse(TOP.toplist_info.ranking);
+		}
+		let id_top = TOP.toplist_info.id_top_rank;
+		contenders = JSON.parse(TOP.toplist_info.ranking);
+		type_top = TOP.toplist_info.type_rank;
+		UTM = TOP.toplist_info.UTM;
+		timelineVotes = TOP.toplist_info.nb_votes;
+		timelineMain = TOP.toplist_info.timelineMain;
+		listLR = JSON.parse(TOP.toplist_info.listLR) ?? [];
+		listWR = JSON.parse(TOP.toplist_info.listWR) ?? [];
 
-    await lauch_first_duel(contenders);
-    setTimeout(function () {
-      waiterTop.style.display = "none";
-      waiterTop.classList.remove("fade-in", "fade-out");
-      localStorage.getItem("twitchGameMode") ? handleTwitchGames(automaticTwitchGift) : null;
-      lauchTop();
-    }, 500);
-  });
+		if (timelineVotes === null) timelineVotes = 0;
+
+		if (timelineMain === null) timelineMain = 1;
+
+		id_top_contenders_ajax = id_top;
+
+		var elementtoplistexists = document.querySelectorAll(".toplistexists");
+		elementtoplistexists.forEach(function (element) {
+			element.style.display = "block";
+		});
+		var elements = document.querySelectorAll(".confirm_delete");
+		elements.forEach(function (element) {
+			element.dataset.toplistid = topList_id;
+		});
+
+		await lauch_first_duel(contenders);
+		setTimeout(function () {
+			waiterTop.style.display = "none";
+			waiterTop.classList.remove("fade-in", "fade-out");
+			lauchTop();
+		}, 500);
+	});
 });
-
-const emailInput    = document.getElementById('t-sponso-email-input');
-const termsCheckbox = document.getElementById('acceptTopSponsoTerms');
-if(!Boolean(participation_inscription_fin_var) && userInfos && userInfos.email_user && emailInput) {
-  emailInput.value = userInfos.email_user;
-  emailInput.classList.add('d-none');
-  termsCheckbox.checked = true;
-} 
 
 // LAUNCH BEGIN TOPLIST
 const launchTopListBtns = document.querySelectorAll(".laucher_t");
 launchTopListBtns.forEach((btn) => {
-  btn.addEventListener("click", async (e) => {
-    const participationWtihPhone = btn.dataset.phoneparticipation;
+    btn.addEventListener("click", async (e) => {
 
-    const phoneInput    = document.getElementById('t-sponso-tel-input');
-    const launchButton  = document.querySelector('.launcher_t_sponso');
-    const errorMessageElemContainer = document.querySelector(".t-sponso-email-alert");
-    const errorMessageElem          = document.querySelector(".t-sponso-email-alert span"); 
-    if(launchButton && !Boolean(participation_inscription_fin_var)) {
-      launchButton.disabled = true;
-      function validateEmail(email) {
-				const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-				return regex.test(email);
-			}
-			function updateLaunchButtonState() {
-				launchButton.disabled =
-					!validateEmail(emailInput.value) || !termsCheckbox.checked;
-			}
-			emailInput.addEventListener("input", updateLaunchButtonState);
-			termsCheckbox.addEventListener("change", updateLaunchButtonState);
+      console.log("make inital");
 
-			const vainkeurData = JSON.parse(localStorage.getItem("vainkeur_data"));
-			errorMessageElemContainer.classList.add("d-none");
+      // ✅ Envoi POST vers le webhook Make avec state = "initial"
+      await fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          state: "initial",
+        }),
+		});
 
-			if (participationWtihPhone == "true") {
-				if (!termsCheckbox.checked) {
-					errorMessageElem.textContent =
-						"Hey, n'oublie pas d'accepter les conditions générales pour pouvoir participer !";
-					errorMessageElemContainer.classList.remove("d-none");
-					return;
-				}
+		document.querySelector("#global-page").classList.add("focus-top");
+		waiterTop.style.display = "block";
+		waiterTop.classList.add("fade-in");
 
-				function validatePhone(phone) {
-					const regex = /^[0-9]\d{1,14}$/;
-					return regex.test(phone);
-				}
-				function updateLaunchButtonState() {
-					launchButton.disabled =
-						!validatePhone(phoneInput.value) || !termsCheckbox.checked;
-				}
+		type_top = btn.dataset.type_top;
+		adjustTypeTopVisibility(type_top);
 
-				phoneInput.addEventListener("input", updateLaunchButtonState);
-				termsCheckbox.addEventListener("change", updateLaunchButtonState);
+		let initContenders = JSON.parse(
+			sessionStorage.getItem(`contenders_${id_top}`)
+		);
+		if (!initContenders) {
+			TOP = await fetchDataFuncHelper(
+				`${SITE_BASE_URL}wp-json/v1/getrankingoftop/${id_top}/elo`
+			);
+			contenders = TOP.ranking;
+		} else {
+			contenders = initContenders;
+		}
 
-				if (phoneInput.value === "" || !validatePhone(phoneInput.value)) {
-					errorMessageElem.textContent =
-						"Pour continuer, entre ton numéro de téléphone valide, stp";
-					errorMessageElemContainer.classList.remove("d-none");
-					return;
-				}
+		document.querySelectorAll(".toplistexists").forEach((element) => {
+			element.style.display = "block";
+		});
 
-				function getCountryCodeFromTitle() {
-					if (document.querySelector(".iti__selected-flag")) {
-						var selectedFlag = document.querySelector(".iti__selected-flag");
-						var title = selectedFlag.getAttribute("title");
-						var countryCodeMatch = title.match(/:\s\+(\d+)/);
-						return countryCodeMatch ? `+${countryCodeMatch[1]}` : "";
-					}
-					return "";
-				}
+		id_toplist_contenders_ajax = await SQL_createTopList({
+			uuid_user: uuid_user,
+			ranking: contenders,
+			id_top_rank: id_top,
+			type_rank: type_top,
+			uuid_creator: btn.dataset.uuid_creator,
+			UTM: UTM,
+		});
 
-				var countryCode = getCountryCodeFromTitle();
-				var fullPhoneNumber = countryCode + phoneInput.value.replace(/^0+/, ""); // Remove leading zeros from input
+		await lauch_first_duel(contenders);
 
-				try {
-					let response = await fetch(`${API_BASE_URL}participation-list/new`, {
-						method: "POST",
-						headers: { "Content-Type": "application/json" },
-						body: JSON.stringify({
-							id_top_p: id_top,
-							uuid_vainkeur: uuid_user,
-							email_p: emailInput.value,
-							phone_p: fullPhoneNumber,
-						}),
-					});
-
-					let data = await response.json();
-					console.log(data);
-
-					if (data.status === "Nouvelle participation ajoutée") {
-						checkTrophy(vainkeurData.id, 17);
-					}
-				} catch (error) {
-					console.error("An error occurred:", error);
-					errorMessageElem.textContent =
-						"Une erreur est survenue, veuillez réessayer plus tard";
-					errorMessageElemContainer.classList.remove("d-none");
-					return;
-				}
-			} else {
-				function validateEmail(email) {
-					const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-					return regex.test(email);
-				}
-				function updateLaunchButtonState() {
-					launchButton.disabled =
-						!validateEmail(emailInput.value) || !termsCheckbox.checked;
-				}
-				emailInput.addEventListener("input", updateLaunchButtonState);
-				termsCheckbox.addEventListener("change", updateLaunchButtonState);
-
-				if (!termsCheckbox.checked) {
-					errorMessageElem.textContent =
-						"Hey, n'oublie pas d'accepter les conditions générales pour pouvoir participer !";
-					errorMessageElemContainer.classList.remove("d-none");
-					return;
-				}
-
-				if (emailInput.value === "" || !validateEmail(emailInput.value)) {
-					errorMessageElem.textContent =
-						"Pour continuer, entre ton adresse e-mail valide, stp";
-					errorMessageElemContainer.classList.remove("d-none");
-					return;
-				}
-
-				try {
-					let response = await fetch(`${API_BASE_URL}participation-list/new`, {
-						method: "POST",
-						headers: { "Content-Type": "application/json" },
-						body: JSON.stringify({
-							id_top_p: id_top,
-							uuid_vainkeur: uuid_user,
-							email_p: emailInput.value,
-						}),
-					});
-
-					let data = await response.json();
-					console.log(data);
-
-					if (data.status === "Nouvelle participation ajoutée") {
-						checkTrophy(vainkeurData.id, 17);
-					}
-				} catch (error) {
-					console.error("An error occurred:", error);
-					window.location.reload();
-				}
-			}
-    }
-
-    document.querySelector("#global-page").classList.add("focus-top");
-    waiterTop.style.display = "block";
-    waiterTop.classList.add("fade-in");
-
-    type_top = btn.dataset.type_top;
-    adjustTypeTopVisibility(type_top);
-
-    if (type_top === "top1") {
-      automaticTwitchGift = automaticTwitchGiftTop1;
-    } else if (type_top === "top3") {
-      automaticTwitchGift = automaticTwitchGiftTop3;
-    } else if (type_top === "complet") {
-      automaticTwitchGift = automaticTwitchGiftTopComplet;
-    } else {
-      automaticTwitchGift = false;
-    }
-
-    let initContenders = JSON.parse(sessionStorage.getItem(`contenders_${id_top}`));
-    if(!initContenders) {
-      TOP = await fetchDataFuncHelper(`${SITE_BASE_URL}wp-json/v1/getrankingoftop/${id_top}/elo`);
-      contenders = TOP.ranking;
-    }
-    else{
-      contenders = initContenders;
-    }
-    console.log(contenders, "contenders");
-
-    document.querySelectorAll(".toplistexists").forEach((element) => {
-      element.style.display = "block";
-    });
-
-    id_toplist_contenders_ajax = await SQL_createTopList({
-      uuid_user: uuid_user,
-      ranking: contenders,
-      id_top_rank: id_top,
-      type_rank: type_top,
-      uuid_creator: btn.dataset.uuid_creator,
-      UTM: UTM,
-    });
-
-    await lauch_first_duel(contenders);
-
-    setTimeout(() => {
-      localStorage.getItem("twitchGameMode") && handleTwitchGames(automaticTwitchGift); 
-      lauchTop(); 
-      waiterTop.style.display = "none";
-      waiterTop.classList.remove("fade-in", "fade-out");
-    }, 500);
-  });
+		setTimeout(() => {
+			lauchTop();
+			waiterTop.style.display = "none";
+			waiterTop.classList.remove("fade-in", "fade-out");
+		}, 500);
+	});
 });
 
 function adjustTypeTopVisibility(type_top) {
@@ -514,6 +276,72 @@ function get_steps(contenders) {
 }
 
 function do_vote(idWinner, idLooser, contenders) {
+
+  console.log("do_vote");
+  console.log('timelineVotes', timelineVotes);
+
+  // ✅ Envoi POST vers le webhook Make avec state = "initial"
+
+  const array_lamp = [
+    {
+      num_lamp: 1,
+      id_lamp: "bfe3274eb32ec3b8415k1g",
+    },
+    {
+      num_lamp: 2,
+      id_lamp: "bf66d769548c66895aa7wn",
+    },
+    {
+      num_lamp: 3,
+      id_lamp: "bf635bd67ca0552054gprb",
+    },
+    {
+      num_lamp: 4,
+      id_lamp: "bf9d17dcb317aa8eafc42c",
+    },
+    {
+      num_lamp: 5,
+      id_lamp: "bf8171b908d7da6c8eztuv",
+    },
+    {
+      num_lamp: 6,
+      id_lamp: "bfb22c704aca6596b1zdgy",
+    },
+    {
+      num_lamp: 7,
+      id_lamp: "bf5c94b20ba80b1ce3akgc",
+    },
+    {
+      num_lamp: 8,
+      id_lamp: "bf720df872433721fboegd",
+    },
+    {
+      num_lamp: 9,
+      id_lamp: "bff26538836e8d695aqa30",
+    },
+    {
+      num_lamp: 10,
+      id_lamp: "bf043979fea49251c1wp25",
+    }
+  ]
+
+  const id_lamp = array_lamp[timelineVotes].id_lamp;
+  
+  console.log("id_lamp", id_lamp);
+  console.log("fdfd", array_lamp[timelineVotes]);
+  
+  fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			state: 'current',
+			id_lamp: id_lamp,
+			color: '{"h":120,"s":1000,"v":1000}',
+		}),
+	});
+
 	let listContenders = contenders,
 		alreadySupTo = [],
 		alreadyInfTo = [],
@@ -1223,11 +1051,6 @@ async function lauch_first_duel(contenders) {
   $("#c_1").addClass("animate__animated animate__fadeInDown");
   $("#c_2").addClass("animate__animated animate__fadeInUp");
 
-  // DEALING WITH YOUTUBE VIDEOS
-  setTimeout(() => {
-    replaceWithYoutubeIframe(firstDuelContenderOneIdData.id_wp, 'contender_1');
-    replaceWithYoutubeIframe(firstDuelContenderTwoIdData.id_wp, 'contender_2');
-  }, 500);
 }
 
 // NEXT DUEL
@@ -1257,335 +1080,6 @@ contendersDOM.forEach((contender) => {
     if (contenderIdWinner === "" || contenderIdLooser === "") {
 			return;
 		} else {
-      // TWITCH
-			if (
-				document.querySelector(".display_battle") &&
-				localStorage.getItem("twitchGameMode") !== null
-			) {
-				if (voteParticipatifBoolean) {
-          if(!saveTwitchGameInfo) {
-            const userData = JSON.parse(localStorage.getItem("user_info"));
-            const embed = {
-              title: `🟣 LIVE en cours de ${twitchChannel} 🟣`,
-              color: 0xA98ED6,
-              description: `TopList ${topInfo.top_number} ${getTopIcon(topInfo.top_cat_name)} ${topInfo.top_title} – ${topInfo.top_question}`,
-              timestamp: new Date().toISOString(),
-              author: {
-                  url: `${SITE_BASE_URL}v/${userData.pseudo_slug_user}`,
-                  icon_url: userData.avatar_user ? userData.avatar_user : "https://vainkeurz.com/wp-content/uploads/2023/09/avatar-rose.webp",
-                  name: userData.pseudo_user,
-              },
-              fields: [
-                { name: "Streamer", value: twitchChannel, inline: true },
-                { name: "Mode de jeu", value: "Participatif", inline: true },
-                {
-                  name: "Participants",
-                  value: `👀 ${usersNumberForParticipatifMode}`,
-                  inline: true,
-                },
-                { name: "Type TopList", value: type_top ?? "(Inconnu)", inline: true },
-                { name: "Max votes possibles", value: getMaxVotesOfTopList(+topInfo.top_number, type_top) ?? "(Inconnu)", inline: true },
-              ],
-              url: `https://www.twitch.tv/${twitchChannel}`,
-              image: { url: "https://vainkeurz.com/wp-content/uploads/2023/09/gif-mode-game-1-twitch.gif" },
-              footer: { text: 'Go Participer Au Live!', icon_url: 'https://vainkeurz.com/wp-content/themes/t-vkrz/assets/images/emojis/twitch.png' }
-            };
-            const messageToSend = {
-                username: "NOTEURZ 🤖",
-                avatar_url: 'https://vainkeurz.com/wp-content/uploads/2022/12/boteurz-image-300x300.jpeg',
-                embeds: [embed],
-            };
-            // SAVE DATA TO DB…
-            fetch(`${API_BASE_URL}twitch/save-game`, {
-              method: 'POST',
-              body: JSON.stringify({
-                id_top: id_top,
-                id_toplist: document.querySelector('.confirm_delete').dataset.toplistid,
-                uuid_user: uuid_user,
-                stream_channel: twitchChannel,
-                number_participants: Object.keys(users).length,
-                game_mode: 1,
-                participants: Object.keys(users),
-                webhook: 'twitch-live',
-                messageData: messageToSend
-              }),
-              headers: { 'Content-Type': 'application/json' }
-            })
-              .then(response => response.json()) 
-              .then(data => {
-                console.log(data)
-                id_twitch_game = data.id_game;
-                saveTwitchGameInfo = true;
-
-                // SHOW LINK TO GO
-                const tiragaBtnContainer = document.querySelector('.go-to-tirage-vkrz');
-                const tiragaBtn          = tiragaBtnContainer.querySelector('.go-to-tirage-vkrz-btn');
-                tiragaBtnContainer.classList.remove('d-none');
-                tiragaBtn.href = `${TIRAGE_VAINKEUR_URL}?streamChannel=${twitchChannel}`;
-                tiragaBtn.addEventListener('click', () => tiragaBtnContainer.classList.add('d-none'));
-              })
-              .catch((error) => console.error("Error sending message:", error));
-          };
-          users = {};
-					votesNumber.textContent = "0";
-					votesNumberForContenderOne = 0;
-					votesNumberForContenderTwo = 0;
-					contenderOneVotesPercent.textContent = "0%";
-					contenderTwoVotesPercent.textContent = "0%";
-					X = A = B = 0;
-					document.querySelector("#votes-stats-1").classList.remove("active");
-					document.querySelector("#votes-stats-2").classList.remove("active");
-				} else if (votePredictionBoolean && winnerAlready === false) {
-					let side;
-					if (target.id === "c_1") side = "1";
-					else if (target.id === "c_2") side = "2";
-
-					toFilter = Object.entries(users);
-					nonPassed = toFilter.filter(([key, value]) => value.side !== side);
-					passed = toFilter.filter(([key, value]) => value.side === side);
-
-					// WINNER CHICKEN DINNER…
-					if (passed.length === 1 && winnerAlready === false) {
-						winnerAlready = true;
-						document
-							.querySelector("#prediction-player")
-							.classList.add("d-none");
-						document
-							.querySelector("#prediction-player .card-header")
-							.classList.add("flex-column-reverse");
-						document.querySelector(
-							"#prediction-player .card-header"
-						).style.gap = "8px";
-						document
-							.querySelectorAll(".votes-container > p:first-of-type")
-							.forEach((p) => p.remove());
-						document
-							.querySelector(".contenders-containers")
-							.classList.add("blur");
-						document.querySelector("#winner-sound").play();
-						document.querySelector(".twitchGamesWinnerName").textContent =
-							passed[0][0];
-						$(".twitchGamesWinnerContainer").addClass("show");
-						confetti();
-
-						function rnd(m, n) {
-							m = parseInt(m);
-							n = parseInt(n);
-
-							return Math.floor(Math.random() * (n - m + 1)) + m;
-						}
-
-						function confetti() {
-							$.each($(".twitchGamesWinnerName.confetti"), function () {
-								var confetticount = ($(this).width() / 50) * 10;
-								for (var i = 0; i <= confetticount; i++) {
-									$(this).append(
-										'<span class="particle c' +
-											rnd(1, 4) +
-											'" style="top:' +
-											rnd(10, 50) +
-											"%; left:" +
-											rnd(0, 100) +
-											"%;width:" +
-											rnd(5, 15) +
-											"px; height:" +
-											rnd(5, 10) +
-											"px;animation-delay: " +
-											rnd(0, 30) / 10 +
-											's;"></span>'
-									);
-								}
-							});
-						}
-
-            document.querySelector('.confirm_deletee').addEventListener('click', function(){
-              document.querySelector('.confirm_delete').click();
-            })
-
-						document
-							.querySelector("#winner-continuer")
-							.addEventListener("click", () => {
-								document
-									.querySelector(".contenders-containers")
-									.classList.remove("blur");
-								document.querySelector(".twitchGamesWinnerContainer").remove();
-								document.querySelector("#prediction-player").classList.remove("d-none");
-							});
-
-						// SAVE TO LOCAL STORAGE…
-						const twitchGameResumeObj = {
-							idRanking: id_toplist_contenders_ajax,
-							participantsNumber: `${Object.keys(users).length + Object.keys(losers).length}`,
-							mode: "votePrediction",
-							winner: `${passed[0][0]}`,
-						};
-						localStorage.setItem("resumeTwitchGame", JSON.stringify(twitchGameResumeObj));
-
-            // Send data to the server
-            fetch(`${API_BASE_URL}twitch/winner-game`, {
-              method: 'POST',
-              body: JSON.stringify({
-                id_twitch_game: id_twitch_game,
-                winner: passed[0][0],
-                stream_channel: twitchChannel
-              }),
-              headers: {
-                'Content-Type': 'application/json',
-              }
-            })
-              .then(response => response.json())
-              .then(data => {
-                console.log(data);
-              })
-              .catch((error) => console.error("Error updating winner:", error));
-					}
-
-					for (let user of toFilter) {
-						user[1]["voted"] = false;
-						user[1]["side"] = "0";
-						document
-              .querySelector(`#prediction-player [id="vkrz-${user[0]}"]`)
-							.classList.remove("text-primary");
-					}
-
-					if (passed.length === 0) {
-						users = Object.fromEntries(nonPassed);
-					} else {
-						users = Object.fromEntries(passed);
-						losers = { ...losers, ...Object.fromEntries(nonPassed) };
-
-						// PROCESS FOR LOSERS…
-						if (nonPassed.length > 0) {
-							const elimines = document.querySelector(
-								"#participants .card-title.elimines"
-							);
-							elimines.classList.remove("d-none");
-							elimines.innerHTML = `<span class="va va-unknow va-lg"></span> ${
-								Object.keys(losers).length
-							} ${Object.keys(losers).length > 1 ? "Eliminés" : "Eliminé"}`;
-
-							for (const [key, loser] of Object.entries(nonPassed)) {
-								let target = document.querySelector( `#prediction-player [id='vkrz-${loser[0]}']`);
-								target.classList.remove("text-primary");
-								target.classList.add("beforeDelete");
-								setTimeout(() => {
-									target.remove();
-								}, 4000);
-							}
-						}
-					}
-
-					if (Object.keys(users).length === 1 || winnerAlready === true) {
-						document.querySelector("#participants .card-title").innerHTML =
-							"<i class='fab fa-twitch'></i> Le gagnant!! 🎉";
-					} else if (Object.keys(users).length > 1) {
-						preditcionParticipantsVotedNumber.textContent = 0;
-						preditcionParticipantsNumber.textContent =
-							Object.keys(users).length;
-					} else if (Object.keys(users).length === 0) {
-						document.querySelector("#participants .card-title").innerHTML =
-							"<i class='fab fa-twitch'></i> 0 Participants";
-					}
-				} else if (votePointsBoolean) {
-					let side;
-					if (target.id === "c_1") side = "1";
-					else if (target.id === "c_2") side = "2";
-
-					toFilter = Object.entries(users);
-
-					let oppositeSide = side === "1" ? "2" : "1";
-					notSameVoteGroup = toFilter.filter(
-						([key, value]) => value.side === oppositeSide
-					);
-					notSameVoteGroupObj = Object.fromEntries(notSameVoteGroup);
-
-					sameVoteGroup = toFilter.filter(
-						([key, value]) => value.side === side
-					);
-					sameVoteGroupObj = Object.fromEntries(sameVoteGroup);
-
-					for (const vainkeurPlusOne of Object.keys(sameVoteGroupObj)) {
-						const vainkeurPlusOneDOM = document.querySelector(
-								`#ranking-player [id="vkrz-${vainkeurPlusOne}"]`
-							),
-							vainkeurPlusOneDOMpoints =
-								vainkeurPlusOneDOM.querySelector("td:last-of-type");
-
-						vainkeurPlusOneDOMpoints.innerHTML = `${
-							+vainkeurPlusOneDOMpoints.dataset.order + 1
-						} &uarr;`;
-						vainkeurPlusOneDOMpoints.classList.add("text-success");
-						vainkeurPlusOneDOMpoints.setAttribute(
-							"data-order",
-							`${+vainkeurPlusOneDOMpoints.dataset.order + 1}`
-						);
-					}
-
-					if (notSameVoteGroup.length > 0) {
-						for (let vainkeurMinusOne of Object.keys(notSameVoteGroupObj)) {
-							const vainkeurMinusOneDOM = document.querySelector(
-									`#ranking-player [id="vkrz-${vainkeurMinusOne}"]`
-								),
-								vainkeurMinusOneDOMpoints =
-									vainkeurMinusOneDOM.querySelector("td:last-of-type");
-
-							vainkeurMinusOneDOMpoints.innerHTML =
-								vainkeurMinusOneDOMpoints.dataset.order;
-							vainkeurMinusOneDOMpoints.classList.remove("text-success");
-							vainkeurMinusOneDOMpoints.setAttribute(
-								"data-order",
-								vainkeurMinusOneDOMpoints.dataset.order
-							);
-						}
-					}
-
-					if (Object.keys(users).length) {
-						const initTable = (function () {
-							let table = $(".table-points").dataTable();
-							table.fnDestroy();
-
-							table.dataTable({
-								autoWidth: true,
-								paging: false,
-								searching: false,
-								order: [[2, "desc"]],
-							});
-
-							positionStr = "";
-							document
-								.querySelector(".table-points tbody")
-								.querySelectorAll("tr")
-								.forEach((row, index) => {
-									switch (index) {
-										case 0:
-											positionStr =
-												'<span class="ico va va-medal-1 va-lg"></span>';
-											break;
-										case 1:
-											positionStr =
-												'<span class="ico va va-medal-2 va-lg"></span>';
-											break;
-										case 2:
-											positionStr =
-												'<span class="ico va va-medal-3 va-lg"></span>';
-											break;
-										default:
-											positionStr = index + 1;
-									}
-
-									row.querySelector("td:first-of-type").innerHTML = positionStr;
-									row
-										.querySelector("td:nth-of-type(2)")
-										.classList.remove("voted");
-								});
-						})();
-					}
-
-					pointsParticipantsVotedNumber.textContent = 0;
-
-					for (let user in users) users[user] = { side: "0", voted: false };
-				}
-			}
 
 			if (target.id === "c_1") {
 				$("#c_1").addClass("vainkeurz animate__animated animate__shakeY");
@@ -1633,13 +1127,7 @@ contendersDOM.forEach((contender) => {
 				$("#c_1").addClass("animate__animated animate__fadeInDown");
 				$("#c_2").addClass("animate__animated animate__fadeInUp");
 
-        // DEALING WITH YOUTUBE VIDEOS
-        setTimeout(() => {
-          if (duel.isNextDuel) {
-              replaceWithYoutubeIframe(duel.contender1, 'contender_1');
-              replaceWithYoutubeIframe(duel.contender2, 'contender_2');
-          }
-        }, 500);
+        
 
 				alreadyVoted = false;
 			}, 500);

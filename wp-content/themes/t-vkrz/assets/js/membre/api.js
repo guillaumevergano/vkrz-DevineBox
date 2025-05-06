@@ -8,12 +8,9 @@ const API_BASE_URL =
 		? "https://proto.vainkeurz.com/api/vkrz/"
 		: "https://vainkeurz.com/api/vkrz/";
 
-const SITE_BASE_URL = env === 'local' ? "http://localhost:8888/vkrz-wp/"
+const SITE_BASE_URL = env === 'local' ? "http://localhost:8888/vkrz-devineBox/"
   : env === 'proto' ? "https://proto.vainkeurz.com/"
-    : "https://vainkeurz.com/";
-
-const TIRAGE_VAINKEUR_URL = env === 'local' ? "http://localhost:8888/vkrz-tirage/"
-  : "https://tirage.vainkeurz.com/";
+    : "https://devine.vainkeurz.com/";
 
 async function fetchDataFuncHelper(url) {
   const response = await fetch(url);

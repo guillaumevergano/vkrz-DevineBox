@@ -1,5 +1,16 @@
 == Changelog ==
 
+= 6.4.18 =
+Release Date: April 30th, 2025
+
+* [Improved] Strip HTML for HPOS Order columns
+* [Improved] Smart Filter with 'isset' operator could give a wrong display format
+* [Improved] Events Calendar add-on: The Venue Website now display the full URL instead of a pre-defined label
+* [Fixed] MetaBox editing fix for unserialize() errors
+* [Fixed] Editing for MetaBox Taxonomy columns with custom table did not work correct
+* [Fixed] Multiple 'Doing it wrong' warnings
+* [Updated] Admin Columns Core to version 4.7.14
+
 = 6.4.17 =
 Release Date: March 19th, 2025
 

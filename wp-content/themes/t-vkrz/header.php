@@ -5,7 +5,7 @@ global $top_infos;
 global $weglot_lang;
 $uuid_user = give_uuid();
 $env       = env();
-$weglot_lang = weglot_get_current_language();
+$weglot_lang = "fr";
 ?>
 <!DOCTYPE html>
 <html lang="fr" class="dark-style dark-layout layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="horizontal-menu-template">
@@ -126,7 +126,7 @@ if(get_query_var('toplist_devine_id')){
                   <div class="slim-left">
                     <a href="<?php bloginfo('url'); ?>" class="app-brand-link gap-2">
                       <span class="logo-simple">
-                        <img src="<?php bloginfo('template_directory'); ?>/assets/images/vkrz/logo-vkrz-star-wars.png" alt="VAINKEURZ logo" class="img-fluid">
+                        <img src="<?php bloginfo('template_directory'); ?>/assets/images/vkrz/logo-vkrz.webp" alt="VAINKEURZ logo" class="img-fluid">
                       </span>
                     </a>
                     <a href="javascript:location.reload()" class="btn-annule-devine">
@@ -167,7 +167,7 @@ if(get_query_var('toplist_devine_id')){
                   <div class="slim-left">
                     <a href="<?php bloginfo('url'); ?>" class="app-brand-link gap-2">
                       <span class="logo-simple">
-                        <img src="<?php bloginfo('template_directory'); ?>/assets/images/vkrz/logo-vkrz-star-wars.png" alt="VAINKEURZ logo" class="img-fluid">
+                        <img src="<?php bloginfo('template_directory'); ?>/assets/images/vkrz/logo-vkrz.webp" alt="VAINKEURZ logo" class="img-fluid">
                       </span>
                     </a>
                   </div>
@@ -216,7 +216,7 @@ if(get_query_var('toplist_devine_id')){
                 <div class="slim-left">
                   <a href="<?php bloginfo('url'); ?>" class="app-brand-link gap-2 d-none d-sm-block">
                     <span class="logo-simple">
-                      <img src="<?php bloginfo('template_directory'); ?>/assets/images/vkrz/logo-vkrz-star-wars.png" alt="VAINKEURZ logo" class="img-fluid">
+                      <img src="<?php bloginfo('template_directory'); ?>/assets/images/vkrz/logo-vkrz.webp" alt="VAINKEURZ logo" class="img-fluid">
                     </span>
                   </a>
                   <a href="javascript:location.reload()" class="btn-annule-devine">
@@ -233,7 +233,7 @@ if(get_query_var('toplist_devine_id')){
           <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4">
             <a href="<?php bloginfo('url'); ?>" class="app-brand-link gap-2">
               <span class="logo">
-                <img src="<?php bloginfo('template_directory'); ?>/assets/images/vkrz/logo-vkrz-star-wars.png" alt="VAINKEURZ logo" class="img-fluid">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/images/vkrz/logo-vkrz.webp" alt="VAINKEURZ logo" class="img-fluid">
               </span>
             </a>
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">

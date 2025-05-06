@@ -137,89 +137,11 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
               <div class="meetup-img-wrapper rounded-top text-left <?php echo $hidemobile; ?>"></div>
               <div class="card-body presentationtop <?php echo $hidemobile; ?>">
                 <div class="meetup-header">
-                  <div class="mt-3">
-                    <?php if($type_top != "sponso"): ?>
-                      <div class="title-win">
-                        <h2>
-                          <span class="top-title"></span>
-                        </h2>
-                      </div>
-                    <?php endif; ?>
+                  <div class="py-5">
                     <h1 class="top-question animate__animated animate__flash">
                       <?php get_template_part('partials/loader/loader-mini'); ?>
                     </h1>
                     <div class="top-precision"></div>
-                  </div>
-                  <div class="separate separate-sponso mt-4 mb-2"></div>
-                  <div class="info-top-footer">
-                    <?php if($type_top != "sponso"): ?>
-                      <div class="row meetings align-items-center">
-                        <div class="col-md-6">
-                          <div class="vainkeur-card"></div>
-                        </div>
-                        <div class="col-md-6">
-                          <!-- Classement mondial + Share -->
-                          <div id="share-and-check-toplist-mondial">
-                            <div class="btn-actions-toplist">
-                              <a href="#" class="btn-wording toplistmondialurl" data-bs-toggle="modal" data-bs-target="#modalClassementMondial">
-                                <span class="va va-globe va-lg"></span> Découvre le classement mondial
-                              </a>
-                            </div>
-                            <div class="btn-actions-toplist">
-                              <a class="btn-wording showsharetop">
-                                <span class="va va-megaphone va-lg"></span> Partage la TopList
-                              </a>
-                              <div class="sharetop w-100">
-                                <ul class="reseau-share d-flex align-items-center justify-content-arround w-100">
-                                  <li>
-                                    <a href="" class="share-tw btn-wording" target="_blank" title="Tweet" style="background:#000000;">
-                                      <i class="social-media fa-brands fa-x-twitter" aria-hidden="true"></i>
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="" data-action="share/whatsapp/share" class="share-wa btn-wording" style="background:#55E863;">
-                                      <i class="social-media fab fa-whatsapp" aria-hidden="true"></i>
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="" title="Partager sur Facebook" target="_blank" class="share-fb btn-wording" style="background:#0B66FE;">
-                                      <i class="social-media fab fa-facebook-f" aria-hidden="true"></i>
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="#" data-link="<?= $url_top; ?>" data-textafter="✅" class="btn-wording copy-button copy-topurl" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copier le lien de la TopList" style="font-size:0.8rem;">
-                                      <span class="va va-link va-md m-0 va-2x"></span>
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    <?php else: ?>
-                      <div class="infos-card-t d-flex align-items-center">
-                        <div class="me-2">
-                          <span class="ico va va-chance va-2x"></span>
-                        </div>
-                        <div class="info-numbers">
-                          <small class="text-muted wording-tirage">... ⏳ ...</small>
-                          <?php if(get_field("fin_de_la_sponso_t_sponso_decalage", $id_top)) : ?>
-                            <h4>
-                              <?= the_field('fin_de_la_sponso_t_sponso_decalage', $id_top); ?>
-                            </h4>
-                          <?php elseif(get_field("top_permanent_topsponso", $id_top)): ?>
-                            <h4 class="top-permanent-checking-date">
-                              ... ⏳ ...
-                            </h4>
-                          <?php else: ?>
-                            <h4>
-                            <?= the_field('fin_de_la_sponso_t_sponso', $id_top); ?>
-                            </h4>
-                          <?php endif; ?>
-                        </div>
-                      </div>
-                    <?php endif; ?>
                   </div>
                 </div>
               </div>
@@ -229,194 +151,113 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
         <div class="col-md-4">
           <div class="card animate__animated animate__backInUp card-presentation-top-right">
             <div class="card-body rules-content">
-              <?php if($type_top == "sponso"): ?>
-                <div class="lot-whitelabel d-none">
-                  <img src="<?= wp_get_attachment_image_url(get_field('cadeau_t_sponso', $id_top), 'large', false); ?>" alt="">
-                </div>
-                <div class="agagner">
-                  <div class="d-cadeau row">
-                    <div class="col-7">
-                      <span class="titrewin">
-                        À gagner <span class="va va-finger-down va-lg"></span>
-                      </span>
-                      <h5>
-                        <?= the_field('titre_de_la_sponso_t_sponso', $id_top); ?>
-                      </h5>
-                      <div class="text-rules">
-                        <?php the_field('description_t_sponso', $id_top); ?>
-                      </div>
-                    </div>
-                    <div class="col-5">
-                      <img src="<?= wp_get_attachment_image_url(get_field('cadeau_t_sponso', $id_top), 'large', false); ?>" alt="">
-                    </div>
-                  </div>
-                </div>
-              <?php endif; ?>
               <div class="btn-cta-starttop">
-                <?php if($etat_top == "valide"): ?>
-                  <div class="<?php echo $hide_if_sponso; ?>">
-                    <div class="twitch-possible d-none">
-                      <div class="modes-jeu-twitch d-none d-sm-block">
-                        <button class="btnstarttwitch" type="button">
-                          Choix des modes Twitch
-                          <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title="TopList avec un lot &agrave; gagner<br>pour le viewer qui devinera le mieux" class='va va-gift va-lg va-twitch-gift-game d-none'></span>
-                        </button>
-                        <div class="modes-jeu-twitch__content-btns">
-                          <button type="button" id="votePrediction" class="mb-2 btn btn-gradient-primary modeGameTwitchBtn">
-                            <div>
-                              <span class="va va-skull va-lg"></span> Battle Royale
-                            </div>
-                            <small class="text-muted">Le viewer qui devine tous tes choix triomphe</small>
-                            <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title="TopList avec un lot &agrave; gagner<br>pour le viewer qui devinera le mieux" class='va va-gift va-lg va-twitch-gift-game d-none'></span>
-                          </button>
-                          <button type="button" id="votePoints" class="btn btn-gradient-primary modeGameTwitchBtn mb-2">
-                            <div>
-                              <span class="va va-hundred va-lg"></span> Championnat
-                            </div>
-                            <small class="text-muted">Le viewer qui devine le plus sera le gagnant</small>
-                            <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title="TopList avec un lot &agrave; gagner<br>pour le viewer qui devinera le mieux" class='va va-gift va-lg va-twitch-gift-game d-none'></span>
-                          </button>
-                          <button type="button" id="voteParticipatif" class="btn btn-gradient-primary modeGameTwitchBtn">
-                            <div><span class="va va-heart-hands va-lg"></span> Communauté</div>
-                            <small class="text-muted">Tu vois la jauge des votes des viewers</small>
-                          </button>
-                        </div>
-                        <div class="separate mt-3 mb-3"></div>
-                      </div>
+                <div class="contenders-btn-block">
+                  <div class="check-btn-block animate__animated" data-bs-toggle="modal" data-bs-target="#modalcontenders">
+                    <div class="info-check">
+                      Check les <span class="nb_contenders me-1 ms-1 nb_contenders_check_btn">-</span> contenders
                     </div>
-                    <div class="contenders-btn-block">
-                      <div class="check-btn-block animate__animated" data-bs-toggle="modal" data-bs-target="#modalcontenders">
-                        <div class="info-check">
-                          Check les <span class="nb_contenders me-1 ms-1 nb_contenders_check_btn">-</span> contenders
-                        </div>
-                        <small class="text-muted">Tu pourras supprimer ceux que tu ne veux pas classer</small>
+                    <small class="text-muted">Tu pourras supprimer ceux que tu ne veux pas classer</small>
+                  </div>
+                  <div class="separate mt-3 mb-3"></div>
+                </div>
+                <div class="listingchoice">
+                  <div id="choosenumbertop">
+                    <div class="form-check choicetop1-bloc is_classik">
+                      <div class="info-check">
+                        Top 1
                       </div>
-                      <div class="separate mt-3 mb-3"></div>
+                      <small class="text-muted indication-nb-votes-top1 is_classik" data-weglot-translate="true">
+                        <?php echo get_indication_nbvotes($top_number)["top1"]; ?>
+                      </small>
+                      <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title="TopList avec un lot &agrave; gagner<br>pour le viewer qui devinera le mieux" class='va va-gift va-lg va-twitch-gift-game va-twitch-gift-game-typetop va-twitch-gift-game-typetop-1 d-none'></span>
+                    </div>
+                    <div class="form-check choicetop3-bloc is_classik">
+                      <div class="info-check">
+                        Top 3
+                      </div>
+                      <small class="text-muted indication-nb-votes-top3 is_classik" data-weglot-translate="true">
+                        <?php echo get_indication_nbvotes($top_number)["top3"]; ?>
+                      </small>
+                      <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title="TopList avec un lot &agrave; gagner<br>pour le viewer qui devinera le mieux" class='va va-gift va-lg va-twitch-gift-game va-twitch-gift-game-typetop va-twitch-gift-game-typetop-3 d-none'></span>
+                    </div>
+                    <div class="form-check choicetopcomplet-bloc is_classik mb-sm-3 mb-2">
+                      <div class="info-check">
+                        Complet
+                      </div>
+                      <small class="text-muted indication-nb-votes-complet is_classik" data-weglot-translate="true">
+                        <?php echo get_indication_nbvotes($top_number)["topcomplet"]; ?>
+                      </small>
+                      <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title="TopList avec un lot &agrave; gagner<br>pour le viewer qui devinera le mieux" class='va va-gift va-lg va-twitch-gift-game va-twitch-gift-game-typetop va-twitch-gift-game-typetop-complet d-none'></span>
                     </div>
                   </div>
-                  <div class="listingchoice">
-                    <div id="choosenumbertop">
-                      <div class="form-check choicetop1-bloc is_classik">
-                        <div class="info-check">
-                          Top 1
-                        </div>
-                        <small class="text-muted indication-nb-votes-top1 is_classik" data-weglot-translate="true">
-                          <?php echo get_indication_nbvotes($top_number)["top1"]; ?>
-                        </small>
-                        <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title="TopList avec un lot &agrave; gagner<br>pour le viewer qui devinera le mieux" class='va va-gift va-lg va-twitch-gift-game va-twitch-gift-game-typetop va-twitch-gift-game-typetop-1 d-none'></span>
-                      </div>
-                      <div class="form-check choicetop3-bloc is_classik">
-                        <div class="info-check">
-                          Top 3
-                        </div>
-                        <small class="text-muted indication-nb-votes-top3 is_classik" data-weglot-translate="true">
-                          <?php echo get_indication_nbvotes($top_number)["top3"]; ?>
-                        </small>
-                        <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title="TopList avec un lot &agrave; gagner<br>pour le viewer qui devinera le mieux" class='va va-gift va-lg va-twitch-gift-game va-twitch-gift-game-typetop va-twitch-gift-game-typetop-3 d-none'></span>
-                      </div>
-                      <div class="form-check choicetopcomplet-bloc is_classik mb-sm-3 mb-2">
-                        <div class="info-check">
-                          Complet
-                        </div>
-                        <small class="text-muted indication-nb-votes-complet is_classik" data-weglot-translate="true">
-                          <?php echo get_indication_nbvotes($top_number)["topcomplet"]; ?>
-                        </small>
-                        <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title="TopList avec un lot &agrave; gagner<br>pour le viewer qui devinera le mieux" class='va va-gift va-lg va-twitch-gift-game va-twitch-gift-game-typetop va-twitch-gift-game-typetop-complet d-none'></span>
-                      </div>
-                    </div>
+                </div>
+                <div class="choosecta">
+                  <div class="cta-begin cta-top1">
+                    <a href="#" id="begin_top1" data-type_top="top1" class="laucher_t btn-wording-rose btn-wording bubbly-button animate__jackInTheBox animate__animated">
+                      <i class="fab fa-twitch twitch-icon-tbegin"></i>&nbsp;
+                      <span class="cta-wording">Lancer mon Top 1</span>
+                    </a>
                   </div>
-                  <div class="choosecta">
-                    <div class="cta-begin cta-top1">
-                      <a href="#" id="begin_top1" data-type_top="top1" class="laucher_t btn-wording-rose btn-wording bubbly-button animate__jackInTheBox animate__animated">
-                        <i class="fab fa-twitch twitch-icon-tbegin"></i>&nbsp;
-                        <span class="cta-wording">Lancer mon Top 1</span>
-                      </a>
-                    </div>
-                    <div class="cta-begin cta-top3">
-                      <a href="#" id="begin_top3" data-type_top="top3" class="laucher_t btn-wording-rose btn-wording bubbly-button animate__jackInTheBox animate__animated">
-                        <i class="fab fa-twitch twitch-icon-tbegin"></i>&nbsp;
-                        <span class="cta-wording">Lancer mon Top 3</span>
-                      </a>
-                    </div>
-                    <?php if($type_top == "sponso"): ?>
-                      <?php if(!$participation_inscription_fin) : ?>
-                        <div class="t-sponso-email-beginning">
-                          <div>
-                            <input type="email" placeholder="Ton email" name="t-sponso-email-input" id="t-sponso-email-input">
-                            <input type="tel" class="d-none" placeholder="" name="t-sponso-tel-input" id="t-sponso-tel-input">
-                          </div>
-                            
-                          <div class="form-check-inline accept-topsponso-terms">
-                              <input class="form-check-input" type="checkbox" id="acceptTopSponsoTerms" value="acceptTerms">
-                              <?php 
-                              if(get_field('lien_vers_reglement_toplist', $id_top)){
-                                $cgu_t_sponso = get_field('lien_vers_reglement_toplist', $id_top);
-                              } else {
-                                $cgu_t_sponso = "https://vainkeurz.com/ml/";
-                              }
-                              ?>
-                              <label class="form-check-label" for="acceptTopSponsoTerms">J’accepte les <a href="<?= $cgu_t_sponso; ?>" target="_blank">CGU</a> </label>
-                          </div>
-
-                          <p class="t-sponso-email-alert d-none mt-3">
-                            <i class="fa fa-exclamation-triangle me-1" aria-hidden="true"></i>
-                            <span></span>
-                          </p>
+                  <div class="cta-begin cta-top3">
+                    <a href="#" id="begin_top3" data-type_top="top3" class="laucher_t btn-wording-rose btn-wording bubbly-button animate__jackInTheBox animate__animated">
+                      <i class="fab fa-twitch twitch-icon-tbegin"></i>&nbsp;
+                      <span class="cta-wording">Lancer mon Top 3</span>
+                    </a>
+                  </div>
+                  <?php if($type_top == "sponso"): ?>
+                    <?php if(!$participation_inscription_fin) : ?>
+                      <div class="t-sponso-email-beginning">
+                        <div>
+                          <input type="email" placeholder="Ton email" name="t-sponso-email-input" id="t-sponso-email-input">
+                          <input type="tel" class="d-none" placeholder="" name="t-sponso-tel-input" id="t-sponso-tel-input">
                         </div>
-                      <?php endif; ?>
+                          
+                        <div class="form-check-inline accept-topsponso-terms">
+                            <input class="form-check-input" type="checkbox" id="acceptTopSponsoTerms" value="acceptTerms">
+                            <?php 
+                            if(get_field('lien_vers_reglement_toplist', $id_top)){
+                              $cgu_t_sponso = get_field('lien_vers_reglement_toplist', $id_top);
+                            } else {
+                              $cgu_t_sponso = "https://vainkeurz.com/ml/";
+                            }
+                            ?>
+                            <label class="form-check-label" for="acceptTopSponsoTerms">J’accepte les <a href="<?= $cgu_t_sponso; ?>" target="_blank">CGU</a> </label>
+                        </div>
 
-                      <div class="cta-begin cta-complet">
-                        <a href="#" data-type_top="top3" class="laucher_t btn-wording-rose btn-wording bubbly-button animate__jackInTheBox animate__animated launcher_t_sponso">
-                          <i class="fab fa-twitch twitch-icon-tbegin"></i>&nbsp;
-                          <span class="cta-wording">Lancer ma TopList <br> pour tenter ma chance</span>
-                        </a>
-                      </div>
-                    <?php else: ?>
-                      <div class="cta-begin cta-complet">
-                        <a href="#" id="begin_topcomplet" data-type_top="complet" class="laucher_t btn-wording-rose btn-wording bubbly-button animate__jackInTheBox animate__animated animate__delay-1s">
-                          <i class="fab fa-twitch twitch-icon-tbegin"></i>&nbsp;
-                          <span class="cta-wording">Lancer ma TopList</span>
-                        </a>
+                        <p class="t-sponso-email-alert d-none mt-3">
+                          <i class="fa fa-exclamation-triangle me-1" aria-hidden="true"></i>
+                          <span></span>
+                        </p>
                       </div>
                     <?php endif; ?>
-                    <div class="cta-begin cta-finish">
-                      <a href="#" id="begin_termine" class="laucher_finish_t btn-wording-rose btn-wording bubbly-button animate__jackInTheBox animate__animated">
+
+                    <div class="cta-begin cta-complet">
+                      <a href="#" data-type_top="top3" class="laucher_t btn-wording-rose btn-wording bubbly-button animate__jackInTheBox animate__animated launcher_t_sponso">
                         <i class="fab fa-twitch twitch-icon-tbegin"></i>&nbsp;
-                        <span class="cta-wording">Continuer ma TopList</span>
+                        <span class="cta-wording">Lancer ma TopList <br> pour tenter ma chance</span>
                       </a>
-                      <div class="mt-2 text-center box-recommencer recommencer-presentation-top ">
-                        <a href="#" class="btn-wording confirm_delete w-100" data-urltop="" data-toplistid="" data-phrase1="Es-tu sûr de vouloir recommencer ?" data-phrase2="Tous les votes de cette TopList seront remis à 0">
-                          <span class="va va-recommencer va-lg"></span> Recommencer
-                        </a>
-                      </div>
+                    </div>
+                  <?php else: ?>
+                    <div class="cta-begin cta-complet">
+                      <a href="#" id="begin_topcomplet" data-type_top="complet" class="laucher_t btn-wording-rose btn-wording bubbly-button animate__jackInTheBox animate__animated animate__delay-1s">
+                        <i class="fab fa-twitch twitch-icon-tbegin"></i>&nbsp;
+                        <span class="cta-wording">Lancer ma TopList</span>
+                      </a>
+                    </div>
+                  <?php endif; ?>
+                  <div class="cta-begin cta-finish">
+                    <a href="#" id="begin_termine" class="laucher_finish_t btn-wording-rose btn-wording bubbly-button animate__jackInTheBox animate__animated">
+                      <i class="fab fa-twitch twitch-icon-tbegin"></i>&nbsp;
+                      <span class="cta-wording">Continuer ma TopList</span>
+                    </a>
+                    <div class="mt-2 text-center box-recommencer recommencer-presentation-top ">
+                      <a href="#" class="btn-wording confirm_delete w-100" data-urltop="" data-toplistid="" data-phrase1="Es-tu sûr de vouloir recommencer ?" data-phrase2="Tous les votes de cette TopList seront remis à 0">
+                        <span class="va va-recommencer va-lg"></span> Recommencer
+                      </a>
                     </div>
                   </div>
-                <?php elseif($etat_top == "validation"): ?>
-                  <div class="badge bg-label-warning py-3 w-100 mb-2">
-                    La TopList est en cours de validation
-                  </div>
-                  <small class="text-muted">
-                    Quelqu'un de l'ékipe VAINKEURZ va l'examiner et te faire un retour
-                  </small>
-                <?php elseif($etat_top == "creation"): ?>
-                  <div class="badge bg-label-info py-3 w-100 mb-2">
-                    La TopList est toujours en création
-                  </div>
-                  <small class="text-muted">
-                    Depuis le listing de tes TopList, tu peux demander sa validation pour qu'il soit publié !
-                  </small>
-                <?php elseif($etat_top == "refuse"): ?>
-                  <div class="badge bg-label-danger py-3 w-100 mb-2">
-                    La TopList a été refusée
-                  </div>
-                  <small class="text-muted">
-                    Tu as du recevoir un message pour t'informer de la raison du refus. Tu peux aussi nous demander directement sur notre Discord !
-                  </small>
-                <?php elseif($etat_top == "archive"): ?>
-                   <div class="badge bg-label-dark py-3 w-100 mb-2">
-                    La TopList a été archivée
-                  </div>
-                <?php endif; ?>
+                </div>
               </div>
             </div>
           </div>
@@ -433,12 +274,8 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
         <div class="col-md-12">
           <div class="container">
             <div class="tournament-heading-top">
-              <?php if($type_top != "sponso"): ?>
-                <div class="t-titre-tournoi top-title-question"></div>
-              <?php else: ?>
-                <div class="logo-sponso-marqueblanche"></div>
-                <div class="t-titre-tournoi top-title-question"></div>
-              <?php endif; ?>
+              <div class="logo-sponso-marqueblanche"></div>
+              <div class="t-titre-tournoi top-title-question"></div>
             </div>
             <div class="row">
               <div class="col">
@@ -491,342 +328,28 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
                     </div>
 
                     <?php if (!isMobile()) : ?>
-                      <div class="vote-byvoice-container d-none">
-                        
-                        <div id="meter">
-                          <div id="level"></div>
-                        </div>
-                        <p><span id="volume">0</span></p>
-                        <p><span id="maxVolume">0</span></p>
-                        <div class="buttons">
-                          <button class="" onclick="start('contender_1')">#1</button>
-                          <button class="btn btn-label-danger" onclick="stop()">Stop</button>
-                          <button class="btn btn-label-primary" onclick="reset()">Init</button>
-                          <button class="" onclick="start('contender_2')">#2</button>
-                        </div>
-
-                        <div id="results"></div>
-
-                        <script>
-                          let audioContext;
-                          let analyser;
-                          let microphone;
-                          let javascriptNode;
-                          let maxVolume = 0;
-                          let currentContender = null;
-                          let contender1Volume = 0;
-                          let contender2Volume = 0;
-
-                          function start(contender) {
-                            currentContender = contender;
-                            navigator.mediaDevices.getUserMedia({ audio: true })
-                              .then(function(stream) {
-                                audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                                analyser = audioContext.createAnalyser();
-                                microphone = audioContext.createMediaStreamSource(stream);
-                                javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);
-
-                                analyser.smoothingTimeConstant = 0.8;
-                                analyser.fftSize = 1024;
-
-                                microphone.connect(analyser);
-                                analyser.connect(javascriptNode);
-                                javascriptNode.connect(audioContext.destination);
-
-                                javascriptNode.onaudioprocess = function() {
-                                  let array = new Uint8Array(analyser.frequencyBinCount);
-                                  analyser.getByteTimeDomainData(array);
-
-                                  let sum = 0;
-                                  for (let i = 0; i < array.length; i++) {
-                                    let value = (array[i] / 128) - 1;
-                                    sum += value * value;
-                                  }
-                                  let rms = Math.sqrt(sum / array.length);
-
-                                  // Normalize RMS to a 0-100 scale
-                                  let volume = Math.min(Math.max(rms * 100, 0), 100);
-
-                                  document.getElementById('volume').innerText = volume.toFixed(2);
-
-                                  // Adjust the height of the level bar
-                                  document.getElementById('level').style.height = volume + '%';
-
-                                  // Change bar color based on volume
-                                  if (volume > 70) {
-                                    document.getElementById('level').style.backgroundColor = 'red';
-                                  } else if (volume > 40) {
-                                    document.getElementById('level').style.backgroundColor = 'yellow';
-                                  } else {
-                                    document.getElementById('level').style.backgroundColor = '#76ff03';
-                                  }
-
-                                  // Check if the current volume is the new maximum
-                                  if (volume > maxVolume) {
-                                    maxVolume = volume;
-                                    document.getElementById('maxVolume').innerText = maxVolume.toFixed(2);
-                                  }
-                                }
-                              })
-                              .catch(function(err) {
-                                console.error(err);
-                                alert('Erreur d\'accès au microphone : ' + err.message);
-                              });
-                          }
-
-                          function stop() {
-                            if (microphone) {
-                              microphone.disconnect();
-                            }
-                            if (analyser) {
-                              analyser.disconnect();
-                            }
-                            if (javascriptNode) {
-                              javascriptNode.disconnect();
-                            }
-                            if (audioContext) {
-                              audioContext.close();
-                            }
-                          }
-
-                          function reset() {
-                            stop();
-                            document.getElementById('volume').innerText = '0';
-                            document.getElementById('level').style.height = '0%';
-                            document.getElementById('level').style.backgroundColor = '#76ff03';
-                            maxVolume = 0;
-                            contender1Volume = 0;
-                            contender2Volume = 0;
-                            document.getElementById('maxVolume').innerText = '0';
-                            document.querySelector('.voicevote_contender_1').innerText = '🎤';
-                            document.querySelector('.voicevote_contender_2').innerText = '🎤';
-                            document.querySelector('.link-contender_1').style.transform = "scale(1)";
-                            document.querySelector('.link-contender_2').style.transform = "scale(1)";
-                          }
-
-                          if(document.querySelector('.link-contender')) {
-                            document.querySelectorAll(".link-contender").forEach(el => {
-                              el.addEventListener('click', function() {
-                                reset();
-                              });
-                            })
-                          }
-
-                          function newSession(contender) {
-                            stop();
-                            if (maxVolume > 0) {
-                              if (contender === 'contender_1') {
-                                contender1Volume = maxVolume;
-                                document.querySelector('.voicevote_contender_1').innerText = `Volume Max : ${maxVolume.toFixed(2)} dB`;
-                              } else if (contender === 'contender_2') {
-                                contender2Volume = maxVolume;
-                                document.querySelector('.voicevote_contender_2').innerText = `Volume Max : ${maxVolume.toFixed(2)} dB`;
-                              }
-
-                              if (contender1Volume > contender2Volume) {
-                                document.querySelector('.link-contender_1').style.transform = "scale(1.05)";
-                                document.querySelector('.link-contender_2').style.transform = "scale(0.95)";
-                                const contender1Element = document.querySelector('.voicevote_contender_1');
-                                if (!contender1Element.innerHTML.includes('<span class="va-pouce-up va va-lg"></span>')) {
-                                  contender1Element.innerHTML += ` <span class="va-pouce-up va va-lg"></span>`;
-                                }
-                                const contender2Element = document.querySelector('.voicevote_contender_2');
-                                contender2Element.innerHTML = contender2Element.innerHTML.replace(` <span class="va-pouce-up va va-lg"></span>`, '');
-                              } else if (contender2Volume > contender1Volume) {
-                                document.querySelector('.link-contender_2').style.transform = "scale(1.05)";
-                                document.querySelector('.link-contender_1').style.transform = "scale(0.95)";
-                                const contender2Element = document.querySelector('.voicevote_contender_2');
-                                if (!contender2Element.innerHTML.includes('<span class="va-pouce-up va va-lg"></span>')) {
-                                  contender2Element.innerHTML += ` <span class="va-pouce-up va va-lg"></span>`;
-                                }
-                                const contender1Element = document.querySelector('.voicevote_contender_1');
-                                contender1Element.innerHTML = contender1Element.innerHTML.replace(` <span class="va-pouce-up va va-lg"></span>`, '');
-                              }
-                            }
-                            maxVolume = 0;
-                            document.getElementById('volume').innerText = '0';
-                            document.getElementById('maxVolume').innerText = '0';
-                            document.getElementById('level').style.height = '0%';
-                            document.getElementById('level').style.backgroundColor = '#76ff03';
-                          }
-                        </script>
-                      </div>
-                    <?php endif; ?>
-
-                    <?php if (!isMobile()) : ?>
-                      <div class="devine-votes-steps d-none">
+                      <div class="devine-votes-steps">
                         <img src="https://vainkeurz.com/wp-content/uploads/2024/03/manga.png" alt="Manga Image">
 
                         <div>
                           <p class="subtitle-devine-vote">Devine 10 fois le choix de ton duo pour gagner</p>
-                          <h4 class="title-devine-vote">Un abonnement à Mangas.io !</h4>
+                          <h4 class="title-devine-vote">Le manga de ton choix !</h4>
 
                           <div class="outer-progress-bar">
                             <div class="inner-progress-bar"></div>
                             <div class="text-progress-bar"><span class="steps-progress-bar">0</span> sur 10</div>
                           </div>
                         </div>
+                        <div class="perdu-btn">
+                          <a href="#" class="btn-slim perdu-btn">
+                            <span class="cta-wording">C'est perdu</span>
+                          </a>
+                        </div>
                       </div>
                     <?php endif; ?>
                   </div>
-
-                  <?php if (!isMobile()) : ?>
-                    <div class="d-none twitch-votes-container row align-items-center justify-content-center">
-                      <div class="row">
-                        <div class="col col-sm-4 w-100 d-flex justify-content-evenly align-items-center">
-                          <div class="taper-container animate__animated animate__slideInDown">
-                            <div class="votes-container">
-                              <p>Tapez 1</p>
-                              <div class="votes-stats taper-zone d-none" id="votes-stats-1">
-                                <p class="votes-percent" id="votes-percent-1">0%</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="votes-stats-container d-none">
-                            <p class="votes-stats-p">
-                              <strong class="votes-number">0</strong> <span class="votes-number-wording">Vote</span> du chat
-                            </p>
-                            <p>
-                              <strong class="votes-number-total">0</strong> votes depuis le début
-                            </p>
-                          </div>
-                          <div class="taper-container animate__animated animate__slideInUp">
-                            <div class="votes-container">
-                              <p>Tapez 2</p>
-                              <div class="votes-stats taper-zone d-none" id="votes-stats-2">
-                                <p class="votes-percent" id="votes-percent-2">0%</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-sm-4 col-12"></div>
-                      </div>
-                    </div>
-                    <div class="twitchGamesWinnerContainer">
-                      <span class="twitchGamesWinnerName confetti"></span>
-                      <div class="buttons">
-                        <a data-phrase1="Es-tu sûr de vouloir recommencer ?" data-phrase2="Tous les votes de cette TopList seront remis à 0" href="#" class="confirm_deletee btn btn-sm btn-outline-dark waves-effect me-2"> Relancer</a>
-                        <a href="#" class="btn btn-sm btn-outline-primary waves-effect" id="winner-continuer"> Continuer</a>
-                      </div>
-                    </div>
-                    <audio id="winner-sound" style="display: none; width: 0 !important;">
-                      <source src="<?php bloginfo('template_directory'); ?>/assets/audios/winner-sound.mp3" type="audio/mpeg" />
-                    </audio>
-                    <div class="twitch-overlay d-none">
-
-                      <div class="twitch-gift-container d-none">
-                        <div class="card card-twitch-gift">
-                          <div class="card-header">
-                            <h3>
-                              Liste des Lots à gagner<br>
-                              pour le meilleur viewer
-                            </h3>
-
-                            <span class="va-gift va va-z-85"></span>
-                          </div>
-                          <div class="card-body">
-                            <table class="table table-twitch-gift">
-                                <thead>
-                                    <th>Lots à gagner</th>
-                                    <th>Participants</th>
-                                </thead>
-
-                                <tbody>
-                                </tbody>
-
-                                <caption>
-                                  <div class="d-flex">
-                                    <span class="va-gem va va-z-40"></span>
-                                    <p>
-                                      Les KEURZ seront crédités sur le compte VAINKEURZ du gagnant et donne accès à des lots dont des cartes et goodies.
-                                    </p>
-                                  </div>
-                                </caption>
-                            </table>   
-                          </div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <h4>Lancement du jeu dans</h4>
-                        <div id="countdown">
-                          <div class="counter-for-twitch">
-                            <div class="nums">
-                              <?php
-                              $environment = env();
-                              $initial_in  = ($environment == "local") ? 12 : 59;
-                              $initial_i   = ($environment == "local") ? 11 : 58;
-                              ?>
-                              <span class="in"><?= $initial_in; ?></span>
-                              <?php for ($i = $initial_i; $i >= 0; $i--) : ?>
-                                <span><?= $i; ?></span>
-                              <?php endfor; ?>
-                            </div>
-                            <h4>Taper "TopList" dans le chat <br> pour participer!</h4>
-                          </div>
-                          <div class="final flex-column-reverse">
-                            <button type="button" id="launchGameBtn" class="btn btn-lg waves-effect btn-outline-danger" spellcheck="true">
-                              Lancer le jeu
-                            </button>
-
-                            <button type="button" id="reloadGameBtn" class="btn btn-lg waves-effect btn-outline-danger d-none" spellcheck="true">
-                              Recharger la TopList
-                            </button>
-                          </div>
-                        </div>
-                        <span class="mode-alert"><i class="fas fa-info-circle"></i> Il faut au moins deux participants</span>
-                        <div id="participants-overlay" class="mt-2 text-white d-none" data-content="Participants :"></div>
-                      </div>
-
-                    </div>
-                  <?php endif; ?>
                 </div>
               </div>
-
-              <?php if (!isMobile()) : ?>
-                <div id="prediction-player" class="col-md-3 col-12 d-none">
-                  <div class="card mb-2" id="participants">
-                    <div class="card-header flex-column align-items-start">
-                      <h4 class="card-title">
-                        <i class="fab fa-twitch"></i> <strong class="prediction-participants-votey-nbr">0</strong> de <strong class="prediction-participants">0</strong> participants ont voté
-                      </h4>
-                      <h4 class="card-title elimines d-none"></h4>
-                    </div>
-                    <div class="card-body">
-                    </div>
-                  </div>
-                </div>
-                <div id="ranking-player" class="col-md-3 col-12 d-none">
-                  <h4 class="card-title">
-                    <i class="fab fa-twitch"></i> <strong class="points-participants-votey-nbr">0</strong> de <strong class="points-participants">0</strong> participants ont voté
-                  </h4>
-                  <table class="table table-points">
-                    <thead>
-                      <tr>
-                        <th class="text-center">
-                          <span class="text-muted">
-                            Position
-                          </span>
-                        </th>
-
-                        <th>
-                          <span class="text-muted">
-                            Vainkeur
-                          </span>
-                        </th>
-
-                        <th class="text-center">
-                          <span class="text-muted">
-                            Points
-                          </span>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
-              <?php endif; ?>
             </div>
           </div>
         </div>
@@ -898,6 +421,22 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
 
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {
+
+    document.querySelector('.perdu-btn').addEventListener('click', (event) => {
+      event.preventDefault();
+      fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          state: 'current',
+          id_lamp: 'bf043979fea49251c1wp25',
+          color: '{"h":0,"s":1000,"v":1000}',
+        }),
+      });
+    });
+
     if(Boolean(isMobile)) {
       localStorage.removeItem('resumeTwitchGame');
       localStorage.removeItem('twitchGameMode');
@@ -972,30 +511,10 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
               let laucher_btn = document.querySelectorAll('.laucher_t');
               laucher_btn.forEach(function(element) { element.dataset.uuid_creator = creator_infos.data_user.uuid_user; });
 
-              const shareTw = document.querySelector('.share-tw');
-              if (shareTw) {
-                  shareTw.href = `https://twitter.com/intent/tweet?url=${top_url}&text=Go faire la TopList ${top_title}&hashtags=VAINKEURZ`;
-              }
-
-              const shareWa = document.querySelector('.share-wa');
-              if (shareWa) {
-                  shareWa.href = `whatsapp://send?text=${top_url}`;
-              }
-
-              const shareFb = document.querySelector('.share-fb');
-              if (shareFb) {
-                  shareFb.href = `https://www.facebook.com/sharer/sharer.php?u=${top_url}`;
-              }
-
-              const copyTopUrl = document.querySelector('.copy-topurl');
-              if (copyTopUrl) {
-                  copyTopUrl.dataset.link = top_url;
-              }
+              
 
               if (is_beginned == true) {
-                if(document.querySelector('.t-sponso-email-beginning')) {
-                  document.querySelector('.t-sponso-email-beginning').classList.add('d-none');
-                }
+                
                 if(document.querySelector('.cta-finish')) {
                   document.querySelector('.cta-finish').dataset.toplistid = id_topList;
                   document.querySelector('.cta-finish').classList.add('d-block');
@@ -1038,32 +557,6 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
                 if(document.querySelector('.twitch-possible'))
                   document.querySelector('.twitch-possible').style.display = "none";
               }
-
-              pseudoSlug = creator_infos.infos_user.pseudo_slug_user;
-              const creator_link = SITE_BASE_URL + "v/" + pseudoSlug;
-              let creator_block = document.querySelectorAll('.vainkeur-card');
-              let creator_html = `
-                <a href="${creator_link}" class="btn btn-flat-primary waves-effect">
-                  <span class="avatar">
-                    <span class="avatar-picture" style="background-image: url(${creator_infos.infos_user.avatar_user});"></span>
-                  </span>
-                  <span class="championname">
-                    <small class="text-muted">
-                      Créée par
-                    </small>
-                    <div class="creatornametopmin">
-                      <h4>
-                        ${creator_infos.infos_user.pseudo_user}
-                      </h4>
-                      <span class="medailles">
-                        ${creator_infos.data_user.level_vkrz ? `<span class="va va-z-20 va-level-icon va-${creator_infos.data_user.level_vkrz.level_name}"></span>` : ''}
-                        <span class="va va-creator va-z-15" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Créateur de Tops"></span>
-                      </span>
-                    </div>
-                  </span>
-                </a>
-              `;
-              creator_block.forEach(function(element) { element.innerHTML = creator_html; });
               document.querySelector('#waiter-top-step1').classList.add('d-none');
             }
           });
@@ -1154,26 +647,6 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
         }
       });
     }
-
-    var modeButtons = document.querySelectorAll(".modeGameTwitchBtn");
-    modeButtons.forEach(function (button) {
-      button.addEventListener("click", function () {
-        if (button.classList.contains("active-twitch-mode")) {
-          button.classList.remove("active-twitch-mode");
-        } else {
-          modeButtons.forEach(function (btn) {
-            btn.classList.remove("active-twitch-mode");
-          });
-          button.classList.add("active-twitch-mode");
-        }
-        var twitchIcons = document.querySelectorAll(".twitch-icon-tbegin");
-        var isActiveModePresent =
-          document.querySelector(".active-twitch-mode") !== null;
-        twitchIcons.forEach(function (twitchIcon) {
-          twitchIcon.style.display = isActiveModePresent ? "block" : "none";
-        });
-      });
-    });
 
     var choicetopcomplet = document.querySelector(".choicetopcomplet-bloc");
     if(choicetopcomplet){

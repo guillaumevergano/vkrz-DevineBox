@@ -34,38 +34,6 @@ function cpt_init() {
   );
   register_post_type('tournoi', $args);
   
-  // Lots
-  $labels = array(
-    'name' => 'Lot',
-    'singular_name' => 'Lot',
-    'add_new' => 'Ajouter un lot',
-    'add_new_item' => 'Ajouter un lot',
-    'edit_item' => 'Editer un lot',
-    'new_item' => 'Nouveau lot',
-    'all_items' => 'Tous les lots',
-    'view_item' => 'Voir lot',
-    'search_items' => 'Chercher un lot',
-    'not_found' =>  'Aucun lot trouvé',
-    'not_found_in_trash' => 'Aucun lot trouvé dans la corbeille',
-    'menu_name' => 'Lots'
-  );
-  $args = array(
-    'labels' => $labels,
-    'public' => false,
-    'publicly_queryable' => false,
-    'show_ui' => true,
-    'show_in_menu' => true,
-    'query_var' => true,
-    'rewrite' => array('slug' => 'lot'),
-    'map_meta_cap' => true,
-    'has_archive' => true,
-    'hierarchical' => false,
-    'menu_position' => null,
-    'menu_icon' => 'dashicons-drumstick',
-    'show_in_rest' => true,
-    'supports' => array('title', 'thumbnail', 'editor')
-  );
-  register_post_type('lot', $args);
 
   // TopList mondiale
   $labels = array(
@@ -100,38 +68,6 @@ function cpt_init() {
   );
   register_post_type('toplist-mondiale', $args);
   
-  // Annonce
-  $labels = array(
-    'name' => 'Annonce',
-    'singular_name' => 'Annonce',
-    'add_new' => 'Ajouter une annonce',
-    'add_new_item' => 'Ajouter une annonce',
-    'edit_item' => 'Editer une annonce',
-    'new_item' => 'Nouvelle annonce',
-    'all_items' => 'Toutes les annonces',
-    'view_item' => 'Voir l\'annonce',
-    'search_items' => 'Chercher une annonce',
-    'not_found' =>  'Aucune annonce trouvée',
-    'not_found_in_trash' => 'Aucune annonce trouvée dans la corbeille',
-    'menu_name' => 'Annonces'
-  );
-  $args = array(
-    'labels' => $labels,
-    'public' => true,
-    'publicly_queryable' => true,
-    'show_ui' => true,
-    'show_in_menu' => true,
-    'query_var' => true,
-    'rewrite' => array('slug' => 'annonce'),
-    'map_meta_cap' => true,
-    'has_archive' => true,
-    'hierarchical' => false,
-    'menu_position' => null,
-    'menu_icon' => 'dashicons-megaphone',
-    'show_in_rest' => true,
-    'supports' => array('title', 'editor')
-  );
-  register_post_type('annonce', $args);
   
   // Rubrique
   $labels = array(
@@ -198,72 +134,6 @@ function cpt_init() {
     'supports' => array('title', 'thumbnail')
   );
   register_post_type('contender', $args);
-
-  // Shop
-  $labels = array(
-    'name' => 'Produit',
-    'singular_name' => 'Produit',
-    'add_new' => 'Ajouter un produit',
-    'add_new_item' => 'Ajouter un produit',
-    'edit_item' => 'Editer un produit',
-    'new_item' => 'Nouveau produit',
-    'all_items' => 'Tous les produits',
-    'view_item' => 'Voir produit',
-    'search_items' => 'Chercher un produit',
-    'not_found' =>  'Aucun produit trouvé',
-    'not_found_in_trash' => 'Aucun produit trouvé dans la corbeille',
-    'menu_name' => 'produits'
-  );
-  $args = array(
-    'labels' => $labels,
-    'public' => true,
-    'publicly_queryable' => false,
-    'show_ui' => true,
-    'show_in_menu' => true,
-    'query_var' => true,
-    'rewrite' => array('slug' => 'p'),
-    'map_meta_cap' => true,
-    'has_archive' => true,
-    'hierarchical' => false,
-    'menu_position' => null,
-    'menu_icon' => 'dashicons-cart',
-    'show_in_rest' => true,
-    'supports' => array('title', 'thumbnail')
-  );
-  register_post_type('produit', $args);
-  
-  // Concours
-  $labels = array(
-    'name' => 'Concours',
-    'singular_name' => 'Concours',
-    'add_new' => 'Ajouter un concours',
-    'add_new_item' => 'Ajouter un concours',
-    'edit_item' => 'Editer un concours',
-    'new_item' => 'Nouveau concours',
-    'all_items' => 'Tous les concours',
-    'view_item' => 'Voir concours',
-    'search_items' => 'Chercher un concours',
-    'not_found' =>  'Aucun concours trouvé',
-    'not_found_in_trash' => 'Aucun concours trouvé dans la corbeille',
-    'menu_name' => 'Concours'
-  );
-  $args = array(
-    'labels' => $labels,
-    'public' => false,
-    'publicly_queryable' => false,
-    'show_ui' => true,
-    'show_in_menu' => true,
-    'query_var' => true,
-    'rewrite' => array('slug' => 'concours'),
-    'map_meta_cap' => true,
-    'has_archive' => true,
-    'hierarchical' => false,
-    'menu_position' => null,
-    'menu_icon' => 'dashicons-awards',
-    'show_in_rest' => false,
-    'supports' => array('title')
-  );
-  register_post_type('concours', $args);
   
 }
 add_action( 'init', 'cpt_init' );
