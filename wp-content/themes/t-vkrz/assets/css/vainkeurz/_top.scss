@@ -584,6 +584,55 @@ transition: all 0.2s ease-in;
     }
 }
 
+.waiter-perdu{
+    background: linear-gradient(150deg, #0c0a27, #471867, #0c0a27, #230b36, #0c0a27);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    right: 0;
+    left: 0;
+    animation: gradient 15s ease infinite;
+    display: none;
+    
+    .illu-perdu{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-size: 400px;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      background-image: url(../../images/vkrz/perdu-logo.png);
+    }
+    .rejouer{
+      padding: 10px;
+      a{
+        display: inline-block;
+      }
+    }
+    .btn-perdu-waiter {
+      text-align: center;
+      background: rgba(97, 84, 167, 0.1);
+      border-radius: 5px;
+      padding: 6px 10px;
+      transition: all 0.2s ease-in;
+      margin: 5px 5px 5px;
+      border: none;
+      display: inline-block;
+      color: #fff;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      &:hover{
+        cursor: pointer !important;
+        background: $c2;
+      }
+    }
+}
+
 #waiter-top-step1{
   display: block;
 }
@@ -1732,13 +1781,13 @@ body {
 }
 
 .devine-votes-steps {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: "Poppins", sans-serif;
   margin-top: 2rem;
   transform: translateX(-5px);
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
       
   img:first-of-type {
     position: relative;
@@ -1806,6 +1855,17 @@ body {
       }
     }
   }
+}
+
+.perdu-btn{
+  background: #ffffff0a;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
 }
 
 .vote-byvoice-container {

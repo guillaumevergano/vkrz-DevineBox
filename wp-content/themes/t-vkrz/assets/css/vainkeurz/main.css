@@ -4403,6 +4403,54 @@ firebase-auth .firebaseui-idp-list .firebaseui-idp-icon-wrapper {
   }
 }
 
+.waiter-perdu {
+  background: linear-gradient(150deg, #0c0a27, #471867, #0c0a27, #230b36, #0c0a27);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 9999;
+  right: 0;
+  left: 0;
+  animation: gradient 15s ease infinite;
+  display: none;
+}
+.waiter-perdu .illu-perdu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-size: 400px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-image: url(../../images/vkrz/perdu-logo.png);
+}
+.waiter-perdu .rejouer {
+  padding: 10px;
+}
+.waiter-perdu .rejouer a {
+  display: inline-block;
+}
+.waiter-perdu .btn-perdu-waiter {
+  text-align: center;
+  background: rgba(97, 84, 167, 0.1);
+  border-radius: 5px;
+  padding: 6px 10px;
+  transition: all 0.2s ease-in;
+  margin: 5px 5px 5px;
+  border: none;
+  display: inline-block;
+  color: #fff;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.waiter-perdu .btn-perdu-waiter:hover {
+  cursor: pointer !important;
+  background: #7367f0;
+}
+
 #waiter-top-step1 {
   display: block;
 }
@@ -5508,12 +5556,13 @@ body {
 }
 
 .devine-votes-steps {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: "Poppins", sans-serif;
   margin-top: 2rem;
   transform: translateX(-5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .devine-votes-steps img:first-of-type {
   position: relative;
@@ -5572,6 +5621,17 @@ body {
 .devine-votes-steps .outer-progress-bar .text-progress-bar.text-progress-bar-finish {
   right: 35%;
   color: #ffffff;
+}
+
+.perdu-btn {
+  background: rgba(255, 255, 255, 0.0392156863);
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
 }
 
 .vote-byvoice-container {

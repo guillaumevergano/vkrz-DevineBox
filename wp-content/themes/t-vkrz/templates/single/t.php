@@ -222,7 +222,7 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
                               $cgu_t_sponso = "https://vainkeurz.com/ml/";
                             }
                             ?>
-                            <label class="form-check-label" for="acceptTopSponsoTerms">J’accepte les <a href="<?= $cgu_t_sponso; ?>" target="_blank">CGU</a> </label>
+                            <label class="form-check-label" for="acceptTopSponsoTerms">J'accepte les <a href="<?= $cgu_t_sponso; ?>" target="_blank">CGU</a> </label>
                         </div>
 
                         <p class="t-sponso-email-alert d-none mt-3">
@@ -329,18 +329,20 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
 
                     <?php if (!isMobile()) : ?>
                       <div class="devine-votes-steps">
-                        <img src="https://vainkeurz.com/wp-content/uploads/2024/03/manga.png" alt="Manga Image">
+                        <div class="d-flex">
+                          <img src="https://vainkeurz.com/wp-content/uploads/2024/03/manga.png" alt="Manga Image">
 
-                        <div>
-                          <p class="subtitle-devine-vote">Devine 10 fois le choix de ton duo pour gagner</p>
-                          <h4 class="title-devine-vote">Le manga de ton choix !</h4>
+                          <div>
+                            <p class="subtitle-devine-vote">Devine 10 fois le choix de ton duo pour gagner</p>
+                            <h4 class="title-devine-vote">Le manga de ton choix !</h4>
 
-                          <div class="outer-progress-bar">
-                            <div class="inner-progress-bar"></div>
-                            <div class="text-progress-bar"><span class="steps-progress-bar">0</span> sur 10</div>
+                            <div class="outer-progress-bar">
+                              <div class="inner-progress-bar"></div>
+                              <div class="text-progress-bar"><span class="steps-progress-bar">0</span> sur 10</div>
+                            </div>
                           </div>
                         </div>
-                        <div class="perdu-btn">
+                        <div class="perdu-btn-block">
                           <a href="#" class="btn-slim perdu-btn">
                             <span class="cta-wording">C'est perdu</span>
                           </a>
@@ -401,6 +403,7 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
 
 <!-- Offcanvas -->
 <?php get_template_part('partials/loader/recommencer'); ?>
+<?php get_template_part('partials/loader/perdu'); ?>
 <?php get_template_part('partials/loader/loader-top'); ?>
 <?php get_template_part('partials/loader/loader-top-step1'); ?>
 <?php get_template_part('partials/loader/loader-toplist-initial'); ?>
@@ -424,15 +427,33 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
 
     document.querySelector('.perdu-btn').addEventListener('click', (event) => {
       event.preventDefault();
+      
+      const waiterPerdu = document.querySelector('.waiter-perdu');
+      waiterPerdu.style.display = 'block';
+      
       fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          state: 'current',
-          id_lamp: 'bf043979fea49251c1wp25',
-          color: '{"h":0,"s":1000,"v":1000}',
+          state: 'fail'
+        }),
+      });
+    });
+    document.querySelector('.continuer-btn').addEventListener('click', (event) => {
+      event.preventDefault();
+      
+      const waiterPerdu = document.querySelector('.waiter-perdu');
+      waiterPerdu.style.display = 'none';
+      
+      fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          state: 'initial'
         }),
       });
     });

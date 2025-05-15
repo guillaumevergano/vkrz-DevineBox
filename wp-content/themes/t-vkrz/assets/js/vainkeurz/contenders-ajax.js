@@ -278,7 +278,6 @@ function get_steps(contenders) {
 function do_vote(idWinner, idLooser, contenders) {
 
   // ✅ Envoi POST vers le webhook Make avec state = "initial"
-
   const array_lamp = [
     {
       num_lamp: 1,
@@ -322,26 +321,22 @@ function do_vote(idWinner, idLooser, contenders) {
     }
   ]
 
-  const id_lamp = array_lamp[timelineVotes].id_lamp;
-
-  if(timelineVotes > 10) {
-    const id_lamp = "noset";
-  }
-  else{
-    const id_lamp = array_lamp[timelineVotes].id_lamp;
-  }
+  let id_lamp;
+	id_lamp = timelineVotes >= 10 ? "noset" : array_lamp[timelineVotes].id_lamp;
   
-  fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({
-			state: 'current',
-			id_lamp: id_lamp,
-			color: '{"h":120,"s":1000,"v":1000}',
-		}),
-	});
+  if(timelineVotes <= 10) {
+    fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        state: 'current',
+        id_lamp: id_lamp,
+        color: '{"h":120,"s":1000,"v":1000}',
+      }),
+    });
+  }
 
 	let listContenders = contenders,
 		alreadySupTo = [],
