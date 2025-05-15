@@ -277,9 +277,6 @@ function get_steps(contenders) {
 
 function do_vote(idWinner, idLooser, contenders) {
 
-  console.log("do_vote");
-  console.log('timelineVotes', timelineVotes);
-
   // ✅ Envoi POST vers le webhook Make avec state = "initial"
 
   const array_lamp = [
@@ -326,9 +323,13 @@ function do_vote(idWinner, idLooser, contenders) {
   ]
 
   const id_lamp = array_lamp[timelineVotes].id_lamp;
-  
-  console.log("id_lamp", id_lamp);
-  console.log("fdfd", array_lamp[timelineVotes]);
+
+  if(timelineVotes > 10) {
+    const id_lamp = "noset";
+  }
+  else{
+    const id_lamp = array_lamp[timelineVotes].id_lamp;
+  }
   
   fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
 		method: "POST",
