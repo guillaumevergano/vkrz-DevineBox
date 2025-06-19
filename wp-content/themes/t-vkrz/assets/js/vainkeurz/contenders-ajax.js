@@ -111,24 +111,64 @@ laucher_finish_Btns.forEach((btn) => {
 		}, 500);
 	});
 });
+async function get_token_tuya() {
+	const client_id = "cruj8q9rrkpkrwghdpgs";
+	const secret = "2165b05fe5594054a3dbb4d27cab254c";
+	const timestamp = new Date().getTime().toString();
+	const sign_method = "HMAC-SHA256";
+	const access_token = ""; // vide pour la demande initiale
+	const url_path = "/v1.0/token?grant_type=1";
+	const url_token = "https://openapi.tuyaeu.com/v1.0/token?grant_type=1";
+	const http_method = "GET";
+
+	// StringToSign
+	const stringToSign = http_method + "\n" + "\n" + "\n" + "\n" + url_path;
+
+	const signStr = client_id + access_token + timestamp + stringToSign;
+
+	const sign = CryptoJS.HmacSHA256(signStr, secret).toString(CryptoJS.enc.Hex);
+
+	const headers = {
+		client_id: client_id,
+		sign: sign,
+		t: timestamp,
+		sign_method: sign_method,
+	};
+
+	try {
+		const res = await fetch(url_token, {
+			method: "GET",
+			headers: headers,
+		});
+
+		if (!res.ok) {
+			throw new Error(`HTTP ${res.status}`);
+		}
+
+		const data = await res.json();
+		console.log("✅ Token response:", data);
+		return data;
+	} catch (err) {
+		console.error("❌ Failed to fetch token:", err.message);
+	}
+}
+
+get_token_tuya();
+
+function calcSignToken(clientId, timestamp, nonce, signStr, secret) {
+	var str = clientId + timestamp + nonce + signStr;
+	var hash = CryptoJS.HmacSHA256(str, secret);
+	var hashInBase64 = hash.toString();
+	var signUp = hashInBase64.toUpperCase();
+	return signUp;
+}
 
 // LAUNCH BEGIN TOPLIST
 const launchTopListBtns = document.querySelectorAll(".laucher_t");
 launchTopListBtns.forEach((btn) => {
     btn.addEventListener("click", async (e) => {
-
-      console.log("make inital");
-
-      // ✅ Envoi POST vers le webhook Make avec state = "initial"
-      await fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          state: "initial",
-        }),
-		});
+      
+    
 
 		document.querySelector("#global-page").classList.add("focus-top");
 		waiterTop.style.display = "block";
