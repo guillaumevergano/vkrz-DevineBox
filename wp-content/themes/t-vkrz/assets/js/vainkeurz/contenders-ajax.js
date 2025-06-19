@@ -113,53 +113,26 @@ laucher_finish_Btns.forEach((btn) => {
 });
 
 
-const clientId = "u3tvqmf9xdrhvnanmwt8";
-const secret = "2165b05fe5594054a3dbb4d27cab254c";
-const baseUrl = "https://openapi.tuyaeu.com/";
-const path = "/v1.0/token";
-const query = "grant_type=1";
-
-// Étape 1 : Timestamp et nonce
-const timestamp = Date.now().toString();
-const nonce = Math.random().toString(36).substring(2, 15);
-
-// Étape 2 : Signature de la requête
-const method = "GET";
-const body = ""; // GET, donc pas de corps
-const contentHash = CryptoJS.SHA256(body).toString(); // SHA256 du corps
-
-// Signature-Headers est vide ici, donc headerStr sera vide
-const signUrl = method + "\n" + contentHash + "\n\n" + path + "?" + query;
-const stringToSign = clientId + timestamp + nonce + signUrl;
-const sign = CryptoJS.HmacSHA256(stringToSign, secret).toString().toUpperCase();
-
-// Étape 3 : Appel de l'API avec fetch
-fetch("https://openapi.tuyaeu.com/v1.0/token?grant_type=1", {
-	method: "GET",
-	headers: {
-		client_id: clientId,
-		sign: sign,
-		t: timestamp,
-		sign_method: "HMAC-SHA256",
-		nonce: nonce,
-	},
+fetch(SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/make_initial.php", {
+	method: "POST",
 })
-	.then((res) => res.json())
-	.then((data) => {
-		console.log("✅ Token reçu :", data);
-	})
-	.catch((err) => {
-		console.error("❌ Erreur lors de la requête :", err);
-	});
-
+.then((res) => res.json())
+.then((data) => {
+  if (data.success) {
+    console.log("✅ Réponse Tuya :", data);
+  } else {
+    console.error("❌ Erreur Tuya :", data.msg || data.code);
+  }
+})
+.catch((err) => {
+  console.error("❌ Erreur réseau :", err);
+});
 
 // LAUNCH BEGIN TOPLIST
 const launchTopListBtns = document.querySelectorAll(".laucher_t");
 launchTopListBtns.forEach((btn) => {
     btn.addEventListener("click", async (e) => {
       
-    
-
 		document.querySelector("#global-page").classList.add("focus-top");
 		waiterTop.style.display = "block";
 		waiterTop.classList.add("fade-in");
@@ -307,66 +280,41 @@ function get_steps(contenders) {
 
 function do_vote(idWinner, idLooser, contenders) {
 
-  // ✅ Envoi POST vers le webhook Make avec state = "initial"
   const array_lamp = [
-    {
-      num_lamp: 1,
-      id_lamp: "bfe3274eb32ec3b8415k1g",
-    },
-    {
-      num_lamp: 2,
-      id_lamp: "bf66d769548c66895aa7wn",
-    },
-    {
-      num_lamp: 3,
-      id_lamp: "bf635bd67ca0552054gprb",
-    },
-    {
-      num_lamp: 4,
-      id_lamp: "bf9d17dcb317aa8eafc42c",
-    },
-    {
-      num_lamp: 5,
-      id_lamp: "bf8171b908d7da6c8eztuv",
-    },
-    {
-      num_lamp: 6,
-      id_lamp: "bfb22c704aca6596b1zdgy",
-    },
-    {
-      num_lamp: 7,
-      id_lamp: "bf5c94b20ba80b1ce3akgc",
-    },
-    {
-      num_lamp: 8,
-      id_lamp: "bf720df872433721fboegd",
-    },
-    {
-      num_lamp: 9,
-      id_lamp: "bff26538836e8d695aqa30",
-    },
-    {
-      num_lamp: 10,
-      id_lamp: "bf043979fea49251c1wp25",
-    }
-  ]
+		{ num_lamp: 1, id_lamp: "bfe3274eb32ec3b8415k1g" },
+		{ num_lamp: 2, id_lamp: "bf66d769548c66895aa7wn" },
+		{ num_lamp: 3, id_lamp: "bf635bd67ca0552054gprb" },
+		{ num_lamp: 4, id_lamp: "bf9d17dcb317aa8eafc42c" },
+		{ num_lamp: 5, id_lamp: "bf8171b908d7da6c8eztuv" },
+		{ num_lamp: 6, id_lamp: "bfb22c704aca6596b1zdgy" },
+		{ num_lamp: 7, id_lamp: "bf5c94b20ba80b1ce3akgc" },
+		{ num_lamp: 8, id_lamp: "bf720df872433721fboegd" },
+		{ num_lamp: 9, id_lamp: "bff26538836e8d695aqa30" },
+		{ num_lamp: 10, id_lamp: "bf043979fea49251c1wp25" },
+	];
 
-  let id_lamp;
-	id_lamp = timelineVotes >= 10 ? "noset" : array_lamp[timelineVotes].id_lamp;
-  
-  if(timelineVotes <= 10) {
-    fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        state: 'current',
-        id_lamp: id_lamp,
-        color: '{"h":120,"s":1000,"v":1000}',
-      }),
-    });
-  }
+	const id_lamp =
+		timelineVotes >= 10 ? "noset" : array_lamp[timelineVotes].id_lamp;
+
+	if (timelineVotes < 10) {
+    console.log("Lampe numéro", array_lamp[timelineVotes]);
+    console.log("id_lamp", id_lamp);
+		fetch(SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/call_tuya_device.php", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({
+				id_lamp: id_lamp,
+				color: { h: 120, s: 1000, v: 1000 },
+			}),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log("💡 Commande Tuya envoyée pour la lampe:", id_lamp, data);
+			})
+			.catch((err) => {
+				console.error("❌ Erreur API Tuya :", err);
+			});
+	}
 
 	let listContenders = contenders,
 		alreadySupTo = [],

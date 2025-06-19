@@ -431,14 +431,19 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
       const waiterPerdu = document.querySelector('.waiter-perdu');
       waiterPerdu.style.display = 'block';
       
-      fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
+      fetch(SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/make_fail.php", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          state: 'fail'
-        }),
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          console.log("✅ Réponse Tuya :", data);
+        } else {
+          console.error("❌ Erreur Tuya :", data.msg || data.code);
+        }
+      })
+      .catch((err) => {
+        console.error("❌ Erreur réseau :", err);
       });
     });
     document.querySelector('.continuer-btn').addEventListener('click', (event) => {
@@ -447,14 +452,19 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
       const waiterPerdu = document.querySelector('.waiter-perdu');
       waiterPerdu.style.display = 'none';
       
-      fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
+      fetch(SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/make_initial.php", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          state: 'initial'
-        }),
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          console.log("✅ Réponse Tuya :", data);
+        } else {
+          console.error("❌ Erreur Tuya :", data.msg || data.code);
+        }
+      })
+      .catch((err) => {
+        console.error("❌ Erreur réseau :", err);
       });
     });
 
