@@ -111,57 +111,47 @@ laucher_finish_Btns.forEach((btn) => {
 		}, 500);
 	});
 });
-async function get_token_tuya() {
-	const client_id = "cruj8q9rrkpkrwghdpgs";
-	const secret = "2165b05fe5594054a3dbb4d27cab254c";
-	const timestamp = new Date().getTime().toString();
-	const sign_method = "HMAC-SHA256";
-	const access_token = ""; // vide pour la demande initiale
-	const url_path = "/v1.0/token?grant_type=1";
-	const url_token = "https://openapi.tuyaeu.com/v1.0/token?grant_type=1";
-	const http_method = "GET";
 
-	// StringToSign
-	const stringToSign = http_method + "\n" + "\n" + "\n" + "\n" + url_path;
 
-	const signStr = client_id + access_token + timestamp + stringToSign;
+const clientId = "u3tvqmf9xdrhvnanmwt8";
+const secret = "2165b05fe5594054a3dbb4d27cab254c";
+const baseUrl = "https://openapi.tuyaeu.com/";
+const path = "/v1.0/token";
+const query = "grant_type=1";
 
-	const sign = CryptoJS.HmacSHA256(signStr, secret).toString(CryptoJS.enc.Hex);
+// Étape 1 : Timestamp et nonce
+const timestamp = Date.now().toString();
+const nonce = Math.random().toString(36).substring(2, 15);
 
-	const headers = {
-		client_id: client_id,
+// Étape 2 : Signature de la requête
+const method = "GET";
+const body = ""; // GET, donc pas de corps
+const contentHash = CryptoJS.SHA256(body).toString(); // SHA256 du corps
+
+// Signature-Headers est vide ici, donc headerStr sera vide
+const signUrl = method + "\n" + contentHash + "\n\n" + path + "?" + query;
+const stringToSign = clientId + timestamp + nonce + signUrl;
+const sign = CryptoJS.HmacSHA256(stringToSign, secret).toString().toUpperCase();
+
+// Étape 3 : Appel de l'API avec fetch
+fetch("https://openapi.tuyaeu.com/v1.0/token?grant_type=1", {
+	method: "GET",
+	headers: {
+		client_id: clientId,
 		sign: sign,
 		t: timestamp,
-		sign_method: sign_method,
-	};
+		sign_method: "HMAC-SHA256",
+		nonce: nonce,
+	},
+})
+	.then((res) => res.json())
+	.then((data) => {
+		console.log("✅ Token reçu :", data);
+	})
+	.catch((err) => {
+		console.error("❌ Erreur lors de la requête :", err);
+	});
 
-	try {
-		const res = await fetch(url_token, {
-			method: "GET",
-			headers: headers,
-		});
-
-		if (!res.ok) {
-			throw new Error(`HTTP ${res.status}`);
-		}
-
-		const data = await res.json();
-		console.log("✅ Token response:", data);
-		return data;
-	} catch (err) {
-		console.error("❌ Failed to fetch token:", err.message);
-	}
-}
-
-get_token_tuya();
-
-function calcSignToken(clientId, timestamp, nonce, signStr, secret) {
-	var str = clientId + timestamp + nonce + signStr;
-	var hash = CryptoJS.HmacSHA256(str, secret);
-	var hashInBase64 = hash.toString();
-	var signUp = hashInBase64.toUpperCase();
-	return signUp;
-}
 
 // LAUNCH BEGIN TOPLIST
 const launchTopListBtns = document.querySelectorAll(".laucher_t");
