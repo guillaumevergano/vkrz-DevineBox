@@ -23,27 +23,47 @@ function addGuessVote() {
   const titleDevineVote     = document.querySelector(".title-devine-vote");
   const subTitleDevineVote  = document.querySelector(".subtitle-devine-vote");
 
-  if (currentRightGuesses < 10) {
-      currentRightGuesses++;
-      const width = currentRightGuesses * 10; // Each step is 10% of the width
-      innerProgressBar.style.width = `${width}%`;
-      if(stepsProgressBar)
-        stepsProgressBar.textContent = currentRightGuesses;
-  }
+  currentRightGuesses++;
 
-  if (currentRightGuesses === 9) {
-    textProgressBar.innerHTML = `DUEL FINAL <span class="va-face-screaming va va-md"></span>`;
-    textProgressBar.classList.add('text-progress-bar-finish')
-    innerProgressBar.classList.add('inner-progress-bar-finish')
-  }
+  if (currentRightGuesses <= 10) {
+    const width = currentRightGuesses * 10;
+    innerProgressBar.style.width = `${width}%`;
 
-  // Optional: Check if the progress is complete
-  if (currentRightGuesses === 10) {
+    if (stepsProgressBar) {
+      stepsProgressBar.textContent = currentRightGuesses;
+    }
+
+    if (currentRightGuesses === 9) {
+      textProgressBar.innerHTML = `DUEL FINAL <span class="va-face-screaming va va-md"></span>`;
+      textProgressBar.classList.add('text-progress-bar-finish');
+      innerProgressBar.classList.add('inner-progress-bar-finish');
+    }
+
+    if (currentRightGuesses === 10) {
+      outerProgressBar.classList.add('d-none');
+      subTitleDevineVote.classList.add('d-none');
+      titleDevineVote.innerHTML = `&nbsp; &nbsp; C'EST GAGNÉ ! <span class="va-party-popper va va-lg"></span>`;
+      confetti.start();
+      setTimeout(() => confetti.stop(), 20000);
+    }
+  } else {
+    // After 10 votes
     outerProgressBar.classList.add('d-none');
-    subTitleDevineVote.classList.add('d-none');
-    titleDevineVote.innerHTML = `&nbsp; &nbsp; C'EST GAGNÉ ! <span class="va-party-popper va va-lg"></span>`;
-    confetti.start();
-    setTimeout(function () { confetti.stop(); }, 20000);
+    confetti.stop();
+
+    if (currentRightGuesses < 20) {
+      titleDevineVote.innerHTML = `🎉 Tu as gagné avec ton duo !`;
+      subTitleDevineVote.classList.remove('d-none');
+      subTitleDevineVote.textContent = `${currentRightGuesses} bonnes réponses… continue, c’est impressionnant ! ✨`;
+    } else if (currentRightGuesses < 30) {
+      titleDevineVote.innerHTML = `🏆 Quel duo de choc !`;
+      subTitleDevineVote.classList.remove('d-none');
+      subTitleDevineVote.textContent = `${currentRightGuesses} réponses justes… vous êtes imbattables 🙌`;
+    } else {
+      titleDevineVote.innerHTML = `💯 Légendaire !`;
+      subTitleDevineVote.classList.remove('d-none');
+      subTitleDevineVote.textContent = `${currentRightGuesses} réponses… qui peut arrêter ton duo ? 🔥`;
+    }
   }
 }
 const userInfos = JSON.parse(localStorage.getItem("user_info"));
