@@ -330,11 +330,11 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
                     <?php if (!isMobile()) : ?>
                       <div class="devine-votes-steps">
                         <div class="d-flex">
-                          <img src="https://vainkeurz.com/wp-content/uploads/2024/03/manga.png" alt="Manga Image">
+                          <img src="<?php bloginfo('template_directory'); ?>/assets/images/emojis/wrapped-gift_1f381.png" alt="Manga Image">
 
                           <div>
                             <p class="subtitle-devine-vote">Devine 10 fois le choix de ton duo pour gagner</p>
-                            <h4 class="title-devine-vote">Le manga de ton choix !</h4>
+                            <h4 class="title-devine-vote">Une récompense</h4>
 
                             <div class="outer-progress-bar">
                               <div class="inner-progress-bar"></div>
