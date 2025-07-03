@@ -3,6 +3,7 @@ include_once "get_token.php";
 
 $token = getTuyaToken($client_id, $secret);
 $results = [];
+$is_user_connected = is_user_logged_in();
 
 if ($token) {
     foreach ($array_lamp as $lamp) {

@@ -112,7 +112,6 @@ $participation_inscription_fin = get_field('participation_inscription_fin_t_spon
   let contendersLoaded = false;
   let is_toplist_type_youtube_videos_var;
 </script>
-
 <div class="tournoi-content ba-cover-r <?= $type_top_class ?? ""; ?> bloc-top-<?php echo $type_top; ?>">
 <?php
 // Vérifiez la condition pour appliquer le style
@@ -421,6 +420,27 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
     </div>
   </div>
 </div>
+
+<?php if(is_user_logged_in()): ?>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      fetch("https://devine.vainkeurz.com/wp-content/themes/t-vkrz/function/tuya/make_initial.php", {
+        method: "POST",
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          console.log("✅ Réponse Tuya :", data);
+        } else {
+          console.error("❌ Erreur Tuya :", data.msg || data.code);
+        }
+      })
+      .catch((err) => {
+        console.error("❌ Erreur réseau :", err);
+      });
+    });
+  </script>
+<?php endif; ?>
 
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

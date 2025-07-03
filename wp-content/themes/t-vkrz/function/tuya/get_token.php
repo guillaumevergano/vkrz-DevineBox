@@ -1,6 +1,7 @@
 <?php
 $client_id = "cruj8q9rrkpkrwghdpgs";
 $secret = "2165b05fe5594054a3dbb4d27cab254c";
+$is_user_connected = is_user_logged_in();
 
 // === 1. Obtenir le token ===
 function getTuyaToken($client_id, $secret) {
@@ -30,7 +31,12 @@ function getTuyaToken($client_id, $secret) {
     curl_close($ch);
 
     $json = json_decode($response, true);
-    return $json["result"]["access_token"] ?? null;
+    if($is_user_connected) {
+      return $json["result"]["access_token"] ?? null;
+    }
+    else{
+      return "Not connected";
+    }
 }
 
 function sendGroupProperties($access_token, $client_id, $secret, $properties) {

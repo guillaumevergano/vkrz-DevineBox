@@ -50,19 +50,13 @@ function addGuessVote() {
     // After 10 votes
     outerProgressBar.classList.add('d-none');
     confetti.stop();
-
+    titleDevineVote.classList.add("title-devine-vote-finish");
     if (currentRightGuesses < 20) {
-      titleDevineVote.innerHTML = `🎉 Tu as gagné avec ton duo !`;
-      subTitleDevineVote.classList.remove('d-none');
-      subTitleDevineVote.textContent = `${currentRightGuesses} bonnes réponses… continue, c’est impressionnant ! ✨`;
+      titleDevineVote.innerHTML = `<span class="scoremondial">${currentRightGuesses}</span> bonnes réponses… let's go`;
     } else if (currentRightGuesses < 30) {
-      titleDevineVote.innerHTML = `🏆 Quel duo de choc !`;
-      subTitleDevineVote.classList.remove('d-none');
-      subTitleDevineVote.textContent = `${currentRightGuesses} réponses justes… vous êtes imbattables 🙌`;
+      titleDevineVote.innerHTML = `<span class="scoremondial">${currentRightGuesses}</span> bonnes réponses… vous êtes vraiment chauds`;
     } else {
-      titleDevineVote.innerHTML = `💯 Légendaire !`;
-      subTitleDevineVote.classList.remove('d-none');
-      subTitleDevineVote.textContent = `${currentRightGuesses} réponses… qui peut arrêter ton duo ? 🔥`;
+      titleDevineVote.innerHTML = `<span class="scoremondial">${currentRightGuesses}</span> bonnes réponses… vous êtes légendaires`;
     }
   }
 }
@@ -130,22 +124,6 @@ laucher_finish_Btns.forEach((btn) => {
 			lauchTop();
 		}, 500);
 	});
-});
-
-
-fetch(SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/make_initial.php", {
-	method: "POST",
-})
-.then((res) => res.json())
-.then((data) => {
-  if (data.success) {
-    console.log("✅ Réponse Tuya :", data);
-  } else {
-    console.error("❌ Erreur Tuya :", data.msg || data.code);
-  }
-})
-.catch((err) => {
-  console.error("❌ Erreur réseau :", err);
 });
 
 // LAUNCH BEGIN TOPLIST
@@ -907,54 +885,6 @@ async function get_nextDuel(contenders) {
     }
   } else {
     document.getElementById("waiter-toplist").style.display = "block";
-
-     // SAVE TWITCH GAME RESULTS…
-     if (
-      document.querySelector(".display_battle") &&
-      localStorage.getItem("twitchGameMode") !== null &&
-      votePointsBoolean
-    ) {
-      const twitchGameResumeObj = {
-        idRanking: id_toplist_contenders_ajax,
-        id_twitch_game: id_twitch_game,
-        mode: "votePoints",
-      };
-      localStorage.setItem("resumeTwitchGame", JSON.stringify(twitchGameResumeObj));
-
-      // SAVE TO DATABASE
-      fetch(`${API_BASE_URL}twitch/update-participants-game`, {
-        method: 'POST',
-        body: JSON.stringify({
-          id: id_twitch_game,
-          extra_field_for_points_game: ((document.querySelector(".table-points tbody").innerHTML).trim()).replace(/>[\s]+</g, '><')
-        }),
-        headers: { 'Content-Type': 'application/json' }
-      })
-        .then(response => response.json()) 
-        .then(data => { console.log(data, "new request to save points game") })
-    } 
-    if (document.querySelector(".display_battle") && localStorage.getItem("twitchGameMode") !== null && votePredictionBoolean && winnerAlready === false) {
-      fetch(`${API_BASE_URL}twitch/update-participants-game`, {
-        method: 'POST',
-        body: JSON.stringify({
-          id: id_twitch_game,
-          rest_participants: Object.keys(users)
-        }),
-        headers: { 'Content-Type': 'application/json', }
-      })
-        .then(response => response.json()) 
-        .then(data => {
-          if(data.status === "success") { 
-            const twitchGameResumeObj = {
-              idRanking: id_toplist_contenders_ajax,
-              participantsNumber: `${Object.keys(users).length}`,
-              mode: "votePrediction",
-              winner: null,
-            };
-            localStorage.setItem("resumeTwitchGame", JSON.stringify(twitchGameResumeObj));
-          }
-        })
-    }
 
     setTimeout(async function () {
 			await SQL_saveTopList({

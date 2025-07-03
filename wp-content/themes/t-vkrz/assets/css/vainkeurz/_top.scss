@@ -1792,7 +1792,7 @@ body {
   img:first-of-type {
     position: relative;
     z-index: 2;
-    transform: translateY(12px) translateX(13.5px);
+    transform: translateY(34px) translateX(13.5px);
   }
 
   p {
@@ -1812,6 +1812,24 @@ body {
     text-transform: uppercase;
     margin-left: .6rem;
     text-align: center;
+  }
+
+  h4.title-devine-vote-finish{
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 31.24px;
+    text-transform: uppercase;
+    margin-left: 30px;
+    text-align: left;
+    position: relative;
+    top: 40px;
+    .scoremondial {
+      color: #f4167f;
+      font-weight: 600;
+      font-size: 2rem;
+      display: block;
+    }
   }
 
   .outer-progress-bar {

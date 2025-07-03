@@ -3039,3 +3039,16 @@ height: 130px;
 .avatar-yt{
   max-width: 50px;
 }
+
+.perdu-btn-block{
+  position: relative;
+  top: 8px;
+  left: -50px;
+  transform: scale(0.85);
+}
+
+.scoremondial{
+  color: $rose;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
