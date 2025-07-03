@@ -42,7 +42,7 @@ function sendGroupProperties($access_token, $client_id, $secret, $properties) {
     $url = "https://openapi.tuyaeu.com" . $path;
 
     $payload = [
-        "group_id" => "12878339",
+        "group_id" => "12717769",
         "properties" => $properties
     ];
     $body = json_encode($payload, JSON_UNESCAPED_SLASHES);
