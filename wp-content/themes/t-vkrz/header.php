@@ -94,7 +94,15 @@ if(isset($top_infos)){
 if(get_query_var('toplist_devine_id')){
   $class_body = "single single-tournoi single-devine";
 }
+if(is_user_logged_in()){
+  $wp_user_logged_in = "true";
+} else {
+  $wp_user_logged_in = "false";
+}
 ?>
+<script>
+  let wp_user_logged_in = "<?php echo $wp_user_logged_in; ?>";
+</script>
 <body <?php body_class($class_body); ?> id="<?php echo (get_query_var('toplist_id')) ? 'toplist-single' : ''; ?>">
   <?php if(get_post_type() == "tournoi" || get_query_var('toplist_devine_id') || get_query_var('toplist_id')): ?>
     <div class="ba-cover-r"></div>

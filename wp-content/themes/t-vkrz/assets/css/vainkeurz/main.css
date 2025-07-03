@@ -3241,6 +3241,19 @@ body .top_beginned {
   max-width: 50px;
 }
 
+.perdu-btn-block {
+  position: relative;
+  top: 8px;
+  left: -50px;
+  transform: scale(0.85);
+}
+
+.scoremondial {
+  color: #f4167f;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
 .page-template-monitor .list-vainkeur-monitor {
   margin: 0 !important;
   padding: 0;
@@ -5567,7 +5580,7 @@ body {
 .devine-votes-steps img:first-of-type {
   position: relative;
   z-index: 2;
-  transform: translateY(12px) translateX(13.5px);
+  transform: translateY(34px) translateX(13.5px);
 }
 .devine-votes-steps p {
   font-size: 16.5px;
@@ -5585,6 +5598,23 @@ body {
   text-transform: uppercase;
   margin-left: 0.6rem;
   text-align: center;
+}
+.devine-votes-steps h4.title-devine-vote-finish {
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 31.24px;
+  text-transform: uppercase;
+  margin-left: 30px;
+  text-align: left;
+  position: relative;
+  top: 40px;
+}
+.devine-votes-steps h4.title-devine-vote-finish .scoremondial {
+  color: #f4167f;
+  font-weight: 600;
+  font-size: 2rem;
+  display: block;
 }
 .devine-votes-steps .outer-progress-bar {
   height: 50px;

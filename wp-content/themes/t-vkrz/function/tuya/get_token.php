@@ -29,6 +29,7 @@ function getTuyaToken($client_id, $secret) {
     $response = curl_exec($ch);
     curl_close($ch);
 
+    // Check if user is admin
     $json = json_decode($response, true);
     return $json["result"]["access_token"] ?? null;
 }

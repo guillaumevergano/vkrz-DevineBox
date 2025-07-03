@@ -16,35 +16,49 @@ let guessVotesBoolean   = true;
 let currentRightGuesses = 0;
 
 function addGuessVote() {
-  const innerProgressBar    = document.querySelector(".inner-progress-bar");
-  const outerProgressBar    = document.querySelector(".outer-progress-bar");
-  const stepsProgressBar    = document.querySelector(".steps-progress-bar");
-  const textProgressBar     = document.querySelector(".text-progress-bar");
-  const titleDevineVote     = document.querySelector(".title-devine-vote");
-  const subTitleDevineVote  = document.querySelector(".subtitle-devine-vote");
+	const innerProgressBar = document.querySelector(".inner-progress-bar");
+	const outerProgressBar = document.querySelector(".outer-progress-bar");
+	const stepsProgressBar = document.querySelector(".steps-progress-bar");
+	const textProgressBar = document.querySelector(".text-progress-bar");
+	const titleDevineVote = document.querySelector(".title-devine-vote");
+	const subTitleDevineVote = document.querySelector(".subtitle-devine-vote");
 
-  if (currentRightGuesses < 10) {
-      currentRightGuesses++;
-      const width = currentRightGuesses * 10; // Each step is 10% of the width
-      innerProgressBar.style.width = `${width}%`;
-      if(stepsProgressBar)
-        stepsProgressBar.textContent = currentRightGuesses;
-  }
+	currentRightGuesses++;
 
-  if (currentRightGuesses === 9) {
-    textProgressBar.innerHTML = `DUEL FINAL <span class="va-face-screaming va va-md"></span>`;
-    textProgressBar.classList.add('text-progress-bar-finish')
-    innerProgressBar.classList.add('inner-progress-bar-finish')
-  }
+	if (currentRightGuesses <= 10) {
+		const width = currentRightGuesses * 10;
+		innerProgressBar.style.width = `${width}%`;
 
-  // Optional: Check if the progress is complete
-  if (currentRightGuesses === 10) {
-    outerProgressBar.classList.add('d-none');
-    subTitleDevineVote.classList.add('d-none');
-    titleDevineVote.innerHTML = `&nbsp; &nbsp; C'EST GAGNÉ ! <span class="va-party-popper va va-lg"></span>`;
-    confetti.start();
-    setTimeout(function () { confetti.stop(); }, 20000);
-  }
+		if (stepsProgressBar) {
+			stepsProgressBar.textContent = currentRightGuesses;
+		}
+
+		if (currentRightGuesses === 9) {
+			textProgressBar.innerHTML = `DUEL FINAL <span class="va-face-screaming va va-md"></span>`;
+			textProgressBar.classList.add("text-progress-bar-finish");
+			innerProgressBar.classList.add("inner-progress-bar-finish");
+		}
+
+		if (currentRightGuesses === 10) {
+			outerProgressBar.classList.add("d-none");
+			subTitleDevineVote.classList.add("d-none");
+			titleDevineVote.innerHTML = `&nbsp; &nbsp; C'EST GAGNÉ ! <span class="va-party-popper va va-lg"></span>`;
+			confetti.start();
+			setTimeout(() => confetti.stop(), 20000);
+		}
+	} else {
+		// After 10 votes
+		outerProgressBar.classList.add("d-none");
+		confetti.stop();
+		titleDevineVote.classList.add("title-devine-vote-finish");
+		if (currentRightGuesses < 20) {
+			titleDevineVote.innerHTML = `<span class="scoremondial">${currentRightGuesses}</span> bonnes réponses… let's go`;
+		} else if (currentRightGuesses < 30) {
+			titleDevineVote.innerHTML = `<span class="scoremondial">${currentRightGuesses}</span> bonnes réponses… vous êtes vraiment chauds`;
+		} else {
+			titleDevineVote.innerHTML = `<span class="scoremondial">${currentRightGuesses}</span> bonnes réponses… vous êtes légendaires`;
+		}
+	}
 }
 const userInfos = JSON.parse(localStorage.getItem("user_info"));
 
@@ -112,21 +126,30 @@ laucher_finish_Btns.forEach((btn) => {
 	});
 });
 
-
-fetch(SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/make_initial.php", {
-	method: "POST",
-})
-.then((res) => res.json())
-.then((data) => {
-  if (data.success) {
-    console.log("✅ Réponse Tuya :", data);
-  } else {
-    console.error("❌ Erreur Tuya :", data.msg || data.code);
-  }
-})
-.catch((err) => {
-  console.error("❌ Erreur réseau :", err);
-});
+// Check if user is logged in before making the request
+if (wp_user_logged_in == "true") {
+  console.log("wp_user_logged_in", wp_user_logged_in);
+	fetch(
+		SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/make_initial.php",
+		{
+			method: "POST",
+		}
+	)
+		.then((res) => res.json())
+		.then((data) => {
+			if (data.success) {
+				console.log("✅ Réponse Tuya :", data);
+			} else {
+				console.error("❌ Erreur Tuya :", data.msg || data.code);
+			}
+		})
+		.catch((err) => {
+			console.error("❌ Erreur réseau :", err);
+		});
+}
+else{
+  console.log("user is not logged in");
+}
 
 // LAUNCH BEGIN TOPLIST
 const launchTopListBtns = document.querySelectorAll(".laucher_t");
@@ -297,23 +320,28 @@ function do_vote(idWinner, idLooser, contenders) {
 		timelineVotes >= 10 ? "noset" : array_lamp[timelineVotes].id_lamp;
 
 	if (timelineVotes < 10) {
-    console.log("Lampe numéro", array_lamp[timelineVotes]);
-    console.log("id_lamp", id_lamp);
-		fetch(SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/call_tuya_device.php", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({
-				id_lamp: id_lamp,
-				color: { h: 120, s: 1000, v: 1000 },
-			}),
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				console.log("💡 Commande Tuya envoyée pour la lampe:", id_lamp, data);
-			})
-			.catch((err) => {
-				console.error("❌ Erreur API Tuya :", err);
-			});
+    console.log("wp_user_logged_in", wp_user_logged_in);
+    if (wp_user_logged_in == "true") {
+			fetch(
+				SITE_BASE_URL +
+					"wp-content/themes/t-vkrz/function/tuya/call_tuya_device.php",
+				{
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						id_lamp: id_lamp,
+						color: { h: 120, s: 1000, v: 1000 },
+					}),
+				}
+			)
+				.then((res) => res.json())
+				.then((data) => {
+					console.log("💡 Commande Tuya envoyée pour la lampe:", id_lamp, data);
+				})
+				.catch((err) => {
+					console.error("❌ Erreur API Tuya :", err);
+				});
+		}
 	}
 
 	let listContenders = contenders,

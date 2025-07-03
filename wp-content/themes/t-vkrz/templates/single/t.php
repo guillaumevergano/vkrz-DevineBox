@@ -327,28 +327,26 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
                       </div>
                     </div>
 
-                    <?php if (!isMobile()) : ?>
-                      <div class="devine-votes-steps">
-                        <div class="d-flex">
-                          <img src="https://vainkeurz.com/wp-content/uploads/2024/03/manga.png" alt="Manga Image">
+                    <div class="devine-votes-steps">
+                      <div class="d-flex">
+                        <img src="<?php bloginfo('template_directory'); ?>/assets/images/emojis/wrapped-gift_1f381.png" alt="Manga Image">
 
-                          <div>
-                            <p class="subtitle-devine-vote">Devine 10 fois le choix de ton duo pour gagner</p>
-                            <h4 class="title-devine-vote">Le manga de ton choix !</h4>
+                        <div>
+                          <p class="subtitle-devine-vote">Devine 10 fois le choix de ton duo pour gagner</p>
+                          <h4 class="title-devine-vote">Une récompense</h4>
 
-                            <div class="outer-progress-bar">
-                              <div class="inner-progress-bar"></div>
-                              <div class="text-progress-bar"><span class="steps-progress-bar">0</span> sur 10</div>
-                            </div>
+                          <div class="outer-progress-bar">
+                            <div class="inner-progress-bar"></div>
+                            <div class="text-progress-bar"><span class="steps-progress-bar">0</span> sur 10</div>
                           </div>
                         </div>
-                        <div class="perdu-btn-block">
-                          <a href="#" class="btn-slim perdu-btn">
-                            <span class="cta-wording">C'est perdu</span>
-                          </a>
-                        </div>
                       </div>
-                    <?php endif; ?>
+                      <div class="perdu-btn-block">
+                        <a href="#" class="btn-slim perdu-btn">
+                          <span class="cta-wording">C'est perdu</span>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -423,50 +421,54 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
 </div>
 
 <script>
+
   document.addEventListener('DOMContentLoaded', (event) => {
 
-    document.querySelector('.perdu-btn').addEventListener('click', (event) => {
-      event.preventDefault();
-      
-      const waiterPerdu = document.querySelector('.waiter-perdu');
-      waiterPerdu.style.display = 'block';
-      
-      fetch(SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/make_fail.php", {
-        method: "POST",
-      })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          console.log("✅ Réponse Tuya :", data);
-        } else {
-          console.error("❌ Erreur Tuya :", data.msg || data.code);
-        }
-      })
-      .catch((err) => {
-        console.error("❌ Erreur réseau :", err);
+    if(wp_user_logged_in == "true") {
+      console.log("wp_user_logged_in is true");
+      document.querySelector('.perdu-btn').addEventListener('click', (event) => {
+        event.preventDefault();
+        
+        const waiterPerdu = document.querySelector('.waiter-perdu');
+        waiterPerdu.style.display = 'block';
+        
+        fetch(SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/make_fail.php", {
+          method: "POST",
+        })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success) {
+            console.log("✅ Réponse Tuya :", data);
+          } else {
+            console.error("❌ Erreur Tuya :", data.msg || data.code);
+          }
+        })
+        .catch((err) => {
+          console.error("❌ Erreur réseau :", err);
+        });
       });
-    });
-    document.querySelector('.continuer-btn').addEventListener('click', (event) => {
-      event.preventDefault();
-      
-      const waiterPerdu = document.querySelector('.waiter-perdu');
-      waiterPerdu.style.display = 'none';
-      
-      fetch(SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/make_initial.php", {
-        method: "POST",
-      })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          console.log("✅ Réponse Tuya :", data);
-        } else {
-          console.error("❌ Erreur Tuya :", data.msg || data.code);
-        }
-      })
-      .catch((err) => {
-        console.error("❌ Erreur réseau :", err);
+      document.querySelector('.continuer-btn').addEventListener('click', (event) => {
+        event.preventDefault();
+        
+        const waiterPerdu = document.querySelector('.waiter-perdu');
+        waiterPerdu.style.display = 'none';
+        
+        fetch(SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/make_initial.php", {
+          method: "POST",
+        })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success) {
+            console.log("✅ Réponse Tuya :", data);
+          } else {
+            console.error("❌ Erreur Tuya :", data.msg || data.code);
+          }
+        })
+        .catch((err) => {
+          console.error("❌ Erreur réseau :", err);
+        });
       });
-    });
+    }
 
     if(Boolean(isMobile)) {
       localStorage.removeItem('resumeTwitchGame');
