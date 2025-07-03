@@ -424,6 +424,30 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
 
   document.addEventListener('DOMContentLoaded', (event) => {
 
+    if (wp_user_logged_in == "true") {
+      console.log("wp_user_logged_in", wp_user_logged_in);
+      fetch(
+        SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/make_initial.php",
+        {
+          method: "POST",
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success) {
+            console.log("✅ Initialisation Tuya :", data);
+          } else {
+            console.error("❌ Erreur Tuya :", data.msg || data.code);
+          }
+        })
+        .catch((err) => {
+          console.error("❌ Erreur réseau :", err);
+        });
+    }
+    else{
+      console.log("user is not logged in");
+    }
+
     if(wp_user_logged_in == "true") {
       console.log("wp_user_logged_in is true");
       document.querySelector('.perdu-btn').addEventListener('click', (event) => {

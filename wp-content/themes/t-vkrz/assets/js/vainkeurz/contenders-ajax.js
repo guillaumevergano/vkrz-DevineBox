@@ -69,19 +69,6 @@ laucher_finish_Btns.forEach((btn) => {
 		
 		const topList_id = btn.dataset.toplistid;
 
-    console.log("make inital 2");
-
-		// ✅ Envoi POST vers le webhook Make avec state = "initial"
-		await fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				state: "initial",
-			}),
-		});
-
 		id_toplist_contenders_ajax = topList_id;
 
 		waiterTop.style.display = "block";
@@ -126,30 +113,6 @@ laucher_finish_Btns.forEach((btn) => {
 	});
 });
 
-// Check if user is logged in before making the request
-if (wp_user_logged_in == "true") {
-  console.log("wp_user_logged_in", wp_user_logged_in);
-	fetch(
-		SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/make_initial.php",
-		{
-			method: "POST",
-		}
-	)
-		.then((res) => res.json())
-		.then((data) => {
-			if (data.success) {
-				console.log("✅ Réponse Tuya :", data);
-			} else {
-				console.error("❌ Erreur Tuya :", data.msg || data.code);
-			}
-		})
-		.catch((err) => {
-			console.error("❌ Erreur réseau :", err);
-		});
-}
-else{
-  console.log("user is not logged in");
-}
 
 // LAUNCH BEGIN TOPLIST
 const launchTopListBtns = document.querySelectorAll(".laucher_t");
