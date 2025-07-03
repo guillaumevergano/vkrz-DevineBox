@@ -10,6 +10,7 @@ include($templatepath . '/function/meca.php');
 include($templatepath . '/function/cron.php');
 include($templatepath . '/function/packs.php');
 include($templatepath . '/function/notifications.php');
+include($templatepath . '/function/tuya.php');
 
 @ini_set('upload_max_size', '64M');
 @ini_set('post_max_size', '64M');

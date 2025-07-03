@@ -1,7 +1,5 @@
 <?php
 include_once "get_token.php";
-
-
 $token = getTuyaToken($client_id, $secret);
 if ($token) {
     sendGroupProperties($token, $client_id, $secret, "{\"work_mode\":\"scene\"}");
