@@ -138,6 +138,30 @@ jQuery(document).ready(function ($) {
 		swipe: true,
   	draggable: true,
 	});
+  $(".slick-carousel-cat8").slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: true,
+		autoplay: false,
+		appendDots: $(".slick-nav-dots-cat8"),
+		nextArrow: $(".vk-next-cat8"),
+		prevArrow: $(".vk-prev-cat8"),
+		swipe: true,
+  	draggable: true,
+	});
+  $(".slick-carousel-cat9").slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: true,
+		autoplay: false,
+		appendDots: $(".slick-nav-dots-cat9"),
+		nextArrow: $(".vk-next-cat9"),
+		prevArrow: $(".vk-prev-cat9"),
+		swipe: true,
+  	draggable: true,
+	});
   $(".slick-carousel-cat-special").slick({
 		infinite: true,
 		slidesToShow: 1,

@@ -319,8 +319,9 @@ function do_vote(idWinner, idLooser, contenders) {
 	const id_lamp =
 		timelineVotes >= 10 ? "noset" : array_lamp[timelineVotes].id_lamp;
 
+  console.log("timelineVotes", timelineVotes);
 	if (timelineVotes < 10) {
-    console.log("wp_user_logged_in", wp_user_logged_in);
+    console.log("wp_user_logged_in_lamp", wp_user_logged_in);
     if (wp_user_logged_in == "true") {
 			fetch(
 				SITE_BASE_URL +
