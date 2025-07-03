@@ -31,12 +31,7 @@ function getTuyaToken($client_id, $secret) {
     curl_close($ch);
 
     $json = json_decode($response, true);
-    if($is_user_connected) {
-      return $json["result"]["access_token"] ?? null;
-    }
-    else{
-      return "Not connected";
-    }
+    return $json["result"]["access_token"] ?? null;
 }
 
 function sendGroupProperties($access_token, $client_id, $secret, $properties) {

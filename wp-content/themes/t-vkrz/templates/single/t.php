@@ -419,29 +419,6 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
   </div>
 </div>
 
-<?php if(is_user_logged_in()): ?>
-  <script>
-    const SITE_wp_url = "<?php echo site_url(); ?>";
-    document.addEventListener('DOMContentLoaded', (event) => {
-      url_to_fetch = SITE_wp_url + "/wp-content/themes/t-vkrz/function/tuya/make_initial.php";
-      fetch(url_to_fetch, {
-        method: "POST",
-      })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          console.log("✅ Réponse Tuya :", data);
-        } else {
-          console.error("❌ Erreur Tuya :", data.msg || data.code);
-        }
-      })
-      .catch((err) => {
-        console.error("❌ Erreur réseau :", err);
-      });
-    });
-  </script>
-<?php endif; ?>
-
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {
 
@@ -818,4 +795,49 @@ if (strpos(home_url($_SERVER['REQUEST_URI']), '/t/') !== false && get_field('fic
     });
   });
 </script>
+<?php 
+$client_id = "cruj8q9rrkpkrwghdpgs";
+$secret = "2165b05fe5594054a3dbb4d27cab254c";
+$token = getTuyaToken($client_id, $secret);
+if ($token) {
+    $timestamp = round(microtime(true) * 1000);
+    $nonce = bin2hex(random_bytes(16));
+    $method = "POST";
+    $path = "/v2.0/cloud/thing/group/properties";
+    $url = "https://openapi.tuyaeu.com" . $path;
+
+    $payload = [
+        "group_id" => "12717769",
+        "properties" => "{\"work_mode\":\"scene\"}"
+    ];
+    $body = json_encode($payload, JSON_UNESCAPED_SLASHES);
+    $body_hash = hash('sha256', $body);
+
+    $stringToSign = $method . "\n" . $body_hash . "\n\n" . $path;
+    $signStr = $client_id . $token . $timestamp . $nonce . $stringToSign;
+    $sign = strtoupper(hash_hmac('sha256', $signStr, $secret));
+
+    $headers = [
+        "client_id: $client_id",
+        "access_token: $token",
+        "t: $timestamp",
+        "nonce: $nonce",
+        "sign_method: HMAC-SHA256",
+        "sign: $sign",
+        "Content-Type: application/json"
+    ];
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+} else {
+    http_response_code(500);
+    echo json_encode(["error" => "Impossible de récupérer le token Tuya"]);
+}
+?>
 <?php get_footer(); ?>

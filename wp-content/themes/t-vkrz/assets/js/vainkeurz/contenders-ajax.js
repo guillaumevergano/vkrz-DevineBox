@@ -69,19 +69,6 @@ laucher_finish_Btns.forEach((btn) => {
 		
 		const topList_id = btn.dataset.toplistid;
 
-    console.log("make inital 2");
-
-		// ✅ Envoi POST vers le webhook Make avec state = "initial"
-		await fetch("https://hook.eu1.make.com/53egclppdslw97p2633t38udxfl8vshm", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				state: "initial",
-			}),
-		});
-
 		id_toplist_contenders_ajax = topList_id;
 
 		waiterTop.style.display = "block";
@@ -297,6 +284,7 @@ function do_vote(idWinner, idLooser, contenders) {
 	if (timelineVotes < 10) {
     console.log("Lampe numéro", array_lamp[timelineVotes]);
     console.log("id_lamp", id_lamp);
+    console.log("SITE_BASE_URL", SITE_BASE_URL);
 		fetch(SITE_BASE_URL + "wp-content/themes/t-vkrz/function/tuya/call_tuya_device.php", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
