@@ -132,7 +132,7 @@ if(is_user_logged_in()){
               <div class="content-show-navbar-barre row">
                 <div class="col-md-6">
                   <div class="slim-left">
-                    <a href="<?php bloginfo('url'); ?>" class="app-brand-link gap-2">
+                    <a href="<?php bloginfo('url'); ?>/convention" class="app-brand-link gap-2">
                       <span class="logo-simple">
                         <img src="<?php bloginfo('template_directory'); ?>/assets/images/vkrz/logo-vkrz.webp" alt="VAINKEURZ logo" class="img-fluid">
                       </span>
