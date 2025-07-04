@@ -567,25 +567,15 @@ function hasNullAttribute(obj) {
 
 async function processTops(tops, divToFillWithTops, grid) {
 
-  let collectionUser = localStorage.getItem('inventaire_user') ? JSON.parse(localStorage.getItem('inventaire_user')) : null;
-  if(collectionUser === null) {
-    collectionUser = {};
-  }
-
   const fragment = document.createDocumentFragment();
 
   tops.forEach(t => {
-    const topState = !hasNullAttribute(collectionUser) ? findIdTopStateInObject(collectionUser, t.top_id) : "todo";
     const div = document.createElement('div');
     div.className = `${grid} grid-item`;
     div.dataset.idTop = t.top_id;
-    div.dataset.filterItem = `${topState} ${t.top_slug}`;
-    div.dataset.filterName = `${t.top_question} ${t.top_title}`;
 
     div.innerHTML = `
-      <div class="min-tournoi card state-${
-				t.top_type
-			} h-100 d-flex flex-column topState-${topState}">
+      <div class="min-tournoi card h-100 d-flex flex-column">
         <div class="min-tournoi-content">
           <div class="cov-illu-container">
             <div class="cov-illu" style="background: url(${
@@ -598,11 +588,6 @@ async function processTops(tops, divToFillWithTops, grid) {
           <div class="pushtop d-flex flex-column h-100">
             <div class="min-tournoi-title flex-grow-1">
               <h4 class="titre-top-min eh3 line-clamp-2">
-                ${
-									t.top_type === "sponso"
-										? `<span class="va va-gift va-md"></span>`
-										: t.top_cat_icon
-								}
                 ${t.top_title}
               </h4>
               <h3 class="card-title eh2 line-clamp-3">${t.top_question}</h3>

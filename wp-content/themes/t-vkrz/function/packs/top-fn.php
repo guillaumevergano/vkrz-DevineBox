@@ -2455,3 +2455,23 @@ function get_tops_of_a_sub_cat($data) {
 
     return $list_tops;
 }
+
+function get_all_tops_from_vedette() {
+
+  $list_toplist_ids = get_field('liste_des_toplist_les_plus_jouees', get_page_by_path('convention'));
+  $list_tops = array();
+  $tops = new WP_Query(array(
+    'post_type' => 'tournoi',
+    'posts_per_page' => '-1',
+    'post__in' => $list_toplist_ids,
+  ));
+
+  if ($tops->have_posts()) {
+    while ($tops->have_posts()) : $tops->the_post();
+      $info_top = get_top_infos(get_the_ID(), 'slim');
+      array_push($list_tops, $info_top);
+    endwhile;
+  }
+
+  return $list_tops;
+}

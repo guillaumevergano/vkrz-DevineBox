@@ -737,5 +737,12 @@ register_rest_route('v1', '/allproducts', array(
     'callback' => 'get_popular_top',
     'permission_callback' => '__return_true'
   ));
+
+  // Get all Tops from Vedette
+  register_rest_route('v1', '/getalltopsfromvedetteconvention/', array(
+    'methods' => 'GET',
+    'callback' => 'get_all_tops_from_vedette',
+    'permission_callback' => '__return_true'
+  ));
   
 });
