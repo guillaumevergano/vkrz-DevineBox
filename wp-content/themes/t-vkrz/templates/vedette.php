@@ -18,7 +18,7 @@ Template Name: Vedette
   <section class="creator-block">
     <div class="container-xxl">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-9">
            <section class="row match-height mt-4" id="rendervedettetops">
               <div class="col-md-4 col-6 me-50">
                 <div class="card loading-card">
@@ -136,7 +136,7 @@ Template Name: Vedette
               </div>
             </section>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="text-center animate__fadeInUp animate__animated animate__delay-2s">
             <h3 class="titre-section text-center titre-section-emojibig mt-3">
               <a href="<?php bloginfo('url'); ?>/cat/food">
