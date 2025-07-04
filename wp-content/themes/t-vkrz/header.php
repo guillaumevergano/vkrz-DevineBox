@@ -222,7 +222,7 @@ if(is_user_logged_in()){
             <div class="content-show-navbar-barre row">
               <div class="col-md-6 col-4">
                 <div class="slim-left">
-                  <a href="<?php bloginfo('url'); ?>" class="app-brand-link gap-2 d-none d-sm-block">
+                  <a href="<?php bloginfo('url'); ?>/convention" class="app-brand-link gap-2 d-none d-sm-block">
                     <span class="logo-simple">
                       <img src="<?php bloginfo('template_directory'); ?>/assets/images/vkrz/logo-vkrz.webp" alt="VAINKEURZ logo" class="img-fluid">
                     </span>
@@ -239,7 +239,7 @@ if(is_user_logged_in()){
       <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
         <div class="container-xxl">
           <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4">
-            <a href="<?php bloginfo('url'); ?>" class="app-brand-link gap-2">
+            <a href="<?php bloginfo('url'); ?>/convention" class="app-brand-link gap-2">
               <span class="logo">
                 <img src="<?php bloginfo('template_directory'); ?>/assets/images/vkrz/logo-vkrz.webp" alt="VAINKEURZ logo" class="img-fluid">
               </span>
