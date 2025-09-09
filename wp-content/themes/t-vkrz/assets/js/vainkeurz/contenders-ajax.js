@@ -279,33 +279,49 @@ function do_vote(idWinner, idLooser, contenders) {
 		{ num_lamp: 10, id_lamp: "bf043979fea49251c1wp25" },
 	];
 
-	const id_lamp =
-		timelineVotes >= 10 ? "noset" : array_lamp[timelineVotes].id_lamp;
+	const id_lamp = timelineVotes >= 10 ? "noset" : array_lamp[timelineVotes].id_lamp;
+  console.log("wp_user_logged_in", wp_user_logged_in);
 
   console.log("timelineVotes", timelineVotes);
-	if (timelineVotes < 10) {
-    console.log("wp_user_logged_in_lamp", wp_user_logged_in);
-    if (wp_user_logged_in == "true") {
-			fetch(
-				SITE_BASE_URL +
-					"wp-content/themes/t-vkrz/function/tuya/call_tuya_device.php",
-				{
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({
-						id_lamp: id_lamp,
-						color: { h: 120, s: 1000, v: 1000 },
-					}),
-				}
-			)
-				.then((res) => res.json())
-				.then((data) => {
-					console.log("💡 Commande Tuya envoyée pour la lampe:", id_lamp, data);
-				})
-				.catch((err) => {
-					console.error("❌ Erreur API Tuya :", err);
-				});
-		}
+  if (wp_user_logged_in == "true") {
+    if (timelineVotes < 9) {
+      fetch(
+        SITE_BASE_URL +
+          "wp-content/themes/t-vkrz/function/tuya/call_tuya_device.php",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id_lamp: id_lamp,
+            color: { h: 120, s: 1000, v: 1000 },
+          }),
+        }
+      )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("💡 Commande Tuya envoyée pour la lampe:", id_lamp, data);
+      })
+      .catch((err) => {
+        console.error("❌ Erreur API Tuya :", err);
+      });
+    }
+    else if (timelineVotes === 9) {
+      fetch(
+        SITE_BASE_URL +
+          "wp-content/themes/t-vkrz/function/tuya/make_celebration.php",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" }
+        }
+      )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("🎉 Célébration Tuya envoyée:");
+      })
+      .catch((err) => {
+        console.error("❌ Erreur API Tuya :", err);
+      });
+    }
 	}
 
 	let listContenders = contenders,
