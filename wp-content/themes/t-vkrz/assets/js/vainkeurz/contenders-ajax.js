@@ -268,7 +268,7 @@ function do_vote(idWinner, idLooser, contenders) {
 
   const array_lamp = [
 		{ num_lamp: 1, id_lamp: "bfe3274eb32ec3b8415k1g" },
-		{ num_lamp: 2, id_lamp: "bf66d769548c66895aa7wn" },
+		{ num_lamp: 2, id_lamp: "bf70e42b0c5cca8619gfym" },
 		{ num_lamp: 3, id_lamp: "bf635bd67ca0552054gprb" },
 		{ num_lamp: 4, id_lamp: "bf9d17dcb317aa8eafc42c" },
 		{ num_lamp: 5, id_lamp: "bf8171b908d7da6c8eztuv" },
